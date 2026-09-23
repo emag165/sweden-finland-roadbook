@@ -126,6 +126,8 @@ ul.sl a{font:500 11px/1 var(--mono);letter-spacing:.06em;margin-left:6px;white-s
  border:1px solid var(--line2);color:var(--dim)}
 .tag.a{color:var(--amb);border-color:var(--amb2)}
 .stay{margin-left:auto;font:500 10.5px/1.6 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--dim);white-space:nowrap}.stay b{font-weight:600;color:var(--txt)}.stay i{font-style:normal;color:var(--dimmer);margin:0 6px}.stay u{text-decoration:none;white-space:nowrap}.stay+.tag{margin-left:0}
+.kv{display:flex;gap:14px;align-items:baseline;margin:0 0 9px;font-size:13.5px;line-height:1.5;color:var(--dim)}.kv .k{flex:0 0 66px;font:600 9.5px/1.5 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--dimmer);white-space:nowrap}.kv .v{flex:1;min-width:0}.kv b{color:var(--txt)}.kv.go .k{color:var(--amb)}.kv.x .v,.kv.x b{color:var(--dimmer)}.alt .kv{margin-bottom:7px}.alt .kv .k{color:var(--amb)}.alt .kv.go .v b{color:var(--hi)}.bl{list-style:none;margin:0;padding:0;flex:1;min-width:0}.bl li{margin:0 0 6px;padding-left:14px;position:relative}.bl li::before{content:"";position:absolute;left:0;top:.55em;width:6px;height:6px;border-radius:50%;background:var(--amb)}.pill{display:inline-block;font:600 9px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;padding:4px 6px;border:1px solid var(--line2);color:var(--dim);margin-left:6px;vertical-align:1px;white-space:nowrap;font-style:normal}.pill.now{color:var(--amb);border-color:var(--amb2)}.pill.road{color:var(--cyan);border-color:var(--cyan2)}.leg.base{border-left-color:var(--amb)}.leg.base .lhead{background:var(--wa-bg)}.rc a{color:inherit;border:0}.alt .tl a{color:var(--amb);border:0;letter-spacing:.1em;margin-left:8px;opacity:.8}
+
 .tag.c{color:var(--cyan);border-color:var(--cyan2)}
 .tag.r{color:var(--red);border-color:var(--red2)}
 .lbody{padding:16px 18px}
@@ -210,7 +212,7 @@ li b{color:var(--txt)}
 nav div{padding:0 14px}nav button{padding:13px 12px}#theme{margin-left:12px;padding:6px 10px}
 h2{display:block}h2 small{display:block;text-align:left;margin-top:5px}
 .ldate{flex-basis:66px;padding:10px 6px;font-size:18px;letter-spacing:-.03em;white-space:nowrap}.ldate small{letter-spacing:.12em}.ldate small span{display:block;margin-top:3px}.ldate small span::before{content:none}
-.ltitle{padding:12px 14px;flex-direction:column;align-items:flex-start;gap:8px}.tag{margin-left:0}.stay{margin-left:0;white-space:normal;line-height:1.7}
+.ltitle{padding:12px 14px;flex-direction:column;align-items:flex-start;gap:8px}.tag{margin-left:0}.stay{margin-left:0;white-space:normal;line-height:1.7}.kv{flex-direction:column;gap:2px}.kv .k{flex:none}
 .lbody{padding:14px}.addr{font-size:11px;letter-spacing:0}
 .rc{flex:1 1 calc(50% - 1px);min-width:0;padding:10px 12px}.rc .lab{letter-spacing:.12em}
 .load{flex-wrap:wrap;row-gap:7px}.load>span:first-child{order:1}.load>span:last-child{order:2;margin-left:auto;text-align:right}.load .trk{order:3;flex:1 1 calc(100% - 60px)}.load .cap{order:4}
@@ -345,7 +347,8 @@ h2{display:block}h2 small{display:block;text-align:left;margin-top:5px}
   <div class="ldate">14<small>SEP<span>MON</span></small></div>
   <div class="ltitle"><h3>Singapore → Frankfurt</h3><span class="tag c">Booked</span></div></div>
   <div class="lbody">
-   <p class="addr">SQ026 · SIN 23:55 → FRA 07:05 (15 SEP) · B777-300ER · BUSINESS · T3 → T1</p></div>
+   <div class="kv"><span class="k">FLIGHT</span><span class="v">SQ026 · SIN 23:55 → FRA 07:05 (15 Sep) · B777-300ER · Business · T3 → T1</span></div>
+  </div>
   <div class="read">
    <div class="rc"><b>23:55</b><div class="lab">depart SIN</div></div>
    <div class="rc"><b>07:05</b><div class="lab">arrive FRA</div></div>
@@ -356,9 +359,8 @@ h2{display:block}h2 small{display:block;text-align:left;margin-top:5px}
   <div class="ldate">15<small>SEP<span>TUE</span></small></div>
   <div class="ltitle"><h3>Frankfurt → Oslo</h3><span class="tag c">Booked</span></div></div>
   <div class="lbody">
-   <p class="addr">LH860 · FRA 10:15 → OSL 12:20 · LUFTHANSA · BUSINESS · TERMINAL 1</p>
-   <div class="warn c"><b>Connection is 3 h 10 m, same terminal.</b> You clear immigration at
-    Frankfurt — arriving from outside Schengen, departing inside it — so the time is not idle.</div>
+   <div class="kv"><span class="k">FLIGHT</span><span class="v">LH860 · FRA 10:15 → OSL 12:20 · Lufthansa Business · Terminal 1</span></div>
+   <div class="kv"><span class="k">NOTE</span><span class="v">3 h 10 connection, same terminal — <b>immigration at Frankfurt</b> (arriving from outside Schengen, leaving inside it), so the time is not idle.</span></div>
   </div>
   <div class="read">
    <div class="rc c"><b>3 h 10</b><div class="lab">connection</div></div>
@@ -382,10 +384,9 @@ h2{display:block}h2 small{display:block;text-align:left;margin-top:5px}
   <div class="ldate">26<small>SEP<span>SAT</span></small></div>
   <div class="ltitle"><h3>Oslo → Stockholm Arlanda</h3><span class="tag c">Booked</span></div></div>
   <div class="lbody">
-   <p class="addr">SK 882 · OSL 16:05 → ARN 17:05 · 1 H · CRJ-900, OPERATED BY CITYJET · SAS BUSINESS FLEX · ALL FOUR</p>
-   <p>The overland trip starts here. One hour in the air; lands at Terminal 5. Tonight's hotel is <b>Ett Hem in Östermalm, central Stockholm</b> (booked 21 Sep in place of the airport Clarion) —
-    Arlanda Express to Stockholm Central, about 20 min, then a short taxi; or a taxi from the terminal, about 40 km. Regional jet with small overhead bins — larger cabin
-    bags may be taken into the hold at the gate.</p></div>
+   <div class="kv"><span class="k">FLIGHT</span><span class="v">SK 882 · OSL 16:05 → ARN 17:05 · 1 h · CRJ-900 (CityJet) · SAS Business Flex · all four</span></div>
+   <div class="kv"><span class="k">NOTE</span><span class="v">Lands <b>Terminal 5</b> · Arlanda Express to Stockholm Central ~20 min then a short taxi, or a taxi from the terminal, ~40 km · regional jet: larger cabin bags may go to the hold at the gate.</span></div>
+  </div>
   <div class="read">
    <div class="rc"><b>16:05</b><div class="lab">depart OSL · Gardermoen</div></div>
    <div class="rc"><b>17:05</b><div class="lab">arrive ARN</div></div>
@@ -393,19 +394,13 @@ h2{display:block}h2 small{display:block;text-align:left;margin-top:5px}
    <div class="rc ref" title="SAS Business Flex, within Europe: 2 checked bags up to 32 kg each, 1 carry-on 55×40×23 cm up to 8 kg, 1 underseat bag 40×30×15 cm. From flysas.com ticket-types page, read 9 Sep 2026; not printed on the confirmation. A CRJ-900 bin is small — the 8 kg carry-on may still go in the hold at the gate."><b>2 × 32 kg</b><div class="lab"><a href="https://www.flysas.com/en/travel-info/ticket-types/regular" target="_blank" rel="noopener">luggage · + 8 kg cabin · flysas.com</a></div></div></div>
  </div>
 
-<div class="leg ok"><div class="lhead">
+ <div class="leg ok"><div class="lhead">
   <div class="ldate">26<small>SEP<span>SAT</span></small></div>
   <div class="ltitle"><h3>Ett Hem, Stockholm</h3><span class="stay"><u>IN <b>SAT 26 SEP</b></u><i>·</i><wbr><u>OUT <b>SUN 27 SEP</b></u><wbr><u><i>·</i>1&nbsp;NIGHT</u></span><span class="tag c">Booked</span></div></div>
   <div class="lbody">
-   <p class="addr">ETT HEM · SKÖLDUNGAGATAN 2 · ÖSTERMALM, STOCKHOLM · CHECK-IN AFTER 15:00 <a href="https://www.google.com/maps/search/?api=1&amp;query=Ett%20Hem%2C%20Sk%C3%B6ldungagatan%202%2C%20114%2027%20Stockholm%2C%20Sweden" target="_blank" rel="noopener" title="Open in Google Maps" style="border:0;font-size:11px;letter-spacing:.1em">⌖&nbsp;MAP</a></p>
-   <p>Two suites — Residential Suite A (city view) under Senyue, the garden-view mezzanine suite under Jason — two adults each,
-    breakfast for two per room, prepaid. <b>Free cancellation ends 24 Sep 14:00; after that the full amount.</b>
-    <b>The vehicle pickup moves here too</b> (Adam, 21 Sep): Ronny still needs this address, and how and when the handover happens is to confirm with him.</p>
-   <div class="clim">
-    <div class="ct"><span class="cl">Climate 26–27 Sep</span>
-     <span class="cbar" title="30 years of record · mean night to mean day, scale −8 to +16 °C"><i style="left:62.9%;width:30.8%"></i><u class="l" style="left:62.9%">7.1</u><u class="r" style="left:93.8%">14.5 °C</u></span></div>
-    <div class="ck"><span>frost <b>8 %</b> of nights</span><span>cold night <b>1.2</b></span><span>rain <b>26 %</b> of days</span></div>
-   </div></div>
+   <div class="kv"><span class="k">SLEEP</span><span class="v"><b>Ett Hem</b> · Sköldungagatan 2, Östermalm <a href="https://www.google.com/maps/search/?api=1&amp;query=Ett%20Hem%2C%20Sk%C3%B6ldungagatan%202%2C%20114%2027%20Stockholm%2C%20Sweden" target="_blank" rel="noopener" title="Open in Google Maps" style="border:0;font-size:11px;letter-spacing:.1em">⌖&nbsp;MAP</a> · two suites — Residential Suite A (city view) and the garden mezzanine — breakfast · <b>check-in after 15:00</b> · tel 0046-468200590 (as on the voucher)</span></div>
+   <div class="kv"><span class="k">NOTE</span><span class="v"><b>The vehicles are collected here tomorrow</b> — Ronny has still to confirm the time and the handover; he needs this address.</span></div>
+  </div>
   <div class="read">
    <div class="rc ref"><b>Östermalm</b><div class="lab">hotel · Sköldungagatan 2</div></div>
    <div class="rc" title="civil twilight at Stockholm on 26 Sep — first light 05:59, sunrise 06:41, sunset 18:35, last light 19:16"><b>05:59–19:16</b><div class="lab">usable light · 13.3&nbsp;h</div></div>
@@ -416,17 +411,9 @@ h2{display:block}h2 small{display:block;text-align:left;margin-top:5px}
   <div class="ldate">27<small>SEP<span>SUN</span></small></div>
   <div class="ltitle"><h3>Stockholm handover → Sundsvall</h3><span class="stay"><u>IN <b>SUN 27 SEP</b></u><i>·</i><wbr><u>OUT <b>MON 28 SEP</b></u><wbr><u><i>·</i>1&nbsp;NIGHT</u></span><span class="tag c">Booked</span></div></div>
   <div class="lbody">
-   <p class="addr">HOME HOTEL GRAND SUNDSVALL · NYBROGATAN 13 · TET S-07 PASSES THE DOOR — TOMORROW'S GRAVEL OPTION STARTS HERE <a href="https://www.google.com/maps/search/?api=1&amp;query=Home%20Hotel%20Grand%20Sundsvall%2C%20Nybrogatan%2013%2C%20852%2031%20Sundsvall%2C%20Sweden" target="_blank" rel="noopener" title="Open in Google Maps" style="border:0;font-size:11px;letter-spacing:.1em">⌖&nbsp;MAP</a></p>
-   <p>The pickup point is now the hotel in Stockholm, not Arlanda (Adam, 21 Sep) — <b>a Sunday; Ronny still needs the hotel address, and how and when the handover happens is to confirm with him.</b>
-    Assuming 08:00, roll ~10:00, Sundsvall ~15:50 (E4, 375 km by Google Maps, 21 Sep, from Sköldungagatan 2; Google flags a toll on the way out of Stockholm). <b>Gear check at handover, before leaving Stockholm</b> — deploy tent, run fridge and
-    compressor, check both spares and all sidewalls, inventory tools against contract, photograph
-    everything. Budget 2 h. Tyres and accessories are uninsured. <b>Check-out at the Home Hotel Grand is 07:00–11:00</b> and tomorrow starts at 12:00 on the paved plan, 06:30 if the trail is taken — settle the bill and the key drop at check-in.</p>
+   <div class="kv"><span class="k">SLEEP</span><span class="v"><b>Home Hotel Grand Sundsvall</b> · Nybrogatan 13 <a href="https://www.google.com/maps/search/?api=1&amp;query=Home%20Hotel%20Grand%20Sundsvall%2C%20Nybrogatan%2013%2C%20852%2031%20Sundsvall%2C%20Sweden" target="_blank" rel="noopener" title="Open in Google Maps" style="border:0;font-size:11px;letter-spacing:.1em">⌖&nbsp;MAP</a> · 2 deluxe double, breakfast + dinner · check-in 15:00–23:00 (+46 60 64 65 60) · <b>check-out 07:00–11:00 — settle the bill and the key drop at check-in</b>; tomorrow starts 12:00 on the road, 06:30 if the trail is taken</span></div>
+   <div class="kv"><span class="k">ROUTE</span><span class="v"><b>Handover at the hotel, ~08:00 assumed</b>, then the gear check, 2 h — tent, fridge, compressor, both spares and all sidewalls, tools against the contract, photograph everything (tyres and accessories are uninsured) · <b>E4 north, 375 km</b> · toll on the way out of Stockholm · TET S-07 passes the hotel door — tomorrow's gravel starts there</span></div>
    <div class="load" title="full bar = 400 km, the six-hour ceiling on sealed road at 65 km/h; red = over it"><span>DRIVE</span><span class="trk"><i style="width:93.8%"></i></span><span class="cap">400</span><span>375 KM · 5.8 H</span></div>
-   <div class="clim">
-    <div class="ct"><span class="cl">Climate 27–28 Sep</span>
-     <span class="cbar" title="30 years of record, snow 46 · mean night to mean day, scale −8 to +16 °C"><i style="left:50.8%;width:34.6%"></i><u class="l" style="left:50.8%">4.2</u><u class="r" style="left:85.4%">12.5 °C</u></span></div>
-    <div class="ck"><span>frost <b>14 %</b> of nights</span><span>cold night <b>−0.2</b></span><span>snow <b>none</b> in 46 yrs</span></div>
-   </div>
   </div>
   <div class="read">
    <div class="rc c"><b>~10:00 → ~15:50</b><div class="lab">roll · arrive, on an assumed 08:00 handover</div></div>
@@ -439,21 +426,15 @@ h2{display:block}h2 small{display:block;text-align:left;margin-top:5px}
   <div class="ldate">28<small>SEP<span>MON</span></small></div>
   <div class="ltitle"><h3>Sundsvall → Docksta, Höga Kusten</h3><span class="stay"><u>IN <b>MON 28 SEP</b></u><i>·</i><wbr><u>OUT <b>TUE 29 SEP</b></u><wbr><u><i>·</i>1&nbsp;NIGHT</u></span><span class="tag c">Booked</span></div></div>
   <div class="lbody">
-   <p class="addr">E4 NORTH · HÄRNÖSAND · HÖGA KUSTEN BRIDGE · ULLÅNGER → DOCKSTA HOTELL · ÖRNVÄGEN 2 <a href="https://www.google.com/maps/search/?api=1&amp;query=Docksta%20Hotell%2C%20%C3%96rnv%C3%A4gen%202%2C%20870%2033%20Docksta%2C%20Sweden" target="_blank" rel="noopener" title="Open in Google Maps" style="border:0;font-size:11px;letter-spacing:.1em">⌖&nbsp;MAP</a></p>
-   <p><b>Paved plan: the E4 from Sundsvall to Docksta, 116 km (Google Maps, 17 Sep), ~1.9 h.</b> Härnösand, the Höga Kusten bridge (E4 crosses the Ångermanälven at Hornöberget), Ullånger, then Docksta at the foot of Skuleberget — the hotel sits by the E4. Leave at <b>12:00</b> after a morning in Sundsvall and the gear check: in by ~13:55, lunch in Docksta and Skuleberget before check-in opens at 15:00. Fuel in Sundsvall or Härnösand; nothing is far from the E4 all day.</p>
+   <div class="kv"><span class="k">SLEEP</span><span class="v"><b>Docksta Hotell</b> · Örnvägen 2, by the E4 under Skuleberget <a href="https://www.google.com/maps/search/?api=1&amp;query=Docksta%20Hotell%2C%20%C3%96rnv%C3%A4gen%202%2C%20870%2033%20Docksta%2C%20Sweden" target="_blank" rel="noopener" title="Open in Google Maps" style="border:0;font-size:11px;letter-spacing:.1em">⌖&nbsp;MAP</a> · 2 double or twin, breakfast, pay at the hotel · <b>check-in 15:00–00:00 — tell them the arrival time and which plan you are on</b> (+46 613 400 10) · check-out by 12:00 · trail day tomorrow: ask at check-in for an early breakfast and how to leave the keys</span></div>
+   <div class="kv"><span class="k">ROUTE</span><span class="v"><b>E4 all day</b> — Härnösand, the Höga Kusten bridge, Ullånger, Docksta · leave 12:00 after the morning in Sundsvall, in ~13:55: lunch and Skuleberget before the room · fuel Sundsvall or Härnösand</span></div>
    <div class="load" title="116 km of road — Google Maps, fastest route, 17 Sep 2026 — E4 throughout; full bar = 400 km, the six-hour ceiling on sealed road at 65 km/h; red = over it — ~7 km of this route is recorded gravel, timed at 35 km/h (registers checked 22 Sep)"><span>DRIVE</span><span class="trk"><i style="width:29.0%"></i></span><span class="cap">400</span><span>116 KM · 1.9 H</span></div>
-   <p><b>Docksta Hotell</b> <a href="https://www.google.com/maps/search/?api=1&amp;query=Docksta%20Hotell%2C%20%C3%96rnv%C3%A4gen%202%2C%20870%2033%20Docksta%2C%20Sweden" target="_blank" rel="noopener" title="Open in Google Maps" style="border:0;font-size:11px;letter-spacing:.1em">⌖&nbsp;MAP</a> — Örnvägen 2, by the E4 at the foot of Skuleberget, 12 km north-east of where the line ends at Ullånger (booked 16 Sep in place of the Ullånger hotel, which was cancelled free). <b>Booked:</b> two Double or Twin rooms (large double requested), breakfast included, pay at the hotel (SEK 2,610); free cancellation until 27 Sep, then full price. <b>Check-in 15:00–00:00</b> — the paved plan is in by ~13:55, the trail alternative by ~13:20; <b>the hotel asks for an expected arrival time — give it when you call, and say which plan you are on.</b> Check-out is by 12:00 with no early limit stated; if the trail is taken the 06:30 start is before breakfast — ask at check-in for an early one or a bag, and how to leave the keys. Desk +46 613 400 10.</p>
-   <div class="alt"><div class="tl"><span>Trail alternative · decide at departure</span><span>S-07 · 252 KM ON TRAIL · 122 TARMAC · 130 GRAVEL</span></div>
-   <p class="addr">TET S-07 FROM THE HOTEL DOOR · FUEL AT TIMRÅ · VIKSJÖ · MJÄLLOM · ULLÅNGER → 12 KM OF ROAD → DOCKSTA HOTELL · ÖRNVÄGEN 2</p>
-   <div class="warn c"><b>S-07 from km 397 at the hotel to km 649 in Ullånger — 252 km of trail, no road to a trailhead — then 12 km of road (Y 872, E4) north-east to Docksta.</b> Timrå (km 415), Indal (434), Viksjö (498), the Höga Kusten bridge (~537), Mjällom (607), Ullånger (649, 0.9 km off). Fuel on the line at Timrå, Viksjö, Mjällom and Ullånger — fill at Ullånger before the road to the hotel. The E4 shadows the line from Härnösand on, so the escape is never far east.</div>
-   <div class="warn"><b>If the trail is taken, it is the calibration day:</b> 252 km of S-07 — about half of it recorded paved (~122 km), ~130 km gravel (Trafikverket NVDB, 22 Sep) — with the learners driving in daylight, in by mid-afternoon. Whatever average the two vehicles hold <b>on the gravel stretches</b> sets the choice for days 2 and 3 (the 29th and 30th are four-fifths gravel, so the day's overall average will not transfer) — under 35 km/h on gravel, take the road on the 29th.</div>
+   <div class="alt"><div class="tl"><span>Trail alternative · decide at departure <a href="#e-rules" data-go="e">rules →</a></span><span>S-07 · 252 KM ON TRAIL · 122 TARMAC · 130 GRAVEL</span></div>
+   <div class="kv"><span class="k">LINE</span><span class="v"><b>S-07 from the hotel door</b>, km 397 → 649 at Ullånger, then 12 km of road (Y 872, E4) to Docksta · Timrå (415), Indal (434), Viksjö (498), the Höga Kusten bridge (~537), Mjällom (607) · fuel on the line Timrå, Viksjö, Mjällom, Ullånger · the E4 shadows the line from Härnösand — the escape is never far east</span></div>
+   <div class="kv go"><span class="k">GO</span><span class="v"><b>The calibration day</b> — half tarmac, half gravel, learners in daylight, in by mid-afternoon. <b>Under 35 km/h on the gravel → take the road on the 29th.</b></span></div>
    <div class="wp" title="Tap a point for Google Maps directions to the exact GPX coordinate; switch to Gaia on the line"><span><a href="https://www.google.com/maps/dir/?api=1&amp;destination=62.38876,17.30797&amp;travelmode=driving" target="_blank" rel="noopener" title="Google Maps directions to 62.38876, 17.30797 — the GPX point">⌖ ON</a> S-07 km 397 at the Home Hotel Grand door, Nybrogatan</span><span><a href="https://www.google.com/maps/dir/?api=1&amp;destination=63.01717,18.18630&amp;travelmode=driving" target="_blank" rel="noopener" title="Google Maps directions to 63.01717, 18.18630 — the GPX point">⌖ OFF</a> S-07 km 649 → Docksta Hotell, 12 km by Y 872 and the E4</span></div>
    <div class="load t" title="252 km of S-07 from the hotel to km 649, measured from the GPX; 1 km from the hotel door to the line and 12 km of road from the line to Docksta Hotell (OSRM) — of the 252 km of line, ~122 km reads paved and ~130 km gravel in the national road registers; paved at 65 km/h, gravel and unrecorded at 35, 1 h of stops · full bar = 400 km, the six-hour ceiling on sealed road at 65 km/h; red = over it"><span>DRIVE</span><span class="trk"><i class="s" style="left:0.0%;width:0.2%"></i><i style="left:0.2%;width:63.0%"></i><i class="s" style="left:63.2%;width:3.0%"></i></span><span class="cap">400</span><span>~265 KM · 252 ON TRAIL · ~6.8 H</span></div>
-   <div class="ck"><span>depart <b>06:30</b> · first light 06:05</span><span>on the line <b>from the hotel door</b></span><span>Ullånger, km 649 <b>~13:05</b></span><span>Docksta <b>~13:20</b> · check-in from 15:00</span><span>last light <b>19:14</b> · 5.9 h in hand</span></div></div>
-   <div class="clim">
-    <div class="ct"><span class="cl">Climate 28–29 Sep</span>
-     <span class="cbar" title="30 years of record, snow 15 · SMHI Västmarkum A 138070 (T; 63.124 N 18.252 E per SMHI — 13 km N of Ullånger, 9 km NW of Docksta, 141 m) · mean night to mean day, scale −8 to +16 °C"><i style="left:43.3%;width:36.3%"></i><u class="l" style="left:43.3%">2.4</u><u class="r" style="left:79.6%">11.1 °C</u></span></div>
-    <div class="ck"><span>frost <b>35 %</b> of nights</span><span>cold night <b>−2.9</b></span><span>snow <b>none</b> in 15 yrs</span><span><em>station 9 km NW of Docksta, inland at 141 m</em></span></div>
+   <div class="ck"><span>depart <b>06:30</b> · first light 06:05</span><span>on the line <b>from the hotel door</b></span><span>Ullånger, km 649 <b>~13:05</b></span><span>Docksta <b>~13:20</b> · check-in from 15:00</span><span>last light <b>19:14</b> · 5.9 h in hand</span></div>
    </div>
   </div>
   <div class="read">
@@ -467,21 +448,15 @@ h2{display:block}h2 small{display:block;text-align:left;margin-top:5px}
   <div class="ldate">29<small>SEP<span>TUE</span></small></div>
   <div class="ltitle"><h3>Docksta → Granö Beckasin</h3><span class="stay"><u>IN <b>TUE 29 SEP</b></u><i>·</i><wbr><u>OUT <b>WED 30 SEP</b></u><wbr><u><i>·</i>1&nbsp;NIGHT</u></span><span class="tag c">Booked</span></div></div>
   <div class="lbody">
-   <p class="addr">E4 TO NORDMALING, THEN INLAND VIA BJURHOLM TO THE E12 → GRANÖ BECKASIN · VÄSTANÅ 15, GRANÖ <a href="https://www.google.com/maps/search/?api=1&amp;query=Gran%C3%B6%20Beckasin%2C%20V%C3%A4stan%C3%A5%2015%2C%20922%2095%20Gran%C3%B6%2C%20Sweden" target="_blank" rel="noopener" title="Open in Google Maps" style="border:0;font-size:11px;letter-spacing:.1em">⌖&nbsp;MAP</a></p>
-   <p><b>Paved plan: 191 km, ~3.2 h (Google Maps, 17 Sep).</b> E4 up the coast past Örnsköldsvik to Nordmaling, then Google's fastest turns inland on road 353 through Bjurholm and the local roads to the E12 a few kilometres east of Granö; staying on the E4 to Umeå and taking the E12 from there is 196 km at the same time — the bigger road if the weather is poor. Leave at <b>10:00</b>, in by ~13:15: reception is open (it closes 17:30), the rooms may not be ready before 15:00 — the river, lunch and the dinner order first. Fuel Örnsköldsvik or Umeå.</p>
+   <div class="kv"><span class="k">SLEEP</span><span class="v"><b>Granö Beckasin</b> · Västanå 15, on the Umeälven <a href="https://www.google.com/maps/search/?api=1&amp;query=Gran%C3%B6%20Beckasin%2C%20V%C3%A4stan%C3%A5%2015%2C%20922%2095%20Gran%C3%B6%2C%20Sweden" target="_blank" rel="noopener" title="Open in Google Maps" style="border:0;font-size:11px;letter-spacing:.1em">⌖&nbsp;MAP</a> · 2 Bird's Nest Studios, breakfast · check-in 15:00–21:00 but <b>the desk closes 17:30</b> — give the arrival time and agree the key handover if late · <b>dinner on request: order for four on the same call</b> (+46 933 410 00) · breakfast 08–10, check-out 08–11 · trail day tomorrow: early or packed breakfast, settle at check-in</span></div>
+   <div class="kv"><span class="k">ROUTE</span><span class="v"><b>E4 past Örnsköldsvik to Nordmaling, road 353 via Bjurholm, E12</b> — or the E4 to Umeå and the E12 from there, 196 km, the bigger road in poor weather · leave 10:00, in ~13:15; rooms may not be ready before 15:00 — the river and lunch first · fuel Örnsköldsvik or Umeå</span></div>
    <div class="load" title="191 km of road — Google Maps, fastest route, 17 Sep 2026 — E4 · 353 via Bjurholm · E12 (E4 · E12 via Umeå 196 km); full bar = 400 km, the six-hour ceiling on sealed road at 65 km/h; red = over it — ~18 km of this route is recorded gravel, timed at 35 km/h (registers checked 22 Sep)"><span>DRIVE</span><span class="trk"><i style="width:47.8%"></i></span><span class="cap">400</span><span>191 KM · 3.2 H</span></div>
-   <p><b>Granö Beckasin</b> <a href="https://www.google.com/maps/search/?api=1&amp;query=Gran%C3%B6%20Beckasin%2C%20V%C3%A4stan%C3%A5%2015%2C%20922%2095%20Gran%C3%B6%2C%20Sweden" target="_blank" rel="noopener" title="Open in Google Maps" style="border:0;font-size:11px;letter-spacing:.1em">⌖&nbsp;MAP</a> — Västanå 15, on the Umeälven at Granö, STF eco-hotel. <b>Booked:</b> two Bird's Nest Studios (river view, balcony), breakfast included, SEK 8,460; free cancellation until three days before arrival, i.e. 26 Sep. <b>Check-in 15:00–21:00, but the reception itself closes 17:30 Monday–Saturday</b> — the paved plan is in by ~13:15, the trail alternative by ~15:50; the confirmation asks for an expected arrival time: give it, and agree how the keys are handed over if a trail day runs past 17:30. <b>The restaurant is open on request outside June–August</b> — order dinner for four on the same call (+46 933 410 00, info@granobeckasin.com). Breakfast is 08:00–10:00 and <b>check-out is 08:00–11:00</b>; the paved plan leaves at 10:00, inside breakfast; if the trail is taken the 06:30 start needs an early or packed breakfast and the bill and key drop settled at check-in.</p>
-   <div class="alt"><div class="tl"><span>Trail alternative · decide at departure</span><span>S-07 + S-06 · 282 KM ON TRAIL · 52 TARMAC · 230 GRAVEL</span></div>
-   <p class="addr">12 KM OF ROAD BACK TO THE LINE AT ULLÅNGER · S-07 TO ITS END, THEN S-06 — DRIVEN BACKWARDS · FUEL AT SKORPED · TREHÖRNINGSJÖ · NORRFORS → GRANÖ BECKASIN · VÄSTANÅ 15, GRANÖ</p>
-   <div class="warn c"><b>Docksta → Ullånger first: 12 km by the E4 and Y 872 back to the line at km 649 (OSRM; the ⌖ ON link below). Then S-07 km 649 → 686, 37 km to its end at (63.184, 17.929) — the same point where S-06 ends.</b> S-06 is drawn from Haparanda southwards, so from the junction you drive it against its numbering: km 984 down to km 739, 245 km, then leave the line at (64.062, 19.468) for the 35 km to Granö by the local road and the E12 (Google Maps). Skorped fuel 32 km after the junction; Bredbyn 8 km off at km 897; Trehörningsjö (827) and Norrfors (814) on the line. <b>282 km of trail.</b> Escape: Umeå and the E4 from the Vännäs area, 12 km off the line at km 756.</div>
-   <div class="warn"><b>More gravel if the day runs well:</b> stay on S-06 past km 739 to the Vindeln turn-off at km 701 (+38 km, Rödåsel fuel at 712), then road 363 north-west to Granö, ~40 km. 320 km of trail, ~11.0 h, in at ~17:30 — <b>reception closes 17:30</b>, no margin at plan pace now that the day starts with the road from Docksta, so only if you reach km 739 before ~14:20.</div>
+   <div class="alt"><div class="tl"><span>Trail alternative · decide at departure <a href="#e-rules" data-go="e">rules →</a></span><span>S-07 + S-06 · 282 KM ON TRAIL · 52 TARMAC · 230 GRAVEL</span></div>
+   <div class="kv"><span class="k">LINE</span><span class="v"><b>12 km back to the line at Ullånger (km 649)</b>, S-07 to its end (37 km), then <b>S-06 driven backwards</b>, km 984 → 739, and 35 km of local road and E12 to Granö · fuel Skorped (32 km after the junction), Trehörningsjö, Norrfors · escape: Vännäs, 12 km off at km 756, for Umeå and the E4</span></div>
+   <div class="kv go"><span class="k">GO</span><span class="v"><b>Off the line at km 739 by ~15:00 — the desk closes 17:30.</b> The longer run to km 701 (+38 km, in ~17:30) only if you reach km 739 before ~14:20.</span></div>
    <div class="wp" title="Tap a point for Google Maps directions to the exact GPX coordinate; switch to Gaia on the line"><span><a href="https://www.google.com/maps/dir/?api=1&amp;destination=63.01717,18.18630&amp;travelmode=driving" target="_blank" rel="noopener" title="Google Maps directions to 63.01717, 18.18630 — the GPX point">⌖ ON</a> S-07 km 649 at Ullånger, 12 km from Docksta</span><span><a href="https://www.google.com/maps/dir/?api=1&amp;destination=64.06197,19.47318&amp;travelmode=driving" target="_blank" rel="noopener" title="Google Maps directions to 64.06197, 19.47318 — the GPX point">⌖ OFF</a> S-06 km 739 → local road and E12 to Granö, 35 km</span></div>
    <div class="load t" title="12 km of road from Docksta to the line (OSRM), 37 km of S-07 and 245 km of S-06 measured from the GPX, then 35 km of local road and E12 to Granö (Google Maps) — of the 282 km of line, ~52 km reads paved and ~227 km gravel in the national road registers; paved at 65 km/h, gravel and unrecorded at 35, 1 h of stops; ~18 km of the connecting road is gravel · full bar = 400 km, the six-hour ceiling on sealed road at 65 km/h; red = over it"><span>DRIVE</span><span class="trk"><i class="s" style="left:0.0%;width:3.0%"></i><i style="left:3.0%;width:9.2%"></i><i style="left:12.2%;width:61.3%"></i><i class="s" style="left:73.5%;width:8.7%"></i></span><span class="cap">400</span><span>~329 KM · 282 ON TRAIL · ~9.3 H</span></div>
-   <div class="ck"><span>depart <b>06:30</b> · first light 06:03</span><span>on the line at Ullånger <b>~06:45</b></span><span>S-07 / S-06 junction <b>~07:50</b></span><span>off the line, km 739 <b>~15:00</b></span><span>Granö <b>~15:50</b> · desk closes 17:30</span><span>last light <b>19:07</b> · 3.3 h in hand</span></div></div>
-   <div class="clim">
-    <div class="ct"><span class="cl">Climate 29–30 Sep</span>
-     <span class="cbar" title="30 years of record, snow 21 · SMHI Vindeln-Sunnansjönäs 149120 (T to Sep 2025; 25 km, 237 m) · mean night to mean day, scale −8 to +16 °C"><i style="left:45.8%;width:28.8%"></i><u class="l" style="left:45.8%">3.0</u><u class="r" style="left:74.6%">9.9 °C</u></span></div>
-    <div class="ck"><span>frost <b>22 %</b> of nights</span><span>cold night <b>−1.5</b></span><span>snow <b>none</b> in 21 yrs</span></div>
+   <div class="ck"><span>depart <b>06:30</b> · first light 06:03</span><span>on the line at Ullånger <b>~06:45</b></span><span>S-07 / S-06 junction <b>~07:50</b></span><span>off the line, km 739 <b>~15:00</b></span><span>Granö <b>~15:50</b> · desk closes 17:30</span><span>last light <b>19:07</b> · 3.3 h in hand</span></div>
    </div>
   </div>
   <div class="read">
@@ -495,21 +470,15 @@ h2{display:block}h2 small{display:block;text-align:left;margin-top:5px}
   <div class="ldate">30<small>SEP<span>WED</span></small></div>
   <div class="ltitle"><h3>Granö → Treehotel, Harads</h3><span class="stay"><u>IN <b>WED 30 SEP</b></u><i>·</i><wbr><u>OUT <b>FRI 2 OCT</b></u><wbr><u><i>·</i>2&nbsp;NIGHTS</u></span><span class="tag c">Booked</span></div></div>
   <div class="lbody">
-   <p class="addr">ROAD 363 TO VINDELN, 364 TO THE E4 AT SKELLEFTEÅ · E4 TO LULEÅ · ROAD 97 VIA BODEN → TREEHOTEL · EDEFORSVÄGEN 2A, HARADS <a href="https://www.google.com/maps/search/?api=1&amp;query=Treehotel%2C%20Edeforsv%C3%A4gen%202A%2C%20960%2024%20Harads%2C%20Sweden" target="_blank" rel="noopener" title="Open in Google Maps" style="border:0;font-size:11px;letter-spacing:.1em">⌖&nbsp;MAP</a></p>
-   <p><b>Paved plan: 340 km, ~5.3 h (Google Maps, 17 Sep).</b> Road 363 down the Vindelälven to Vindeln, road 364 to the E4 at Skellefteå, the E4 north past Piteå to Luleå, then road 97 through Boden to Harads — big roads, fuel and food at Skellefteå, Piteå and Boden. Google's inland alternative on road 365 (Lycksele · Norsjö · Älvsbyn) is 330 km and four minutes quicker; the E4 is on the card for the road standard and the services. Leave at <b>10:00</b>, in by ~15:25 — 35 minutes before the Guesthouse check-in opens at 16:00 (leave at 10:45 to land on it).</p>
+   <div class="kv"><span class="k">SLEEP</span><span class="v"><b>Treehotel · the 7th Room</b>, all four · Edeforsvägen 2A, Harads <a href="https://www.google.com/maps/search/?api=1&amp;query=Treehotel%2C%20Edeforsv%C3%A4gen%202A%2C%20960%2024%20Harads%2C%20Sweden" target="_blank" rel="noopener" title="Open in Google Maps" style="border:0;font-size:11px;letter-spacing:.1em">⌖&nbsp;MAP</a> · breakfast · <b>check-in 16:00–22:00 at the Treehotel Guesthouse</b> on Edeforsvägen — the plan arrives ~15:25: wait there or on the river · later than 22:00 ring +46 928 103 00 · both bedrooms can be made up as doubles — ask · check-out 2 Oct 08:00–11:00; <b>if the trail is taken on the 2nd, the 06:30 start is before breakfast and the desk — settle at check-in</b></span></div>
+   <div class="kv"><span class="k">ROUTE</span><span class="v"><b>363 to Vindeln · 364 to the E4 at Skellefteå · E4 by Piteå to Luleå · 97 through Boden</b> · leave 10:00, in ~15:25 (10:45 lands on the window) · fuel and food Skellefteå, Piteå, Boden</span></div>
    <div class="load" title="340 km of road — Google Maps, 17 Sep 2026 — 363 · 364 · E4 · 97 (Google's inland 365 route 330 km); full bar = 400 km, the six-hour ceiling on sealed road at 65 km/h; red = over it — ~8 km of this route is recorded gravel, timed at 35 km/h (registers checked 22 Sep)"><span>DRIVE</span><span class="trk"><i style="width:85.0%"></i></span><span class="cap">400</span><span>340 KM · 5.3 H</span></div>
-   <p><b>Treehotel — the 7th Room</b> <a href="https://www.google.com/maps/search/?api=1&amp;query=Treehotel%2C%20Edeforsv%C3%A4gen%202A%2C%20960%2024%20Harads%2C%20Sweden" target="_blank" rel="noopener" title="Open in Google Maps" style="border:0;font-size:11px;letter-spacing:.1em">⌖&nbsp;MAP</a> — Edeforsvägen 2A, Harads. <b>Booked:</b> two nights, 30 Sep → 2 Oct, all four in the one room (two singles, a double, a sofa bed), breakfast included, SEK 33,200 for the two, <b>non-refundable</b>. <b>The second night, 1 Oct, was added on 21 Sep</b> and is on Treehotel's updated confirmation of 22 Sep (same booking number): 1 Oct is a full day at Harads, no driving; check-out 2 Oct 08:00–11:00, when the Jukkasjärvi leg starts. <b>Check-in 16:00–22:00 at the Treehotel Guesthouse</b> on Edeforsvägen — the paved plan is in by ~15:25, 35 minutes before the window opens — wait at the Guesthouse or on the river; the trail alternative, ~17:25, sits inside it; the confirmation asks for an expected arrival time, and anyone later than 22:00 must ring ahead (+46 928 103 00). Check-out 08:00–11:00: the paved plan leaves at 10:00 after breakfast; if the trail is taken on the ICEHOTEL day, 2 Oct, the 06:30 start means leaving before breakfast and before the desk opens (settle at check-in). The room has a double, two singles and a sofa bed — Treehotel confirmed by email in August that <b>both bedrooms can be made up as doubles</b>; this booking came through Booking.com, so ask for that when you give the arrival time.</p>
-   <div class="alt"><div class="tl"><span>Trail alternative · decide at departure</span><span>S-06 · 225 KM ON TRAIL · 15 TARMAC · 210 GRAVEL</span></div>
-   <p class="addr">E12 · E45 TO ARVIDSJAUR, THEN S-06 TO THE GATE · FUEL AT LYCKSELE · ARVIDSJAUR · MOSKOSEL · VIDSEL → TREEHOTEL · EDEFORSVÄGEN 2A, HARADS</p>
-   <div class="warn c"><b>Tarmac first, 211 km: E12 (Blå vägen) to Lycksele, road 365 north, roads 95 and 94 to Arvidsjaur and the local road north to the line — Google's route; the E45 through Lycksele is the other way and about the same (Google Maps).</b> The trail alternatives both zigzag — S-06 east through Boliden is 287 km, S-04 west through Malå is 285 — and either makes a 12-hour day; the road is the straight line. <b>Then S-06 northbound from km 452, 225 km of trail to Treehotel's gate:</b> Moskosel (372, fuel on the line), Vidsel (283, fuel), Storforsen rapids 5 km off at km 260, Harads at km 228, 11.5 km of road to the gate. If Arvidsjaur comes late, E45 to Moskosel instead of the first 80 km of trail saves about an hour and a half.</div>
-   <div class="warn"><b>~448 km, ~10.9 h, in at ~17:30</b> — 1.6 h before last light. Road figures from Google Maps: 211 km to the line, 11.5 km from km 228 to the gate.</div>
+   <div class="alt"><div class="tl"><span>Trail alternative · decide at departure <a href="#e-rules" data-go="e">rules →</a></span><span>S-06 · 225 KM ON TRAIL · 15 TARMAC · 210 GRAVEL</span></div>
+   <div class="kv"><span class="k">LINE</span><span class="v"><b>211 km of tarmac first</b> — E12 to Lycksele, 365, 95 and 94 to Arvidsjaur — then <b>S-06 north, km 452 → 228</b> and 11.5 km of road to the gate · Moskosel (372, fuel on the line), Vidsel (283, fuel), Storforsen rapids 5 km off at km 260 · fuel Lycksele, Arvidsjaur</span></div>
+   <div class="kv go"><span class="k">GO</span><span class="v"><b>At Arvidsjaur later than ~11:15 → E45 to Moskosel instead of the first 80 km of trail, ~1.5 h saved</b> (the plan has 1.6 h in hand). In ~17:30, inside the check-in window.</span></div>
    <div class="wp" title="Tap a point for Google Maps directions to the exact GPX coordinate; switch to Gaia on the line"><span><a href="https://www.google.com/maps/dir/?api=1&amp;destination=65.59020,19.31770&amp;travelmode=driving" target="_blank" rel="noopener" title="Google Maps directions to 65.59020, 19.31770 — the GPX point">⌖ ON</a> S-06 km 452, 5 km east of Arvidsjaur</span><span><a href="https://www.google.com/maps/dir/?api=1&amp;destination=65.87510,19.46428&amp;travelmode=driving" target="_blank" rel="noopener" title="Google Maps directions to 65.87510, 19.46428 — the GPX point">⌖ CUT</a> Moskosel km 372 — E45 alternative joins here</span><span><a href="https://www.google.com/maps/dir/?api=1&amp;destination=66.13448,20.86173&amp;travelmode=driving" target="_blank" rel="noopener" title="Google Maps directions to 66.13448, 20.86173 — the GPX point">⌖ OFF</a> S-06 km 228 by the Lule river → Treehotel 11.5 km</span></div>
    <div class="load t hot" title="211 km of road Granö → Lycksele → Arvidsjaur → the line and 11.5 km from km 228 to the gate (Google Maps), 225 km of S-06 measured from the GPX — of the 225 km of line, ~15 km reads paved and ~209 km gravel in the national road registers; paved at 65 km/h, gravel and unrecorded at 35, 1 h of stops; ~20 km of the connecting road is gravel · full bar = 400 km, the six-hour ceiling on sealed road at 65 km/h; red = over it"><span>DRIVE</span><span class="trk"><i class="s" style="left:0.0%;width:47.2%"></i><i style="left:47.2%;width:50.3%"></i><i class="s" style="left:97.4%;width:2.6%"></i></span><span class="cap">400</span><span>~448 KM · 225 ON TRAIL · ~10.9 H</span></div>
-   <div class="ck"><span>depart <b>06:30</b> · first light 06:00</span><span>Arvidsjaur, on the line <b>~10:15</b></span><span>Moskosel <b>~12:45</b></span><span>Treehotel <b>~17:30</b> · check-in 16:00–22:00</span><span>last light <b>18:59</b> · 1.6 h in hand</span></div></div>
-   <div class="clim">
-    <div class="ct"><span class="cl">Climate 30 Sep–1 Oct</span>
-     <span class="cbar" title="30 years of record, snow 16 · SMHI Lakaträsk A 171790 (T; 24 km N, 185 m) · mean night to mean day, scale −8 to +16 °C"><i style="left:37.1%;width:31.2%"></i><u class="l" style="left:37.1%">0.9</u><u class="r" style="left:68.3%">8.4 °C</u></span></div>
-    <div class="ck"><span>frost <b>43 %</b> of nights</span><span>cold night <b>−4.3</b></span><span>snow <b>none</b> in 16 yrs</span><span><em>station 24 km north, 185 m</em></span></div>
+   <div class="ck"><span>depart <b>06:30</b> · first light 06:00</span><span>Arvidsjaur, on the line <b>~10:15</b></span><span>Moskosel <b>~12:45</b></span><span>Treehotel <b>~17:30</b> · check-in 16:00–22:00</span><span>last light <b>18:59</b> · 1.6 h in hand</span></div>
    </div>
   </div>
   <div class="read">
@@ -519,35 +488,36 @@ h2{display:block}h2 small{display:block;text-align:left;margin-top:5px}
    <div class="rc ref"><b>5739.577.553</b><div class="lab">booking ref · pin withheld</div></div></div>
  </div>
 
+ <div class="leg base"><div class="lhead">
+  <div class="ldate">01<small>OCT<span>THU</span></small></div>
+  <div class="ltitle"><h3>Harads · Treehotel</h3><span class="stay"><u>1 FREE DAY</u></span><span class="tag a">To book</span></div></div>
+  <div class="lbody">
+   <div class="kv"><span class="k">BOOK</span><ul class="bl"><li><b>Forest hike</b> — 3 h · SEK 2 350 pp (5 h SEK 3 700) · 2–10 people · booking@treehotel.se <em class="pill now">BOOK BY 24 SEP</em></li><li><b>Aurora dinner at the Husky Farm</b> — 17:00–21:00 · SEK 3 450 pp · the season opens today <em class="pill now">BOOK BY 24 SEP</em></li><li><b>Northern Lights hunt</b> — 20:00–23:00 · private · SEK 16 000 for four · 25 % deposit, non-refundable <em class="pill now">BOOK BY 24 SEP</em></li><li><b>Jokkmokk Journey</b> — 10:00–16:00 · SEK 5 500 pp · max 4 <em class="pill now">BOOK BY 24 SEP</em></li><li><b>The Stately Storforsen</b> — 5 h private, transfers and lunch · SEK 4 400 pp · or drive there yourselves, ~1 h each way <em class="pill now">BOOK BY 24 SEP</em></li><li><b>Arctic herbs workshop</b> — 2 h · SEK 2 990 pp · instead of the foraging tour <em class="pill now">BOOK BY 24 SEP</em></li></ul></div>
+   <div class="kv"><span class="k">OPEN</span><span class="v"><b>Forest SPA</b> 2 h, SEK 650 pp · <b>foraging tour</b> SEK 2 900 pp · Tallberg Dinner SEK 4 200 pp — Treehotel asks a week ahead for these too</span></div>
+   <div class="kv"><span class="k">EVENING</span><span class="v"><b>Restaurant</b> — tasting menu 18:30, 3 h, SEK 3 450 · 3-course SEK 1 250 · meals were to be pre-booked 14 days ahead: <b>ask when you give the arrival time</b></span></div>
+   <div class="kv x"><span class="k">NOT RUNNING</span><span class="v">reindeer herder · forest Sámi · kayaking · moose VIP · wildlife safari — not offered on our dates</span></div>
+   <div class="kv"><span class="k">CLIMATE</span><span class="v">night 0.9 → day 8.4 °C · frost 43 % of nights · cold night −4.3 · snow none in 16 yrs</span></div>
+  </div>
+  <div class="read">
+   <div class="rc"><b>1</b><div class="lab">free day · thu</div></div>
+   <div class="rc"><b>~05:55–18:56</b><div class="lab">usable light</div></div>
+   <div class="rc a"><b>24 SEP</b><div class="lab">first book-by</div></div>
+   <div class="rc c"><b><a href="#w-harads" data-go="w" style="border:0">Full list →</a></b><div class="lab">things to do</div></div></div>
+ </div>
+
  <div class="leg ok"><div class="lhead">
   <div class="ldate">02<small>OCT<span>FRI</span></small></div>
   <div class="ltitle"><h3>Harads → ICEHOTEL, Jukkasjärvi</h3><span class="stay"><u>IN <b>FRI 2 OCT</b></u><i>·</i><wbr><u>OUT <b>SUN 4 OCT</b></u><wbr><u><i>·</i>2&nbsp;NIGHTS</u></span><span class="tag c">Paid</span></div></div>
   <div class="lbody">
-   <p class="addr">ROAD 97 TO VUOLLERIM, LOCAL ROADS TO NATTAVAARA, E10 GÄLLIVARE · SVAPPAVAARA · KIRUNA → ICEHOTEL · MARKNADSVÄGEN 63, JUKKASJÄRVI <a href="https://www.google.com/maps/search/?api=1&amp;query=ICEHOTEL%2C%20Marknadsv%C3%A4gen%2063%2C%20981%2091%20Jukkasj%C3%A4rvi%2C%20Sweden" target="_blank" rel="noopener" title="Open in Google Maps" style="border:0;font-size:11px;letter-spacing:.1em">⌖&nbsp;MAP</a></p>
-   <p><b>Paved plan: 279 km, ~4.8 h (Google Maps, 17 Sep) — Google's E10 route.</b> Road 97 up the Lule river to Vuollerim, the local roads north to Nattavaara — ~38 km of them gravel in Trafikverket's register, hence the extra half hour — and the E10 at Gällivare, then the E10 by Svappavaara to Kiruna and road 875 to Jukkasjärvi. Leave at <b>10:00</b> after breakfast, in by ~14:50 with the afternoon in hand — check-in, and the 365 wing before dark. <b>Google flagged road works on the E10 between Gällivare and Svappavaara on 17 Sep</b> — its E10 route read 273 km and, later the same day, 279 km "avoiding road closures"; the card uses 279. Both Google routes, this one and the 97 · E45 by Jokkmokk (294 km), run that stretch of the E10 — there is no practical way round it. Look at Trafikverket's map the week before for what the works mean (a lane, delays, a signed diversion).</p>
+   <div class="kv"><span class="k">SLEEP</span><span class="v"><b>ICEHOTEL</b> · Marknadsvägen 63, Jukkasjärvi <a href="https://www.google.com/maps/search/?api=1&amp;query=ICEHOTEL%2C%20Marknadsv%C3%A4gen%2063%2C%20981%2091%20Jukkasj%C3%A4rvi%2C%20Sweden" target="_blank" rel="noopener" title="Open in Google Maps" style="border:0;font-size:11px;letter-spacing:.1em">⌖&nbsp;MAP</a> · 2 Kaamos Deluxe, breakfast + entry · October is the permanent <b>365 wing</b> — the ice build is December–April · +46 980 668 00</span></div>
+   <div class="kv"><span class="k">ROUTE</span><span class="v"><b>97 up the Lule river to Vuollerim · local roads to Nattavaara (~38 km gravel) · E10 Gällivare – Svappavaara – Kiruna · 875 to Jukkasjärvi</b> · leave 10:00, in ~14:50 with the afternoon in hand · <b>road works on the E10 Gällivare – Svappavaara</b> (Google, 17 Sep) — no way round; look at Trafikverket's map the week before</span></div>
    <div class="load" title="279 km of road — Google Maps, 17 Sep 2026, E10 route avoiding the road works (273 km without them) — 97 · Nattavaara · E10 (97 · E45 via Jokkmokk 294 km); full bar = 400 km, the six-hour ceiling on sealed road at 65 km/h; red = over it — ~38 km of this route is recorded gravel, timed at 35 km/h (registers checked 22 Sep)"><span>DRIVE</span><span class="trk"><i style="width:69.8%"></i></span><span class="cap">400</span><span>279 KM · 4.8 H</span></div>
-   <div class="warn c"><b>Shortened 21 Sep:</b> two nights, Fri 2 – Sun 4 Oct (was 1–4 Oct). SEK 18,295 paid, SEK 4,510 refunded. Insured — free cancellation until 12:00 on 2 Oct. Same reservation BJFQ71, now under "Katja Haag Agent Sales".</div>
-   <div class="warn">October is the permanent <b>365 wing</b>. The winter ice structure is a
-    December–April build.</div>
-   <div class="alt"><div class="tl"><span>Trail alternative · decide at departure</span><span>S-16 · 123 KM ON TRAIL · 25 TARMAC · 98 GRAVEL</span></div>
-   <p class="addr">ROAD TO MURJEK, THEN S-16 · FUEL AT NATTAVAARA (8 KM OFF) · HAKKAS · GÄLLIVARE → ICEHOTEL · MARKNADSVÄGEN 63, JUKKASJÄRVI</p>
-   <div class="warn c"><b>The short day, on purpose.</b> Road 97 Harads → Murjek, 67 km (Google Maps); Murjek is 3 km off S-16 at km 999. S-16 north-east: Nattavaara (1047, fuel 8 km off), Hakkas (1122, fuel on the line) — <b>123 km of trail.</b> Exit at Hakkas: the line goes on to Masugnsbyn (km 1264, road 395) but 142 km more trail buys only 38 km of progress. From Hakkas 146 km of road via Gällivare (Google Maps). More trail if you want it: join S-16 at Vuollerim instead (53 km from Harads, 10 km off at km 822) for Jokkmokk → Murjek first — +177 km of trail, a ~500 km day. Not recommended with two paid nights waiting.</div>
+   <div class="alt"><div class="tl"><span>Trail alternative · decide at departure <a href="#e-rules" data-go="e">rules →</a></span><span>S-16 · 123 KM ON TRAIL · 25 TARMAC · 98 GRAVEL</span></div>
+   <div class="kv"><span class="k">LINE</span><span class="v"><b>97 to Murjek, 67 km · S-16 km 999 → 1122 at Hakkas</b> · 146 km of road via Gällivare · fuel Nattavaara (8 km off at 1047), Hakkas (on the line)</span></div>
+   <div class="kv go"><span class="k">GO</span><span class="v"><b>The short day, on purpose — exit at Hakkas.</b> The line on to Masugnsbyn is 142 km more trail for 38 km of progress; the Vuollerim start (+177 km) is a no with two paid nights waiting.</span></div>
    <div class="wp" title="Tap a point for Google Maps directions to the exact GPX coordinate; switch to Gaia on the line"><span><a href="https://www.google.com/maps/dir/?api=1&amp;destination=66.50754,20.88070&amp;travelmode=driving" target="_blank" rel="noopener" title="Google Maps directions to 66.50754, 20.88070 — the GPX point">⌖ ON</a> S-16 km 999, 3 km north of Murjek</span><span><a href="https://www.google.com/maps/dir/?api=1&amp;destination=66.90678,21.59374&amp;travelmode=driving" target="_blank" rel="noopener" title="Google Maps directions to 66.90678, 21.59374 — the GPX point">⌖ OFF</a> S-16 km 1122 at Hakkas, E10</span></div>
    <div class="load t" title="67 km of road 97 Harads → Murjek and 146 km of road via Gällivare (Google Maps), 123 km of S-16 measured from the GPX — of the 123 km of line, ~25 km reads paved and ~97 km gravel in the national road registers; paved at 65 km/h, gravel and unrecorded at 35, 1 h of stops; ~10 km of the connecting road is gravel · full bar = 400 km, the six-hour ceiling on sealed road at 65 km/h; red = over it"><span>DRIVE</span><span class="trk"><i class="s" style="left:0.0%;width:16.8%"></i><i style="left:16.8%;width:30.8%"></i><i class="s" style="left:47.5%;width:36.5%"></i></span><span class="cap">400</span><span>~336 KM · 123 ON TRAIL · ~7.6 H</span></div>
-   <div class="ck"><span>depart <b>06:30</b> · first light 05:57</span><span>Murjek, on the line <b>~07:45</b></span><span>Hakkas, off the line <b>~11:25</b></span><span>ICEHOTEL <b>~14:10</b></span><span>last light <b>18:54</b> · 4.8 h in hand</span></div></div>
-   <div class="todo"><div class="tl"><span>While here · 2 Oct afternoon · 3 Oct, Sat</span><a href="#w-kiruna" data-go="w">Full list →</a></div>
-   <ul>
-   <li><b>ICEHOTEL 365</b> daily 11–18 · ice bar, sculpting class</li>
-   <li class="y"><b>LKAB mine tour</b> 3 h, SEK 590 — no October dates yet; email info@kirunalapland.se</li>
-   <li class="y"><b>Esrange</b> visitor centre 08–18, free</li>
-   <li class="y"><b>Northern Lights dinner</b> — ask at reception</li>
-   <li class="q"><b>Abisko</b> day trip, 100 km — Sky Station status not found</li>
-   <li class="x"><b>Kiruna church</b> — closed until end 2026</li>
-   </ul></div>
-   <div class="clim">
-    <div class="ct"><span class="cl">Climate 1–4 Oct</span>
-     <span class="cbar" title="30 years of record, snow 34 · mean night to mean day, scale −8 to +16 °C"><i style="left:34.2%;width:24.2%"></i><u class="l" style="left:34.2%">0.2</u><u class="r" style="left:58.3%">6.0 °C</u></span></div>
-    <div class="ck"><span>frost <b>48 %</b> of nights</span><span>cold night <b>−4.8</b></span><span>snow <b>50 %</b> of yrs <em>— even odds</em></span></div>
+   <div class="ck"><span>depart <b>06:30</b> · first light 05:57</span><span>Murjek, on the line <b>~07:45</b></span><span>Hakkas, off the line <b>~11:25</b></span><span>ICEHOTEL <b>~14:10</b></span><span>last light <b>18:54</b> · 4.8 h in hand</span></div>
    </div>
   </div>
   <div class="read">
@@ -557,36 +527,38 @@ h2{display:block}h2 small{display:block;text-align:left;margin-top:5px}
    <div class="rc ref"><b>BJFQ71</b><div class="lab">booking</div></div></div>
  </div>
 
+ <div class="leg base"><div class="lhead">
+  <div class="ldate">03<small>OCT<span>SAT</span></small></div>
+  <div class="ltitle"><h3>Jukkasjärvi · ICEHOTEL</h3><span class="stay"><u>1 FREE DAY</u></span><span class="tag a">To book</span></div></div>
+  <div class="lbody">
+   <div class="kv"><span class="k">BOOK</span><ul class="bl"><li><b>Northern Lights Dinner</b> — 4 h · SEK 1 995 pp · min 2 · minivan to a wilderness camp, three courses · gather at Meeting Point 15 min before the start · <b>3 Oct open, 2 Oct sold out</b> · icehotel.com <em class="pill now">BOOK NOW</em></li><li><b>Mountain hike in Abisko</b> — 7 h · SEK 2 190 pp · <b>no departure 1–5 Oct</b> — private only, reservations@icehotel.com <em class="pill ask">ASK ICEHOTEL</em></li><li><b>LKAB mine tour, Kiruna</b> — 3 h · SEK 590 pp · from the Tourist Centre, Malmvägen 9B · no October dates listed on 7 Sep — ask info@kirunalapland.se <em class="pill ask">ASK KIRUNA</em></li><li><b>Ice sculpting · forest walk · wilderness skills · behind the scenes</b> — SEK 795 · 495 · 495 · 495 · ask for the 3 Oct times on arrival <em class="pill desk">AT THE DESK</em></li></ul></div>
+   <div class="kv"><span class="k">OPEN</span><span class="v"><b>ICEHOTEL 365</b> daily 11–18 — ice bar, art suites · <b>Esrange</b> visitor centre 08–18, free, unmanned</span></div>
+   <div class="kv"><span class="k">EVENING</span><span class="v">if the Northern Lights Dinner is not taken: aurora window 21:00–01:00 · private sauna ritual SEK 4 775 on request</span></div>
+   <div class="kv x"><span class="k">NOT RUNNING</span><span class="v">Kiruna church closed to visitors until end 2026 · Abisko Sky Station autumn dates unknown</span></div>
+   <div class="kv"><span class="k">CLIMATE</span><span class="v">night 0.2 → day 6.0 °C · frost 48 % of nights · cold night −4.8 · snow 50 % of yrs — even odds</span></div>
+  </div>
+  <div class="read">
+   <div class="rc"><b>1</b><div class="lab">free day · sat</div></div>
+   <div class="rc"><b>06:01–18:50</b><div class="lab">usable light</div></div>
+   <div class="rc a"><b>NOW</b><div class="lab">first book-by</div></div>
+   <div class="rc c"><b><a href="#w-kiruna" data-go="w" style="border:0">Full list →</a></b><div class="lab">things to do</div></div></div>
+ </div>
+
  <h2>Sector 2 · Across the top<small>FIXED DATES — NO MOVEMENT</small></h2>
 
  <div class="leg hot fix"><div class="lhead">
   <div class="ldate">04<small>OCT<span>SUN</span></small></div>
   <div class="ltitle"><h3>Jukkasjärvi → Levi</h3><span class="stay"><u>IN <b>SUN 4 OCT</b></u><i>·</i><wbr><u>OUT <b>WED 7 OCT</b></u><wbr><u><i>·</i>3&nbsp;NIGHTS</u></span><span class="tag r">Fixed</span></div></div>
   <div class="lbody">
-   <p class="addr">NORTHERN LIGHTS RANCH · 1619 OUNASJOENTIE, LEVI <a href="https://www.google.com/maps/search/?api=1&amp;query=Northern%20Lights%20Ranch%2C%20Ounasjoentie%201619%2C%2099140%20Levi%2C%20Finland" target="_blank" rel="noopener" title="Open in Google Maps" style="border:0;font-size:11px;letter-spacing:.1em">⌖&nbsp;MAP</a></p>
-   <p>Clocks forward one hour at the border. Sky View cabins, hot tub, kitchen. Road: Vittangi, road 395 to Pajala, road 99 north to Kolari, over the river, road 80 to Kittilä, road 79 to Köngäs — 307 km (Google Maps). Google's "fastest" 297 km crosses the <b>Lainio ferry</b>, the same seasonal ferry as the trail alternative — only if it is running.</p>
+   <div class="kv"><span class="k">SLEEP</span><span class="v"><b>Northern Lights Ranch</b> · 1619 Ounasjoentie, Köngäs, Levi <a href="https://www.google.com/maps/search/?api=1&amp;query=Northern%20Lights%20Ranch%2C%20Ounasjoentie%201619%2C%2099140%20Levi%2C%20Finland" target="_blank" rel="noopener" title="Open in Google Maps" style="border:0;font-size:11px;letter-spacing:.1em">⌖&nbsp;MAP</a> · 2 Sky View cabins, hot tub, kitchen, breakfast · <b>check-in from 16:00</b> · <b>Finnish time from the border — clocks +1 h</b> · +358 44 7700540</span></div>
+   <div class="kv"><span class="k">ROUTE</span><span class="v"><b>Vittangi · 395 to Pajala · 99 north to Kolari · over the river · 80 to Kittilä · 79 to Köngäs</b>, 307 km · Google's 297-km "fastest" crosses the Lainio ferry — only if it is running · leave 10:00, in ~15:55 Finnish</span></div>
    <div class="load" title="307 km of road — Google Maps, fastest route, 11 Sep 2026 — via Pajala and Kolari; full bar = 400 km, the six-hour ceiling on sealed road at 65 km/h; red = over it — ~14 km of this route is recorded gravel, timed at 35 km/h (registers checked 22 Sep)"><span>DRIVE</span><span class="trk"><i style="width:76.8%"></i></span><span class="cap">400</span><span>307 KM · 4.9 H</span></div>
-   <div class="warn r"><b>Date change not possible at any price.</b> Hardest of the three non-refundable arrivals.</div>
-   <div class="alt"><div class="tl"><span>Trail alternative · decide at departure</span><span>A′ · 187 KM ON TRAIL · 98 TARMAC · 89 GRAVEL</span></div>
-   <p class="addr">S-16 FROM MASUGNSBYN (KM 1264) TO THE MUONIO BORDER (KM 1451) · ROAD 79 TO LEVI · FUEL KANGOS · KITKIÖJÄRVI · MUONIO</p>
-   <div class="warn c"><b>Road ICEHOTEL → Vittangi → Masugnsbyn (99 km), then S-16 to its end at the Muonio bridge — 187 km of trail:</b> Junosuando (1285), Kangos (1295, fuel), Pintree Lodge (1302), the <b>Lainio river ferry (1334)</b>, Kitkiöjärvi (1417, fuel), Rajamaa (1444). S-16 ends 0.1 km from FIN-03 — the two networks meet at the border. Clocks +1 h. Road 79 Muonio → Kittilä → Sirkka → Köngäs, 78 km. <b>Go / no-go: the Lainio ferry</b> — the GPX says it runs "till middle of October"; it is run by the village road association (Lainio Bys Vägsamfällighet), not Trafikverket — ask Kiruna municipality or the association before departure; the cable ferry is replaced by an ice road in winter with a no-crossing period in between. Closed: S-16 to Kangos only (31 km), back to Junosuando, road 395 via Pajala. <b>Cut:</b> Muonio later than 15:15 Finnish is still fine — the rest is 78 km of tarmac.</div>
+   <div class="alt"><div class="tl"><span>Trail alternative · decide at departure <a href="#e-rules" data-go="e">rules →</a></span><span>A′ · 187 KM ON TRAIL · 98 TARMAC · 89 GRAVEL</span></div>
+   <div class="kv"><span class="k">LINE</span><span class="v"><b>99 km of road to Masugnsbyn · S-16 km 1264 → 1451 at the Muonio border bridge</b> · road 79 Muonio – Kittilä – Sirkka – Köngäs, 78 km · Junosuando (1285), Kangos (1295, fuel), the <b>Lainio river ferry (1334)</b>, Kitkiöjärvi (1417, fuel), Rajamaa (1444)</span></div>
+   <div class="kv go"><span class="k">GO</span><span class="v"><b>The Lainio ferry decides</b> — run by the village road association (Lainio Bys Vägsamfällighet) "till mid-October": ask Kiruna municipality or the association the night before; <b>no answer → treat it as closed</b> · <b>ferry closed: S-16 to Kangos only, back to Junosuando, 395 via Pajala</b> · Muonio after 15:15 Finnish is still fine — 78 km of tarmac remain.</span></div>
    <div class="wp" title="Tap a point for Google Maps directions to the exact GPX coordinate; switch to Gaia on the line"><span><a href="https://www.google.com/maps/dir/?api=1&amp;destination=67.45708,22.04336&amp;travelmode=driving" target="_blank" rel="noopener" title="Google Maps directions to 67.45708, 22.04336 — the GPX point">⌖ ON</a> S-16 km 1264 on road 395 at Masugnsbyn</span><span><a href="https://www.google.com/maps/dir/?api=1&amp;destination=67.48564,22.65919&amp;travelmode=driving" target="_blank" rel="noopener" title="Google Maps directions to 67.48564, 22.65919 — the GPX point">⌖ CUT</a> Kangos km 1295 — ferry closed: back to Junosuando</span><span><a href="https://www.google.com/maps/dir/?api=1&amp;destination=67.76701,22.34514&amp;travelmode=driving" target="_blank" rel="noopener" title="Google Maps directions to 67.76701, 22.34514 — the GPX point">⌖ VIA</a> Lainio ferry km 1334</span><span><a href="https://www.google.com/maps/dir/?api=1&amp;destination=67.93918,23.66503&amp;travelmode=driving" target="_blank" rel="noopener" title="Google Maps directions to 67.93918, 23.66503 — the GPX point">⌖ OFF</a> S-16 km 1451, Muonio border bridge → road 79</span></div>
    <div class="load t" title="99 km of road to Masugnsbyn and 78 km of road 79 Muonio → Ranch (Google Maps), 187 km of S-16 measured from the GPX — of the 187 km of line, ~98 km reads paved and ~85 km gravel in the national road registers; paved at 65 km/h, gravel and unrecorded at 35, 1 h of stops; ~9 km of the connecting road is gravel · full bar = 400 km, the six-hour ceiling on sealed road at 65 km/h; red = over it"><span>DRIVE</span><span class="trk"><i class="s" style="left:0.0%;width:24.8%"></i><i style="left:24.8%;width:46.8%"></i><i class="s" style="left:71.5%;width:19.5%"></i></span><span class="cap">400</span><span>~365 KM · 187 ON TRAIL · ~7.9 H</span></div>
-   <div class="ck"><span>depart <b>06:30</b> Swedish · first light 06:05</span><span>Masugnsbyn <b>~08:15</b></span><span>Muonio <b>~12:55</b> Swedish = 13:55 Finnish</span><span>Ranch <b>~15:25</b> Finnish · check-in from 16:00</span><span>last light <b>19:29</b> · 4.1 h in hand</span></div></div>
-   <div class="todo"><div class="tl"><span>While here · 5–6 Oct, Mon–Tue</span><a href="#w-levi" data-go="w">Full list →</a></div>
-   <ul>
-   <li><b>Ski on stored snow</b> — scheduled from 2 Oct, 09:30–19:00; re-check levi.fi first</li>
-   <li><b>Guided e-fatbike tour</b> — runs to 30 Oct</li>
-   <li class="y"><b>Husky cart ride</b> ~2 h, only at 14 °C or below</li>
-   <li class="y"><b>Gondola for walkers</b> — summer lifts ended 20 Sep; ask at Zero Point</li>
-   <li class="y"><b>ATV</b> — Lapland Safaris by phone only, Mon–Fri 10–15 EET</li>
-   <li class="q"><b>Ranch programme</b> — ask the host</li>
-   <li class="y"><b>Gravel loop L3</b> — FIN-01 west from Köngäs: Pallastunturi, Raattama, Hetta (117 km), FIN-03 Hetta → Muonio (75 km), road 79 back — 192 km of trail — mixed surface: roughly two-thirds of it reads paved in Digiroad (road 957 and the Hetta road; Codex review 22 Sep, not re-checked here), so ~7.8 h from 08:00 at the all-gravel figure is the ceiling, nearer 6 h on the register (78 km of road 79 back); the short version turns at the FIN-01 km 2290 point on road 957 — 44 km of trail, ~3.1 h; the Pallastunturi car park is 14 km further by roads 957 and 9571</li>
-   </ul></div>
-   <div class="clim">
-    <div class="ct"><span class="cl">Climate 4–7 Oct</span>
-     <span class="cbar" title="28 years of record, snow 21 · mean night to mean day, scale −8 to +16 °C"><i style="left:37.1%;width:22.5%"></i><u class="l" style="left:37.1%">0.9</u><u class="r" style="left:59.6%">6.3 °C</u></span></div>
-    <div class="ck"><span>frost <b>41 %</b> of nights</span><span>cold night <b>−4.8</b></span><span>snow <b>29 %</b> of yrs</span></div>
+   <div class="ck"><span>depart <b>06:30</b> Swedish · first light 06:05</span><span>Masugnsbyn <b>~08:15</b></span><span>Muonio <b>~12:55</b> Swedish = 13:55 Finnish</span><span>Ranch <b>~15:25</b> Finnish · check-in from 16:00</span><span>last light <b>19:29</b> · 4.1 h in hand</span></div>
    </div>
   </div>
   <div class="read">
@@ -596,34 +568,36 @@ h2{display:block}h2 small{display:block;text-align:left;margin-top:5px}
    <div class="rc ref"><b>6636.503.648</b><div class="lab">booking ref · pin withheld</div></div></div>
  </div>
 
+ <div class="leg base"><div class="lhead">
+  <div class="ldate">05<small>OCT<span>MON</span></small></div>
+  <div class="ltitle"><h3>Levi · Northern Lights Ranch</h3><span class="stay"><u>2 FREE DAYS · MON–TUE</u></span><span class="tag a">To book</span></div></div>
+  <div class="lbody">
+   <div class="kv"><span class="k">BOOK</span><ul class="bl"><li><b>Soma — Kätkätunturi fell hike</b> — 4 h · 199 € pp · 10:00 or 21:00 · <b>pick-up at the Ranch</b> · 2-day cut-off · 5 and 6 Oct open <em class="pill now">BOOK BY 3 OCT</em></li><li><b>Soma — reindeer farm &amp; Puljutunturi</b> — 5.5 h · 259 € pp · 12:00 · 1-day cut-off <em class="pill now">BOOK BY 5 OCT</em></li><li><b>Soma — aurora tour 149 € · HideOut 229 € · sauna + dinner 259 € · forest cooking 209 € · Levi local life 219 €</b> — days not checked <em class="pill road">ON THE ROAD</em></li><li><b>Husky cart ride — Scandinavian Travel Group</b> — 2 h by wheeled cart + kennel visit · 125 € pp · to 31 Oct while snowless · from Levi, ask for a Ranch pick-up · strict cancellation <em class="pill ask">ASK</em></li><li><b>Lapland Safaris ATV</b> — phone only, Mon–Fri 10–15 · October tours unconfirmed <em class="pill ask">RING</em></li></ul></div>
+   <div class="kv"><span class="k">OPEN</span><span class="v"><b>Ski season opened 2 Oct</b> on stored snow — Glacier, 09:30–19:00; gondola for walkers: ask at Zero Point · <b>Levi Water World</b> 12–20, 25 € · <b>Samiland</b> 10–20, 14 € · e-fatbikes from Zero Point Rental · <b>gravel loop L3</b> — FIN-01 west to Hetta and road 79 back, 192 km of trail, ~6–8 h (full list)</span></div>
+   <div class="kv"><span class="k">EVENING</span><span class="v">the Ranch's hot tub · <b>its own programme: ask at check-in</b></span></div>
+   <div class="kv x"><span class="k">NOT RUNNING</span><span class="v">summer scenic lifts · husky carts only under 14 °C</span></div>
+   <div class="kv"><span class="k">CLIMATE</span><span class="v">night 0.9 → day 6.3 °C · frost 41 % of nights · cold night −4.8 · snow 29 % of yrs</span></div>
+  </div>
+  <div class="read">
+   <div class="rc"><b>2</b><div class="lab">free days · mon–tue</div></div>
+   <div class="rc"><b>06:55–19:21</b><div class="lab">usable light</div></div>
+   <div class="rc a"><b>3 OCT</b><div class="lab">first book-by</div></div>
+   <div class="rc c"><b><a href="#w-levi" data-go="w" style="border:0">Full list →</a></b><div class="lab">things to do</div></div></div>
+ </div>
+
  <div class="leg hot fix"><div class="lhead">
   <div class="ldate">07<small>OCT<span>WED</span></small></div>
   <div class="ltitle"><h3>Levi → Ivalo · 68°39′N</h3><span class="stay"><u>IN <b>WED 7 OCT</b></u><i>·</i><wbr><u>OUT <b>SAT 10 OCT</b></u><wbr><u><i>·</i>3&nbsp;NIGHTS</u></span><span class="tag r">Fixed</span></div></div>
   <div class="lbody">
-   <p class="addr">AURORA VILLAGE IVALO · AURORAKUJA 38 · FURTHEST NORTH <a href="https://www.google.com/maps/search/?api=1&amp;query=Aurora%20Village%20Ivalo%2C%20Aurorakuja%2038%2C%2099800%20Ivalo%2C%20Finland" target="_blank" rel="noopener" title="Open in Google Maps" style="border:0;font-size:11px;letter-spacing:.1em">⌖&nbsp;MAP</a></p>
-   <p>Road 955 through Pokka and Inari — Google's route, 214 km. Digiroad (checked 22 Sep) records it paved from Pokka to Inari; the gravel is the ~51 km between Köngäs and Pokka plus the Ranch access, timed at 35 km/h — hence 4.0 h, not the 3.3 h an all-tarmac 214 km would give. The way round by Sodankylä (road 80, E75) is 284 km · 4.5 h, paved apart from the Ranch access. Base for the Inari run, 82 km return. <b>Check-out is 08:00–11:00</b>: if the 10th goes on the trail (07:00 start), settle and arrange the key drop the evening before.</p>
+   <div class="kv"><span class="k">SLEEP</span><span class="v"><b>Aurora Village Ivalo</b> · Aurorakuja 38 <a href="https://www.google.com/maps/search/?api=1&amp;query=Aurora%20Village%20Ivalo%2C%20Aurorakuja%2038%2C%2099800%20Ivalo%2C%20Finland" target="_blank" rel="noopener" title="Open in Google Maps" style="border:0;font-size:11px;letter-spacing:.1em">⌖&nbsp;MAP</a> · 2 cabin suites, breakfast + dinner — <b>reserve the dinner table</b> · check-in 16:00–21:00 · check-out 08:00–11:00 — the trail on the 10th starts 07:00: settle and arrange the key drop the evening before · +358 10 419 7821</span></div>
+   <div class="kv"><span class="k">ROUTE</span><span class="v"><b>Road 955 through Pokka and Inari</b>, 214 km — the ~51 km Köngäs → Pokka are gravel, tarmac from Pokka on · round by Sodankylä (80, E75) it is 284 km, all tarmac · leave 12:30, in ~16:30 · fuel ABC Levi, Inari · Inari is 41 km north of the Village</span></div>
    <div class="load" title="full bar = 400 km, the six-hour ceiling on sealed road at 65 km/h; red = over it — ~51 km of this route is recorded gravel, timed at 35 km/h (registers checked 22 Sep)"><span>DRIVE</span><span class="trk"><i style="width:53.5%"></i></span><span class="cap">400</span><span>214 KM · 4.0 H</span></div>
-   <div class="warn r">Cancel or modify = full price.</div>
-   <div class="alt"><div class="tl"><span>Trail alternative · decide at departure</span><span>B · 200 KM ON TRAIL · 114 TARMAC · 86 GRAVEL OR UNRECORDED</span></div>
-   <p class="addr">FIN-01 FROM KÖNGÄS (KM 2246) TO ITS JUNCTION WITH FIN-07 (KM 2181 = FIN-07 KM 532) · FIN-07 NORTH VIA POKKA TO INARI (KM 667) · ROAD 4 TO IVALO · FUEL ABC LEVI · TIEVA BAR (561) · INARI</p>
-   <div class="warn c"><b>9 km of road north from the Ranch (Ounasjoentie) onto FIN-01, then the line backwards to the FIN-07 junction — 65 km</b> (the Köngäs link is checked on the map: 8.9 km). <b>FIN-07 north 135 km:</b> Pokka at 563 with the Tieva Bar fuel on the line at 561; the 104 km Pokka → Inari are drawn with 4–10 km chords and follow road 955 — the same road the paved plan uses, recorded paved throughout (Digiroad, 22 Sep) and timed at 65 km/h here as there; the gravel on B is on FIN-01 and the FIN-07 loop south of Pokka, plus the 9 km Ounasjoentie link, which is gravel too. Ends 0.1 km from the Siida museum; road 4 south to Aurora Village, 41 km. In by mid-afternoon with time for Siida on the way.</div>
+   <div class="alt"><div class="tl"><span>Trail alternative · decide at departure <a href="#e-rules" data-go="e">rules →</a></span><span>B · 200 KM ON TRAIL · 114 TARMAC · 86 GRAVEL OR UNRECORDED</span></div>
+   <div class="kv"><span class="k">LINE</span><span class="v"><b>9 km of Ounasjoentie (gravel) to FIN-01 km 2246, backwards to the FIN-07 junction (65 km), FIN-07 north 135 km via Pokka to Inari (km 667)</b>, road 4 south 41 km · fuel Tieva Bar on the line at 561, Inari · the line ends at the Siida museum door</span></div>
+   <div class="kv go"><span class="k">GO</span><span class="v"><b>All the gravel is before Pokka</b> — from Pokka the line is road 955, the same tarmac as the plan, so a slow morning costs nothing after ~10:25. In by early afternoon.</span></div>
    <div class="wp" title="Tap a point for Google Maps directions to the exact GPX coordinate; switch to Gaia on the line"><span><a href="https://www.google.com/maps/dir/?api=1&amp;destination=68.00031,24.70108&amp;travelmode=driving" target="_blank" rel="noopener" title="Google Maps directions to 68.00031, 24.70108 — the GPX point">⌖ ON</a> FIN-01 km 2246, Ounasjoentie river crossing</span><span><a href="https://www.google.com/maps/dir/?api=1&amp;destination=67.97777,25.64763&amp;travelmode=driving" target="_blank" rel="noopener" title="Google Maps directions to 67.97777, 25.64763 — the GPX point">⌖ VIA</a> FIN-01 / FIN-07 junction (km 2181 = 532)</span><span><a href="https://www.google.com/maps/dir/?api=1&amp;destination=68.17230,25.78280&amp;travelmode=driving" target="_blank" rel="noopener" title="Google Maps directions to 68.17230, 25.78280 — the GPX point">⌖ VIA</a> Pokka km 563 · Tieva Bar fuel</span><span><a href="https://www.google.com/maps/dir/?api=1&amp;destination=68.90692,27.01546&amp;travelmode=driving" target="_blank" rel="noopener" title="Google Maps directions to 68.90692, 27.01546 — the GPX point">⌖ OFF</a> FIN-07 km 667, Inari bridge → road 4</span></div>
    <div class="load t" title="9 km of road to the line and 41 km of road 4 from Inari (Google Maps), 65 km of FIN-01 and 135 km of FIN-07 measured from the GPX (127 km of it coarse — floors) — of the 200 km of line, ~114 km reads paved and ~42 km gravel in the national road registers, ~44 km with no surface record south of Pokka — mostly the Köngäs → Pokka state road, which the 7 Oct road line records as gravel; paved at 65 km/h, gravel and unrecorded at 35, 1 h of stops; the 104 km Pokka → Inari are road 955, recorded paved, timed at 65; ~8 km of the connecting road is gravel · full bar = 400 km, the six-hour ceiling on sealed road at 65 km/h; red = over it"><span>DRIVE</span><span class="trk"><i class="s" style="left:0.0%;width:2.2%"></i><i style="left:2.2%;width:50.0%"></i><i class="s" style="left:52.2%;width:10.2%"></i></span><span class="cap">400</span><span>~250 KM · 200 ON TRAIL · ~6.1 H</span></div>
-   <div class="ck"><span>depart <b>07:00</b> · first light 06:58</span><span>Pokka <b>~10:25</b></span><span>Inari <b>~12:20</b></span><span>Aurora Village <b>~13:10</b> · check-in from 16:00</span><span>last light <b>19:06</b></span></div></div>
-   <div class="todo"><div class="tl"><span>While here · 8–9 Oct, Thu–Fri</span><a href="#w-ivalo" data-go="w">Full list →</a></div>
-   <ul>
-   <li><b>Aurora Village huskies</b>: hike €127 · farm visit €69 · wagon ride €94 (under 15 °C) — book online</li>
-   <li class="y"><b>Aurora tour · boat · packraft · sauna</b> — on their autumn list, end dates not published; ask</li>
-   <li><b>Siida museum</b>, Inari ~40 km — Mon–Sat 10–17</li>
-   <li><b>UKK park</b>: Kaunispää 2 km, all four · Luulampi 11 km · Rumakuru 14 km · Kiirunapolku 6 km, strong pair. Paid parking at Kiilopää</li>
-   <li><b>Gold Museum</b>, Tankavaara — Mon–Fri 11–16</li>
-   <li class="x"><b>Lake Inari public cruises</b> — season over</li>
-   <li class="y"><b>Gravel loop I1</b> — road 4 south to where FIN-01 crosses it (km 2064, about 20 km <i>south</i> of Vuotso — you pass the village first; <a href="https://www.google.com/maps/dir/?api=1&amp;destination=67.93022,26.92458&amp;travelmode=driving" target="_blank" rel="noopener" title="Google Maps directions to 67.93022, 26.92458 — the GPX point">⌖ ON</a>), FIN-01 east towards Lokka and back — 88 km of trail, ~6.7 h from 08:00. The border stretch beyond (Tulppio, Tuntsa) is a 12-h day from Ivalo — not a day trip</li>
-   </ul></div>
-   <div class="clim">
-    <div class="ct"><span class="cl">Climate 7–10 Oct</span>
-     <span class="cbar" title="30 years of record, snow 27 · mean night to mean day, scale −8 to +16 °C"><i style="left:35.8%;width:20.8%"></i><u class="l" style="left:35.8%">0.6</u><u class="r" style="left:56.7%">5.6 °C</u></span></div>
-    <div class="ck"><span>frost <b>46 %</b> of nights</span><span>cold night <b>−4.6</b></span><span>snow <b>11 %</b> of yrs</span></div>
+   <div class="ck"><span>depart <b>07:00</b> · first light 06:58</span><span>Pokka <b>~10:25</b></span><span>Inari <b>~12:20</b></span><span>Aurora Village <b>~13:10</b> · check-in from 16:00</span><span>last light <b>19:06</b> · 5.9 h in hand</span></div>
    </div>
   </div>
   <div class="read">
@@ -633,35 +607,36 @@ h2{display:block}h2 small{display:block;text-align:left;margin-top:5px}
    <div class="rc ref"><b>5831.655.575</b><div class="lab">booking ref · pin withheld</div></div></div>
  </div>
 
+ <div class="leg base"><div class="lhead">
+  <div class="ldate">08<small>OCT<span>THU</span></small></div>
+  <div class="ltitle"><h3>Ivalo · Aurora Village</h3><span class="stay"><u>2 FREE DAYS · THU–FRI</u></span><span class="tag a">To book</span></div></div>
+  <div class="lbody">
+   <div class="kv"><span class="k">BOOK</span><ul class="bl"><li><b>Aurora Village — Otsamo fell hike</b> — 174 € pp · runs to 15 Oct <em class="pill now">BOOK BEFORE ARRIVAL</em></li><li><b>Aurora Village — Aurora Camp</b> — ~21:00 · 158 € pp · runs to 15 Oct · or northern lights by car 143 € <em class="pill now">BOOK BEFORE ARRIVAL</em></li><li><b>Aurora Village — UKK hike 143 € · Jäniskoski hike 69 / 143 € (ask) · husky hike 127 € · fatbike 127 / 65 € · panorama sauna 50 € · Nellim 153 €</b> — online, no cut-off stated <em class="pill road">ON THE ROAD</em></li><li><b>Sámi home visit &amp; handicraft workshop, Inari (Renniina)</b> — 2 h, 90 € pp (workshop only 50 €) · transport by enquiry from Inari · no live reindeer in October <em class="pill ask">ASK</em></li><li><b>Indoor gold panning, Tankavaara Gold Museum</b> — Mon–Fri 13:00 to 16 Oct · 1 h · 60 km south <em class="pill ask">ASK</em></li></ul></div>
+   <div class="kv"><span class="k">OPEN</span><span class="v"><b>Siida Sámi Museum</b>, Inari, 40 km — Mon–Sat 10–17, 18 € · <b>Urho Kekkonen park</b> from Saariselkä / Kiilopää, 30–40 km — Kaunispää 2.1 km, Luulampi 11 km, Rumakuru 14 km; carry food · <b>Gold Museum</b>, Tankavaara, Mon–Fri 11–16 · <b>gravel loop I1</b> — FIN-01 east from the E75 south of Vuotso, 88 km of trail, ~6.7 h (full list)</span></div>
+   <div class="kv"><span class="k">EVENING</span><span class="v">dinner is included — <b>reserve the table</b> · aurora window 21:00–01:00</span></div>
+   <div class="kv x"><span class="k">NOT RUNNING</span><span class="v">Lake Inari cruises (ended 30 Sep) · reindeer at the Village from 1 Nov</span></div>
+   <div class="kv"><span class="k">CLIMATE</span><span class="v">night 0.6 → day 5.6 °C · frost 46 % of nights · cold night −4.6 · snow 11 % of yrs</span></div>
+  </div>
+  <div class="read">
+   <div class="rc"><b>2</b><div class="lab">free days · thu–fri</div></div>
+   <div class="rc"><b>06:55–18:58</b><div class="lab">usable light</div></div>
+   <div class="rc a"><b>BY 7 OCT</b><div class="lab">first book-by</div></div>
+   <div class="rc c"><b><a href="#w-ivalo" data-go="w" style="border:0">Full list →</a></b><div class="lab">things to do</div></div></div>
+ </div>
+
  <div class="leg hot fix"><div class="lhead">
   <div class="ldate">10<small>OCT<span>SAT</span></small></div>
   <div class="ltitle"><h3>Ivalo → Rovaniemi</h3><span class="stay"><u>IN <b>SAT 10 OCT</b></u><i>·</i><wbr><u>OUT <b>TUE 13 OCT</b></u><wbr><u><i>·</i>3&nbsp;NIGHTS</u></span><span class="tag r">Fixed</span></div></div>
   <div class="lbody">
-   <p class="addr">GLASS RESORT · TÄHTIKUJA 16, ROVANIEMI · 1 APT FOR 4 <a href="https://www.google.com/maps/search/?api=1&amp;query=Glass%20Resort%2C%20T%C3%A4htikuja%2016%2C%2096930%20Rovaniemi%2C%20Finland" target="_blank" rel="noopener" title="Open in Google Maps" style="border:0;font-size:11px;letter-spacing:.1em">⌖&nbsp;MAP</a></p>
-   <p>Sauna, hot tub, kitchen. Upper floor by stairs only. Photo ID and card wanted at check-in.</p>
+   <div class="kv"><span class="k">SLEEP</span><span class="v"><b>Glass Resort</b> · Tähtikuja 16, Rovaniemi <a href="https://www.google.com/maps/search/?api=1&amp;query=Glass%20Resort%2C%20T%C3%A4htikuja%2016%2C%2096930%20Rovaniemi%2C%20Finland" target="_blank" rel="noopener" title="Open in Google Maps" style="border:0;font-size:11px;letter-spacing:.1em">⌖&nbsp;MAP</a> · 1 apartment for four — sauna, hot tub, kitchen, upper floor by stairs · breakfast + dinner (Gallis, 17–23) · <b>check-in 15:00–00:00, photo ID and card at the desk</b> · +358 40 5194444</span></div>
+   <div class="kv"><span class="k">ROUTE</span><span class="v"><b>Road 4 (E75) south by Sodankylä</b>, 286 km · leave 10:00, in ~14:25 · fuel Ivalo, Sodankylä</span></div>
    <div class="load" title="full bar = 400 km, the six-hour ceiling on sealed road at 65 km/h; red = over it"><span>DRIVE</span><span class="trk"><i style="width:71.5%"></i></span><span class="cap">400</span><span>286 KM · 4.4 H</span></div>
-   <div class="warn">Mon 12 Oct — <b>museums shut.</b> Take the Arctic Circle Hiking Area instead:
-    flat, duckboarded, works in poor weather.</div>
-   <div class="alt"><div class="tl"><span>Trail alternative · decide at departure</span><span>C2 · 191 KM ON TRAIL · 39 TARMAC · 152 GRAVEL OR UNRECORDED</span></div>
-   <p class="addr">ROAD 4 (E75) TO SODANKYLÄ · ROAD 80 WEST TO WHERE FIN-07 CROSSES IT (KM 467) · FIN-07 SOUTH TO THE RESORT (KM 276) · FUEL IVALO · SODANKYLÄ · KIERINKI (409)</p>
-   <div class="warn c"><b>Tarmac first, 222 km: road 4 south to Sodankylä (162 km), road 80 west towards Kittilä to where FIN-07 crosses it at km 467</b> — checked on the map; km 461 in the earlier draft sits 4 km south of the road. <b>Then FIN-07 south, 191 km</b> — the densest, most detailed part of the file: Kierinki (409, fuel on the line), east of Meltaus (344), Ounasvaara (279), ending on road 81 in Rovaniemi, 4 km from the Glass Resort. The gravel is the second half of the day, so the cut is simple: leave the line at Kierinki (59 km of trail, road 79 in) or at Meltaus (124 km, 12 km to road 79). <b>Rule: not on the line by 11:15, or not at Kierinki by 13:00 — road 79.</b> The full FIN-01 → FIN-07 version from E75 (373 km of trail) is 13.3 h and lands after dark; it is a no.</div>
+   <div class="alt"><div class="tl"><span>Trail alternative · decide at departure <a href="#e-rules" data-go="e">rules →</a></span><span>C2 · 191 KM ON TRAIL · 39 TARMAC · 152 GRAVEL OR UNRECORDED</span></div>
+   <div class="kv"><span class="k">LINE</span><span class="v"><b>222 km of tarmac first</b> — road 4 to Sodankylä, road 80 west to FIN-07 km 467 — then <b>FIN-07 south 191 km</b>: Kierinki (409, fuel on the line), east of Meltaus (344), Ounasvaara (279), ending on road 81 4 km from the resort · fuel Ivalo, Sodankylä, Kierinki</span></div>
+   <div class="kv go"><span class="k">GO</span><span class="v"><b>Not on the line by 11:15, or not at Kierinki by 13:00 → road 79.</b> Cuts at Kierinki (59 km of trail) and Meltaus (124 km, 12 km to road 79). The full FIN-01 → FIN-07 day (373 km of trail) lands after dark — a no.</span></div>
    <div class="wp" title="Tap a point for Google Maps directions to the exact GPX coordinate; switch to Gaia on the line"><span><a href="https://www.google.com/maps/dir/?api=1&amp;destination=67.61023,25.46795&amp;travelmode=driving" target="_blank" rel="noopener" title="Google Maps directions to 67.61023, 25.46795 — the GPX point">⌖ ON</a> FIN-07 km 467 on road 80 (Sodankyläntie)</span><span><a href="https://www.google.com/maps/dir/?api=1&amp;destination=67.26897,25.53145&amp;travelmode=driving" target="_blank" rel="noopener" title="Google Maps directions to 67.26897, 25.53145 — the GPX point">⌖ CUT</a> Kierinki km 409 — fuel; road 79 exit</span><span><a href="https://www.google.com/maps/dir/?api=1&amp;destination=66.90416,25.66241&amp;travelmode=driving" target="_blank" rel="noopener" title="Google Maps directions to 66.90416, 25.66241 — the GPX point">⌖ CUT</a> Meltaus km 344 — 12 km to road 79</span><span><a href="https://www.google.com/maps/dir/?api=1&amp;destination=66.51917,25.82132&amp;travelmode=driving" target="_blank" rel="noopener" title="Google Maps directions to 66.51917, 25.82132 — the GPX point">⌖ OFF</a> FIN-07 km 276 on road 81, Rovaniemi → Glass Resort 4 km</span></div>
    <div class="load t hot" title="222 km of road 4 and road 80 to the crossing and 4 km in (Google Maps), 191 km of FIN-07 measured from the GPX — of the 191 km of line, ~39 km reads paved and ~51 km gravel in the national road registers, ~101 km with no surface record — single-lane private roads under 5 m wide in the NLS road class, gravel on satellite imagery at every point checked (22 Sep); paved at 65 km/h, gravel and unrecorded at 35, 1 h of stops · full bar = 400 km, the six-hour ceiling on sealed road at 65 km/h; red = over it"><span>DRIVE</span><span class="trk"><i class="s" style="left:0.0%;width:53.4%"></i><i style="left:53.4%;width:45.7%"></i><i class="s" style="left:99.0%;width:1.0%"></i></span><span class="cap">400</span><span>~417 KM · 191 ON TRAIL · ~9.4 H</span></div>
-   <div class="ck"><span>depart <b>07:00</b> · first light 06:58</span><span>Sodankylä <b>~09:45</b> · on the line <b>~10:50</b></span><span>Kierinki <b>~12:30</b></span><span>Glass Resort <b>~16:25</b> · check-in from 15:00</span><span>last light <b>19:02</b> · 2.6 h in hand</span></div></div>
-   <div class="todo"><div class="tl"><span>While here · 11–12 Oct, Sun–Mon</span><a href="#w-rovaniemi" data-go="w">Full list →</a></div>
-   <ul>
-   <li><b>Sun: Arktikum</b> 10–18 — Mon closed</li>
-   <li class="y"><b>Pilke</b> — Mon closed; closing for good end Oct, may already be shut</li>
-   <li><b>Mon: Santa Claus Office</b> &amp; Post Office — daily 10–17</li>
-   <li class="y"><b>Husky on wheels</b> — Apukka from €159 · Husky Park in the Village 11–15</li>
-   <li class="y"><b>Arctic Circle Hiking Area</b> — flat duckboard loops, the Monday option</li>
-   <li class="q"><b>Glass Resort activities</b> — ask at check-in</li>
-   <li class="y"><b>Gravel loop R1 / R2</b> — FIN-07 from 2.7 km behind the resort: north to Kierinki and road 79 back (133 km of trail, 117 km of road, ~6.7 h) or south to Ranua and back (141 km, ~6.5 h); R1 covers what C2 leaves out if the transfer went on the road</li>
-   </ul></div>
-   <div class="clim">
-    <div class="ct"><span class="cl">Climate 10–13 Oct</span>
-     <span class="cbar" title="30 years of record, snow 30 · mean night to mean day, scale −8 to +16 °C"><i style="left:33.3%;width:22.9%"></i><u class="l" style="left:33.3%">0.0</u><u class="r" style="left:56.2%">5.5 °C</u></span></div>
-    <div class="ck"><span>frost <b>49 %</b> of nights</span><span>cold night <b>−5.4</b></span><span>snow <b>23 %</b> of yrs</span></div>
+   <div class="ck"><span>depart <b>07:00</b> · first light 06:58</span><span>Sodankylä <b>~09:45</b> · on the line <b>~10:50</b></span><span>Kierinki <b>~12:30</b></span><span>Glass Resort <b>~16:25</b> · check-in from 15:00</span><span>last light <b>19:02</b> · 2.6 h in hand</span></div>
    </div>
   </div>
   <div class="read">
@@ -671,36 +646,38 @@ h2{display:block}h2 small{display:block;text-align:left;margin-top:5px}
    <div class="rc ref"><b>6276.007.714</b><div class="lab">booking ref · pin withheld</div></div></div>
  </div>
 
+ <div class="leg base"><div class="lhead">
+  <div class="ldate">11<small>OCT<span>SUN</span></small></div>
+  <div class="ltitle"><h3>Rovaniemi · Glass Resort</h3><span class="stay"><u>2 FREE DAYS · SUN–MON</u></span><span class="tag a">To book</span></div></div>
+  <div class="lbody">
+   <div class="kv"><span class="k">BOOK</span><ul class="bl"><li><b>Pure Lapland — ATV safari</b> — 149 € pp (+50 € solo driver) · transfer 70 € · <b>weekdays only in October → Monday 12</b> <em class="pill now">BOOK BEFORE ARRIVAL</em></li><li><b>Pure Lapland — Ranua wildlife photo tour</b> — 09:00 · 155 € pp · daily · cut-off 1 h <em class="pill road">ON THE ROAD</em></li><li><b>Pure Lapland — evening ATV aurora 199 € (Sun 11 or Mon 12, 20:00, Glass Resort pick-up) · husky on wheels 168 € (Mon 12, 09:00)</b> — online <em class="pill road">ON THE ROAD</em></li><li><b>Floating under the Northern Sky — Lapland Safaris</b> — 3 h evening on a lake · from 212 € pp · Glass Resort pick-up point (Piparina) · one floating on the trip, here or Ruka <em class="pill ask">ASK</em></li><li><b>Antler workshop — Hornwork, Kangasniemi</b> — ~12 km · all year · by quote <em class="pill ask">ASK</em></li></ul></div>
+   <div class="kv"><span class="k">OPEN</span><span class="v"><b>Sunday is the museum day</b> — Arktikum Tue–Sun 10–18, 22 €, <b>closed Monday</b> · Santa Claus Village offices daily 10–17 · <b>Ranua wildlife park</b>, daily 10–16, 24.50 € online · <b>Arctic Circle Hiking Area</b>, 20 min north on the E75 — flat duckboard loops, the Monday option · <b>gravel loops R1 / R2</b> — FIN-07 from behind the resort, north to Kierinki or south to Ranua, ~6.5 h (full list)</span></div>
+   <div class="kv"><span class="k">EVENING</span><span class="v">Gallis restaurant 17–23 · the apartment's sauna and hot tub · <b>aurora alarm — ask at check-in</b></span></div>
+   <div class="kv x"><span class="k">NOT RUNNING</span><span class="v">Pilke science centre · all museums on Monday</span></div>
+   <div class="kv"><span class="k">CLIMATE</span><span class="v">night 0.0 → day 5.5 °C · frost 49 % of nights · cold night −5.4 · snow 23 % of yrs</span></div>
+  </div>
+  <div class="read">
+   <div class="rc"><b>2</b><div class="lab">free days · sun–mon</div></div>
+   <div class="rc"><b>07:11–18:55</b><div class="lab">usable light</div></div>
+   <div class="rc a"><b>BY 10 OCT</b><div class="lab">first book-by</div></div>
+   <div class="rc c"><b><a href="#w-rovaniemi" data-go="w" style="border:0">Full list →</a></b><div class="lab">things to do</div></div></div>
+ </div>
+
  <h2>Sector 3 · Southbound<small>RUKA → BALTIC</small></h2>
 
  <div class="leg ok"><div class="lhead">
   <div class="ldate">13<small>OCT<span>TUE</span></small></div>
   <div class="ltitle"><h3>Rovaniemi → Ruka</h3><span class="stay"><u>IN <b>TUE 13 OCT</b></u><i>·</i><wbr><u>OUT <b>SAT 17 OCT</b></u><wbr><u><i>·</i>4&nbsp;NIGHTS</u></span><span class="tag c">Booked</span></div></div>
   <div class="lbody">
-   <p class="addr">AURORA B. LUXURY LODGE · RUKATUNTURINTIE 5, KUUSAMO · WHOLE HOUSE <a href="https://www.google.com/maps/search/?api=1&amp;query=Rukatunturintie%205%2C%2093825%20Kuusamo%2C%20Finland" target="_blank" rel="noopener" title="Open in Google Maps" style="border:0;font-size:11px;letter-spacing:.1em">⌖&nbsp;MAP</a></p>
-   <p>Densest outdoor base on the route — Oulanka, Riisitunturi, Karhunkierros, and Hossa a day's
-    return away. Self check-in by smart lock — <b>the door code comes from Elisabeth before arrival</b>;
-    if it has not, message her from Rovaniemi.</p>
+   <div class="kv"><span class="k">SLEEP</span><span class="v"><b>Aurora B. Luxury Lodge</b> · Rukatunturintie 5, Kuusamo <a href="https://www.google.com/maps/search/?api=1&amp;query=Rukatunturintie%205%2C%2093825%20Kuusamo%2C%20Finland" target="_blank" rel="noopener" title="Open in Google Maps" style="border:0;font-size:11px;letter-spacing:.1em">⌖&nbsp;MAP</a> · whole house, self-catering · <b>smart lock — the door code comes from Elisabeth before arrival; message her from Rovaniemi if it has not</b> (+358 40 5804451) · check-in after 15:00</span></div>
+   <div class="kv"><span class="k">ROUTE</span><span class="v"><b>Road 82 by Kemijärvi · E63 to Kuusamo and Ruka</b>, 199 km · leave 12:00, in ~15:05 · shop for four nights in Kuusamo on the way in</span></div>
    <div class="load" title="full bar = 400 km, the six-hour ceiling on sealed road at 65 km/h; red = over it"><span>DRIVE</span><span class="trk"><i style="width:49.8%"></i></span><span class="cap">400</span><span>199 KM · 3.1 H</span></div>
-   <div class="alt"><div class="tl"><span>Trail alternative · decide at departure</span><span>D3 · 225 KM ON TRAIL · 57 TARMAC · 168 GRAVEL OR UNRECORDED</span></div>
-   <p class="addr">ROAD 81 TO WHERE FIN-11 LEAVES IT (KM 134) · FIN-11 EAST TO ITS END (KM 258 = FIN-01 KM 1735) · FIN-01 SOUTH TO RUKA (KM 1633) · FUEL ROVANIEMI · KEMIJÄRVI IS 30 KM OFF</p>
-   <div class="warn c"><b>Road 81 out of Rovaniemi towards Posio, 71 km, to where FIN-11 turns off it north-east of Vanttauskoski (km 134)</b> — checked on the map; km 128 in the earlier draft is 4 km off the road, and from there the line only runs back along road 81. <b>FIN-11 east 123 km to its end — and its end is FIN-01 km 1735 to the metre.</b> <b>93 km after the entry the line crosses the Kemijoki on the Räisälä cable ferry</b> (km 227; Finferries, 407 m, free, part of the road network) — confirm it is running on the day; if not, the road round is by Pirttikoski. FIN-01 backwards 102 km, the Salla → Ruka line past Hautajärvi and Käylä on the east side of Oulanka, to the Ruka turn-off — 18.5 km of road to the flat. Both stretches are 30–42 % coarse in the file — the kilometres are floors. No fuel on the line: fill in Rovaniemi. <b>Look at FIN-11 km 143–144 on satellite before the day</b> — 1.3 km of line that car routers replace with a 32-km detour; a bridge or a gate would explain it, nothing is confirmed. <b>Cut:</b> at the FIN-11 / FIN-01 junction the road to Ruka is 113 km by Salla and E63 (96 km by roads 9481 and 950 — Google Maps).</div>
+   <div class="alt"><div class="tl"><span>Trail alternative · decide at departure <a href="#e-rules" data-go="e">rules →</a></span><span>D3 · 225 KM ON TRAIL · 57 TARMAC · 168 GRAVEL OR UNRECORDED</span></div>
+   <div class="kv"><span class="k">LINE</span><span class="v"><b>Road 81, 71 km, to FIN-11 km 134 · FIN-11 east 123 km</b> over the <b>Räisälä cable ferry (km 227, Finferries, free)</b> to its end at FIN-01 km 1735 · <b>FIN-01 backwards 102 km</b> past Hautajärvi and Käylä to km 1633, 18.5 km of road to the flat · <b>no fuel on the line — fill in Rovaniemi</b> · Kemijärvi 30 km off</span></div>
+   <div class="kv go"><span class="k">GO</span><span class="v"><b>Confirm the Räisälä ferry runs on the day</b> (Finferries' service notices, the night before) — if not, the road round by Pirttikoski · cut at the FIN-11 / FIN-01 junction: 113 km of road to Ruka by Salla · look at <b>FIN-11 km 143–144</b> on satellite first — 1.3 km that car routers detour 32 km around.</span></div>
    <div class="wp" title="Tap a point for Google Maps directions to the exact GPX coordinate; switch to Gaia on the line"><span><a href="https://www.google.com/maps/dir/?api=1&amp;destination=66.32862,27.10825&amp;travelmode=driving" target="_blank" rel="noopener" title="Google Maps directions to 66.32862, 27.10825 — the GPX point">⌖ ON</a> FIN-11 km 134 where it leaves road 81</span><span><a href="https://www.google.com/maps/dir/?api=1&amp;destination=66.58097,27.91210&amp;travelmode=driving" target="_blank" rel="noopener" title="Google Maps directions to 66.58097, 27.91210 — the GPX point">⌖ VIA</a> Räisälä cable ferry, FIN-11 km 227 (Finferries) — check it is running</span><span><a href="https://www.google.com/maps/dir/?api=1&amp;destination=66.67647,28.25372&amp;travelmode=driving" target="_blank" rel="noopener" title="Google Maps directions to 66.67647, 28.25372 — the GPX point">⌖ CUT</a> FIN-11 end = FIN-01 km 1735 — road to Ruka 113 km</span><span><a href="https://www.google.com/maps/dir/?api=1&amp;destination=66.23407,29.27471&amp;travelmode=driving" target="_blank" rel="noopener" title="Google Maps directions to 66.23407, 29.27471 — the GPX point">⌖ OFF</a> FIN-01 km 1633 → Ruka flat 18.5 km</span></div>
    <div class="load t" title="71 km of road 81 and 18.5 km of road into Ruka (Google Maps), 123 km of FIN-11 and 102 km of FIN-01 measured from the GPX — of the 225 km of line, ~57 km reads paved and ~26 km gravel in the national road registers, ~142 km with no surface record — single-lane private roads under 5 m wide in the NLS road class, gravel on satellite imagery at every point checked (22 Sep); paved at 65 km/h, gravel and unrecorded at 35, 1 h of stops · full bar = 400 km, the six-hour ceiling on sealed road at 65 km/h; red = over it"><span>DRIVE</span><span class="trk"><i class="s" style="left:0.0%;width:17.8%"></i><i style="left:17.8%;width:30.8%"></i><i style="left:48.5%;width:25.5%"></i><i class="s" style="left:74.0%;width:4.6%"></i></span><span class="cap">400</span><span>~315 KM · 225 ON TRAIL · ~8.1 H</span></div>
-   <div class="ck"><span>depart <b>07:15</b> · first light 07:14</span><span>on the line <b>~08:30</b></span><span>FIN-01 junction <b>~12:05</b></span><span>Ruka <b>~15:20</b> · smart lock, any time</span><span>last light <b>18:38</b> · 3.3 h in hand</span></div></div>
-   <div class="todo"><div class="tl"><span>While here · 14–16 Oct, Wed–Fri · holiday week, book ahead</span><a href="#w-ruka" data-go="w">Full list →</a></div>
-   <ul>
-   <li><b>Ski + gondola</b> — slopes 09:30–19:00, gondola to 23:00, walker tickets; shuts in strong wind</li>
-   <li><b>Pieni Karhunkierros</b> 12 km, 4–6 h, strong pair · <b>Kiutaköngäs</b> 7 km, all four — split with two cars</li>
-   <li class="x"><b>Oulanka Visitor Centre</b> — closed since 26 Sep; trails open</li>
-   <li><b>Hossa</b>, ~100 km — Nature Centre 10–15 to 25 Oct; Julma-Ölkky, Värikallio</li>
-   <li class="y"><b>Riisitunturi</b> — 40 min, last 3 km gravel, slick boardwalks</li>
-   <li class="x"><b>Husky sled · Bike Park · rafting</b> — out of season</li>
-   </ul></div>
-   <div class="clim">
-    <div class="ct"><span class="cl">Climate 13–17 Oct</span>
-     <span class="cbar" title="18 years of record, snow 23 · mean night to mean day, scale −8 to +16 °C"><i style="left:31.2%;width:16.2%"></i><u class="l" style="left:31.2%">−0.5</u><u class="r" style="left:47.5%">3.4 °C</u></span></div>
-    <div class="ck"><span>frost <b>56 %</b> of nights</span><span>cold night <b>−5.2</b></span><span>snow <b>65 %</b> of yrs</span><span>rain→freeze <b>22 %</b> <em>— most on route</em></span></div>
+   <div class="ck"><span>depart <b>07:15</b> · first light 07:14</span><span>on the line <b>~08:30</b></span><span>FIN-01 junction <b>~12:05</b></span><span>Ruka <b>~15:20</b> · smart lock, any time</span><span>last light <b>18:38</b> · 3.3 h in hand</span></div>
    </div>
   </div>
   <div class="read">
@@ -710,23 +687,36 @@ h2{display:block}h2 small{display:block;text-align:left;margin-top:5px}
    <div class="rc ref"><b>HM8NYW9RCJ</b><div class="lab">booking</div></div></div>
  </div>
 
+ <div class="leg base"><div class="lhead">
+  <div class="ldate">14<small>OCT<span>WED</span></small></div>
+  <div class="ltitle"><h3>Ruka · Aurora B. Lodge</h3><span class="stay"><u>3 FREE DAYS · WED–FRI · HOLIDAY WEEK</u></span><span class="tag a">To book</span></div></div>
+  <div class="lbody">
+   <div class="kv"><span class="k">BOOK</span><ul class="bl"><li><b>Oulanka golden-eagle hides — Kuusamo Nature Photography</b> — season to 31 Oct · 220 € pp a day · 4–10 h in the hide · 75 km from Kuusamo + 1.5 km on foot (400 m with a 4x4) · online calendar · eagles not guaranteed <em class="pill now">BOOK BEFORE ARRIVAL</em></li><li><b>Gondola pass</b> — online −20 % · 09:30–23:00 from 2 Oct — re-check ruka.fi <em class="pill now">BOOK BY 13 OCT</em></li><li><b>River floating</b> — Rukapalvelu 138 €, Wed 14:00 / Thu 10:00 · Ruka Adventures 105 € · Friday rafting + sauna 118 € <em class="pill road">ON THE ROAD</em></li><li><b>HoNS sauna</b> — 40 € · 3-day cut-off <em class="pill now">BOOK BY 11 OCT</em></li><li><b>Saunas</b> — Pyhäpiilo smoke sauna Tue/Thu 45 € (Thursday 15) · BASE summit sauna 25 € <em class="pill road">ON THE ROAD</em></li><li><b>Large Carnivore Centre, Kuusamo</b> — bears, lynx, wolfdogs · guided, 25 € · no October hours published <em class="pill ask">RING</em></li></ul></div>
+   <div class="kv"><span class="k">OPEN</span><span class="v"><b>Border gravel, north</b> — FIN-01 km 1633 → 1735 past Käylä and Hautajärvi (102 km, ~76 gravel), back by Salla 113 km: ~234 km, ~5.6 h, from 08:00 back ~13:30 · <b>south</b> = the 17 Oct line to Hossa · <b>Oulanka</b> — Kiutaköngäs 7 km; Pieni Karhunkierros 12 km, 4–6 h; Karhunkierros from Hautajärvi, slippery late October · Valtavaara 5.7 km · Konttainen 2 km · Julma-Ölkky loop 10 km (Hossa) · <b>Riisitunturi</b> 40 min · Kuusamo: Hannu Hautala photo centre Tue–Fri 9–17, Sat 10–15, 15 € · Tropiikki water park 12–20, 25 €</span></div>
+   <div class="kv"><span class="k">EVENING</span><span class="v">self-catering — <b>shop in Kuusamo on the way in</b> · the lodge's own shore for the aurora</span></div>
+   <div class="kv x"><span class="k">NOT RUNNING</span><span class="v">Kuusamo bear hides (season ends late September) · canoeing and rafting programme (ended 30 Sep) · husky sledding · Oulanka visitor centre</span></div>
+   <div class="kv"><span class="k">CLIMATE</span><span class="v">night −0.5 → day 3.4 °C · frost 56 % of nights · cold night −5.2 · snow 65 % of yrs · rain→freeze 22 % — most on route</span></div>
+  </div>
+  <div class="read">
+   <div class="rc"><b>3</b><div class="lab">free days · wed–fri </div></div>
+   <div class="rc"><b>07:09–18:27</b><div class="lab">usable light</div></div>
+   <div class="rc a"><b>11 OCT</b><div class="lab">first book-by</div></div>
+   <div class="rc c"><b><a href="#w-ruka" data-go="w" style="border:0">Full list →</a></b><div class="lab">things to do</div></div></div>
+ </div>
+
  <div class="leg ok"><div class="lhead">
   <div class="ldate">17<small>OCT<span>SAT</span></small></div>
-  <div class="ltitle"><h3>Ruka → Lentiira</h3><span class="stay"><u>IN <b>SAT 17 OCT</b></u><i>·</i><wbr><u>OUT <b>SUN 18 OCT</b></u><wbr><u><i>·</i>1&nbsp;NIGHT</u></span><span class="tag c">Booked</span></div></div>
+  <div class="ltitle"><h3>Ruka → Lentiira</h3><span class="stay"><u>IN <b>SAT 17 OCT</b></u><i>·</i><wbr><u>OUT <b>SUN 18 OCT</b></u><wbr><u><i>·</i>1&nbsp;NIGHT</u></span><span class="tag a">Beds to fix</span></div></div>
   <div class="lbody">
-   <p class="addr">LENTIIRA HOLIDAY VILLAGE · PETÄJÄNIEMENTIE 121, LENTIIRA (KUHMO) · SUPERIOR CHALET <a href="https://www.google.com/maps/search/?api=1&amp;query=Lentiira%20Holiday%20Village%2C%20Pet%C3%A4j%C3%A4niementie%20121%2C%2088930%20Lentiira%2C%20Finland" target="_blank" rel="noopener" title="Open in Google Maps" style="border:0;font-size:11px;letter-spacing:.1em">⌖&nbsp;MAP</a></p>
-   <p>Transit night added 10 Sep so that Ruka → Koli becomes two gravel days instead of one 439-km road day. On the road: Kuusamo, road 5 (E63) south, Suomussalmi, road 912 to Lentiira — 250 km (Google Maps). <b>Check-in after 16:00.</b> The booking is one chalet for <b>two adults</b> — extra beds or a second chalet for four to arrange with the property; <b>bed linen and towels are not included</b> (rent on site or pack them); kitchen is limited and <b>dinner must be booked in advance</b>. Paid in full; 80 % charge on cancellation.</p>
+   <div class="kv"><span class="k">SLEEP</span><span class="v"><b>Lentiira Holiday Village</b> · Petäjäniementie 121, Lentiira (Kuhmo) <a href="https://www.google.com/maps/search/?api=1&amp;query=Lentiira%20Holiday%20Village%2C%20Pet%C3%A4j%C3%A4niementie%20121%2C%2088930%20Lentiira%2C%20Finland" target="_blank" rel="noopener" title="Open in Google Maps" style="border:0;font-size:11px;letter-spacing:.1em">⌖&nbsp;MAP</a> · Superior chalet, <b>booked for two — extra beds or a second chalet for four to arrange with the property</b> · linen and towels not included · <b>dinner must be pre-booked</b> · smoke sauna by the lake on request, ~75–80 € for four an hour — ask for the heating time when you book dinner · <b>Wild Brown Bear hides next door</b> (Kostamustie 5644, Vartius): bears to 30 Oct, wolverines, a wolf pack · 140 € pp a night in a hide, +358 40 5469008 — page undated, ring · check-in after 16:00 · <b>trail day tomorrow — depart 07:10: settle at check-in</b></span></div>
+   <div class="kv"><span class="k">ROUTE</span><span class="v"><b>Kuusamo · road 5 (E63) south · Suomussalmi · 912 to Lentiira</b>, 250 km · leave 12:00, in ~15:55</span></div>
    <div class="load" title="250 km of road — Google Maps, fastest route, 11 Sep 2026; full bar = 400 km, the six-hour ceiling on sealed road at 65 km/h; red = over it"><span>DRIVE</span><span class="trk"><i style="width:62.5%"></i></span><span class="cap">400</span><span>250 KM · 3.8 H</span></div>
-   <div class="alt"><div class="tl"><span>Trail alternative · decide at departure</span><span>H6 · 268 KM ON TRAIL · 61 TARMAC · 207 GRAVEL OR UNRECORDED</span></div>
-   <p class="addr">FIN-01 FROM RUKA (KM 1633) SOUTH ALONG THE BORDER TO HOSSA (KM 1436) · ROAD 843 HOSSA → RAATE · FIN-04 FROM THE RAATE JUNCTION (KM 1060) DOWN THE FRONTIER TO KM 988 · FUEL RUKA · SEO HOSSA (1436)</p>
-   <div class="warn c"><b>The only line from Ruka towards Lentiira is FIN-01 to the Raate junction and FIN-04 from there — 398 km of gravel, 11.4 h of moving before a stop, against 11.2 h of light. So the middle goes on tarmac.</b> 18.5 km of road to the line, then FIN-01 out of Ruka, 197 km down the Kuusamo–Hossa border stretch (15 % coarse) to the SEO Hossa fuel on the line; road 843 Hossa → Raatteentie (9125) and 3 km south on the minor road to the FIN-04 end, <b>107 km on the drawn line</b> (OSRM; Google once showed 93 km by a path never seen — the card, bar and map now all use 107), paved except ~13 km of gravel at the Raate end (Digiroad) — both use Raatteentie and the Honkajärventie link, so neither is a bypass of it; the day is 10.1 h, ~17:20; then FIN-04 backwards from the Raate junction — where FIN-01, FIN-04 and FIN-08 all meet at the Winter War museum road — 71 km down the frontier to km 988, 6 km by road from the door. <b>Cut: at Hossa later than 14:00, stay on the road to Lentiira</b> (158 km via roads 843 and 912, in ~16:50 with the 197 km of FIN-01 done).</div>
+   <div class="alt"><div class="tl"><span>Trail alternative · decide at departure <a href="#e-rules" data-go="e">rules →</a></span><span>H6 · 268 KM ON TRAIL · 61 TARMAC · 207 GRAVEL OR UNRECORDED</span></div>
+   <div class="kv"><span class="k">LINE</span><span class="v"><b>18.5 km to FIN-01 km 1633 · 197 km down the border to Hossa</b> (SEO fuel on the line, km 1436) · road 843 → Raate, 107 km of tarmac · <b>FIN-04 km 1060 → 988</b>, 71 km down the frontier, 6 km to the door · fuel Ruka, Hossa</span></div>
+   <div class="kv go"><span class="k">GO</span><span class="v"><b>At Hossa later than 14:00 → stay on the road to Lentiira</b>, 158 km by 843 and 912, in ~16:50 with the 197 km of FIN-01 done.</span></div>
    <div class="wp" title="Tap a point for Google Maps directions to the exact GPX coordinate; switch to Gaia on the line"><span><a href="https://www.google.com/maps/dir/?api=1&amp;destination=66.23407,29.27471&amp;travelmode=driving" target="_blank" rel="noopener" title="Google Maps directions to 66.23407, 29.27471 — the GPX point">⌖ ON</a> FIN-01 km 1633, 18.5 km from the flat</span><span><a href="https://www.google.com/maps/dir/?api=1&amp;destination=65.44534,29.56147&amp;travelmode=driving" target="_blank" rel="noopener" title="Google Maps directions to 65.44534, 29.56147 — the GPX point">⌖ OFF</a> FIN-01 km 1436 at Hossa (SEO) → road 843; cut 14:00</span><span><a href="https://www.google.com/maps/dir/?api=1&amp;destination=64.79586,29.59425&amp;travelmode=driving" target="_blank" rel="noopener" title="Google Maps directions to 64.79586, 29.59425 — the GPX point">⌖ ON</a> FIN-04 km 1060 — 3 km south of Raatteentie (9125) on the minor road</span><span><a href="https://www.google.com/maps/dir/?api=1&amp;destination=64.39607,29.86181&amp;travelmode=driving" target="_blank" rel="noopener" title="Google Maps directions to 64.39607, 29.86181 — the GPX point">⌖ OFF</a> FIN-04 km 988 at the Lentiira bridge → Holiday Village 6 km</span></div>
    <div class="load t" title="18.5 km to the line, 93 km of road Hossa → Raate and 6 km in (Google Maps), 197 km of FIN-01 and 71 km of FIN-04 measured from the GPX — of the 268 km of line, ~61 km reads paved and ~94 km gravel in the national road registers, ~113 km with no surface record — single-lane private roads under 5 m wide in the NLS road class, gravel on satellite imagery at every point checked (22 Sep); paved at 65 km/h, gravel and unrecorded at 35, 1 h of stops; ~15 km of the connecting road is gravel · full bar = 400 km, the six-hour ceiling on sealed road at 65 km/h; red = over it"><span>DRIVE</span><span class="trk"><i class="s" style="left:0.0%;width:4.6%"></i><i style="left:4.6%;width:49.2%"></i><i class="s" style="left:53.9%;width:23.2%"></i><i style="left:77.1%;width:17.8%"></i><i class="s" style="left:94.9%;width:1.5%"></i></span><span class="cap">400</span><span>~400 KM · 268 ON TRAIL · ~10.1 H</span></div>
-   <div class="ck"><span>depart <b>07:15</b> · first light 07:12</span><span>Hossa <b>~13:25</b> · cut point 14:00</span><span>Raate <b>~15:25</b></span><span>Lentiira <b>~17:20</b> · check-in from 16:00</span><span>last light <b>18:23</b> · 1.1 h in hand</span></div></div>
-   <div class="clim">
-    <div class="ct"><span class="cl">Climate 17–18 Oct</span>
-     <span class="cbar" title="22 years of record, snow 28 · FMI Kuhmo Kalliojoki 101773 (21 km W) · mean night to mean day, scale −8 to +16 °C"><i style="left:32.5%;width:18.8%"></i><u class="l" style="left:32.5%">−0.2</u><u class="r" style="left:51.3%">4.3 °C</u></span></div>
-    <div class="ck"><span>frost <b>44 %</b> of nights</span><span>cold night <b>−5.7</b></span><span>snow <b>32 %</b> of yrs</span><span><em>station 21 km W, 22 yrs</em></span></div>
+   <div class="ck"><span>depart <b>07:15</b> · first light 07:12</span><span>Hossa <b>~13:25</b> · cut point 14:00</span><span>Raate <b>~15:25</b></span><span>Lentiira <b>~17:20</b> · check-in from 16:00</span><span>last light <b>18:23</b> · 1.1 h in hand</span></div>
    </div>
   </div>
   <div class="read">
@@ -740,28 +730,15 @@ h2{display:block}h2 small{display:block;text-align:left;margin-top:5px}
   <div class="ldate">18<small>OCT<span>SUN</span></small></div>
   <div class="ltitle"><h3>Lentiira → Koli</h3><span class="stay"><u>IN <b>SUN 18 OCT</b></u><i>·</i><wbr><u>OUT <b>WED 21 OCT</b></u><wbr><u><i>·</i>3&nbsp;NIGHTS</u></span><span class="tag c">Booked</span></div></div>
   <div class="lbody">
-   <p class="addr">BREAK SOKOS HOTEL KOLI · YLÄ-KOLINTIE 39 · LAKE VIEW <a href="https://www.google.com/maps/search/?api=1&amp;query=Break%20Sokos%20Hotel%20Koli%2C%20Yl%C3%A4-Kolintie%2039%2C%2083960%20Kolinkyl%C3%A4%2C%20Finland" target="_blank" rel="noopener" title="Open in Google Maps" style="border:0;font-size:11px;letter-spacing:.1em">⌖&nbsp;MAP</a></p>
-   <p>On the road: road 912 to Kuhmo, road 75 to Nurmes, road 6 south, Koli — 205 km (Google Maps). Check-in from 16:00; Sunday — the Nature Centre is open 9–15.</p>
+   <div class="kv"><span class="k">SLEEP</span><span class="v"><b>Break Sokos Hotel Koli</b> · Ylä-Kolintie 39 <a href="https://www.google.com/maps/search/?api=1&amp;query=Break%20Sokos%20Hotel%20Koli%2C%20Yl%C3%A4-Kolintie%2039%2C%2083960%20Kolinkyl%C3%A4%2C%20Finland" target="_blank" rel="noopener" title="Open in Google Maps" style="border:0;font-size:11px;letter-spacing:.1em">⌖&nbsp;MAP</a> · 2 junior suites, lake view, breakfast · <b>check-in from 16:00</b> · car parks P1–P3 free for guests · +358 20 1234662</span></div>
+   <div class="kv"><span class="k">ROUTE</span><span class="v"><b>912 to Kuhmo · 75 to Nurmes · road 6 south · Koli</b>, 205 km · leave 12:00, in ~15:10</span></div>
    <div class="load" title="205 km of road — Google Maps, fastest route, 11 Sep 2026; full bar = 400 km, the six-hour ceiling on sealed road at 65 km/h; red = over it"><span>DRIVE</span><span class="trk"><i style="width:51.2%"></i></span><span class="cap">400</span><span>205 KM · 3.2 H</span></div>
-   <div class="alt"><div class="tl"><span>Trail alternative · decide at departure</span><span>K1 · 254 KM ON TRAIL · 37 TARMAC · 217 GRAVEL OR UNRECORDED</span></div>
-   <p class="addr">FIN-04 FROM KM 988 BACKWARDS TO LIEKSA (KM 734) · ROAD 73 ROUND THE SOUTH OF PIELINEN VIA KELVÄ AND AHVENINEN TO KOLI · FUEL LENTIIRA/KUHMO · LIEKSA</p>
-   <div class="warn c">6 km to the line, then FIN-04 south for 254 km (16 % coarse): Juntinvaara tower (949), Ruunaa rapids (745), to 8 km from Lieksa. Koli is across Lake Pielinen from Lieksa; the car ferry is a summer service and the Kolin jäätie is a midwinter ice road — neither exists in October. The land route goes round the south end of the lake: road 73 to Kelvä, roads 518 and 515 over the Ahveninen bridge (a fixed bridge since 1961), road 6 north, roads 504 and 5040 to Koli — <b>104.5 km on the OpenStreetMap network (Google shows 95 km; the larger figure is used)</b>. The line is finished at Lieksa by ~14:50; the road round Pielinen is tarmac apart from ~6 km of gravel (Digiroad), and 1.7 h is in hand. Of the 254 km of FIN-04 only ~37 km reads paved and ~217 km gravel in the register — the rest is private or forest road with no surface record, timed as gravel. <b>Cut: Kivikiekintie, FIN-04 km 933, 56 km in</b> — leave the line west to road 9121, Kuhmo, Nurmes and road 6 to Koli, 220 km of road: ~6.1 h, in ~13:15. It lies before the two FIN-04 stretches (km 933–928 and 908–898) that car routers will not follow, so if the first 56 km are slow or the line looks doubtful, this is the place to decide. Fallback K2 if the 17th ran long: 38 km of road to FIN-01 km 1204, FIN-01 past Kuhmo to Nurmes on the line (150 km), road 6 Nurmes → Koli, 84 km — 7.2 h, in ~14:25.</div>
+   <div class="alt"><div class="tl"><span>Trail alternative · decide at departure <a href="#e-rules" data-go="e">rules →</a></span><span>K1 · 254 KM ON TRAIL · 37 TARMAC · 217 GRAVEL OR UNRECORDED</span></div>
+   <div class="kv"><span class="k">LINE</span><span class="v"><b>6 km to FIN-04 km 988, south 254 km</b> — Juntinvaara tower (949), Ruunaa rapids (745) — to km 734, 8 km from Lieksa · then <b>round the south of Pielinen</b>: road 73, the Ahveninen bridge, road 6, 504 and 5040 — 104.5 km (no ferry, no ice road in October) · fuel Lentiira / Kuhmo, Lieksa</span></div>
+   <div class="kv go"><span class="k">GO</span><span class="v"><b>At Kivikiekintie, km 933 (56 km in), later than ~09:00 → cut</b>: road 9121, Kuhmo, Nurmes, road 6, in ~13:15 · fallback if the 17th ran long: FIN-01 past Kuhmo to Nurmes on the line, road 6 to Koli, in ~14:25.</span></div>
    <div class="wp" title="Tap a point for Google Maps directions to the exact GPX coordinate; switch to Gaia on the line"><span><a href="https://www.google.com/maps/dir/?api=1&amp;destination=64.39607,29.86181&amp;travelmode=driving" target="_blank" rel="noopener" title="Google Maps directions to 64.39607, 29.86181 — the GPX point">⌖ ON</a> FIN-04 km 988 at the Lentiira bridge</span><span><a href="https://www.google.com/maps/dir/?api=1&amp;destination=63.39929,30.37193&amp;travelmode=driving" target="_blank" rel="noopener" title="Google Maps directions to 63.39929, 30.37193 — the GPX point">⌖ VIA</a> Ruunaa km 745</span><span><a href="https://www.google.com/maps/dir/?api=1&amp;destination=63.33265,30.25998&amp;travelmode=driving" target="_blank" rel="noopener" title="Google Maps directions to 63.33265, 30.25998 — the GPX point">⌖ OFF</a> FIN-04 km 734, 8 km NE of Lieksa → road 73, round the south of Pielinen by the Ahveninen bridge (no ferry, no ice road in October)</span><span><a href="https://www.google.com/maps/dir/?api=1&amp;destination=64.12830,30.41859&amp;travelmode=driving" target="_blank" rel="noopener" title="Google Maps directions to 64.12830, 30.41859 — the GPX point">⌖ CUT</a> Kivikiekintie, FIN-04 km 933 — west to road 9121, Kuhmo, Nurmes, Koli (220 km)</span></div>
    <div class="load t" title="6 km to the line and 104.5 km of road Lieksa → Koli round the south of Pielinen (OSRM land route; Google 95), 254 km of FIN-04 measured from the GPX — of the 254 km of line, ~37 km reads paved and ~24 km gravel in the national road registers, ~193 km with no surface record — single-lane private roads under 5 m wide in the NLS road class, gravel on satellite imagery at every point checked (22 Sep); paved at 65 km/h, gravel and unrecorded at 35, 1 h of stops; ~6 km of the connecting road is gravel · full bar = 400 km, the six-hour ceiling on sealed road at 65 km/h; red = over it"><span>DRIVE</span><span class="trk"><i class="s" style="left:0.0%;width:1.5%"></i><i style="left:1.5%;width:63.5%"></i><i class="s" style="left:65.0%;width:23.8%"></i></span><span class="cap">400</span><span>~365 KM · 254 ON TRAIL · ~9.5 H</span></div>
-   <div class="ck"><span>depart <b>07:10</b> · first light 07:10</span><span>Ruunaa <b>~14:30</b></span><span>Lieksa <b>~14:50</b> · gravel done</span><span>Koli <b>~16:45</b> · check-in from 16:00</span><span>last light <b>18:22</b> · 1.7 h in hand</span></div></div>
-   <div class="todo"><div class="tl"><span>While here · 19–20 Oct, Mon–Tue · holiday week</span><a href="#w-koli" data-go="w">Full list →</a></div>
-   <ul>
-   <li><b>Nature Centre Ukko</b> — Mon closed, Tue 9–16; parking P1–P3 free for hotel guests</li>
-   <li><b>Trail of the Tops</b> 1.4 km — steep, rocky; wet rock treacherous</li>
-   <li class="y"><b>Mäkrä trail</b> 7.5 km, 3.5 h — strong pair</li>
-   <li><b>Herajärvi</b> — day sections of a 61 km circuit</li>
-   <li class="x"><b>Chairlift · lake cruises</b> — summer only</li>
-   <li class="q"><b>Monday indoors</b> — Joensuu 63 km, Lieksa 95 km (Google Maps)</li>
-   </ul></div>
-   <div class="clim">
-    <div class="ct"><span class="cl">Climate 18–21 Oct</span>
-     <span class="cbar" title="30 years of record, snow 30 · FMI Lieksa Koli 101616 (rain, snow) · mean night to mean day, scale −8 to +16 °C"><i style="left:31.2%;width:21.2%"></i><u class="l" style="left:31.2%">−0.5</u><u class="r" style="left:52.5%">4.6 °C</u></span></div>
-    <div class="ck"><span>frost <b>54 %</b> of nights</span><span>cold night <b>−7.0</b> <em>— coldest on route</em></span><span>snow <b>40 %</b> of yrs</span></div>
+   <div class="ck"><span>depart <b>07:10</b> · first light 07:10</span><span>Ruunaa <b>~14:30</b></span><span>Lieksa <b>~14:50</b> · gravel done</span><span>Koli <b>~16:45</b> · check-in from 16:00</span><span>last light <b>18:22</b> · 1.7 h in hand</span></div>
    </div>
   </div>
   <div class="read">
@@ -771,27 +748,30 @@ h2{display:block}h2 small{display:block;text-align:left;margin-top:5px}
    <div class="rc ref"><b>5693.548.670</b><div class="lab">booking ref · pin withheld</div></div></div>
  </div>
 
+ <div class="leg base"><div class="lhead">
+  <div class="ldate">19<small>OCT<span>MON</span></small></div>
+  <div class="ltitle"><h3>Koli · Break Sokos</h3><span class="stay"><u>2 FREE DAYS · MON–TUE · HOLIDAY WEEK</u></span><span class="tag a">To book</span></div></div>
+  <div class="lbody">
+   <div class="kv"><span class="k">BOOK</span><ul class="bl"><li><b>Koli Safaris — on request</b> — e-fatbike tour 49 / 69 € · Tour of the Peaks 29 € · Stories 39 € · Walk in the Darkness 69 € · mushroom picking 59 € · <b>weekday sales desk +358 20 1234 660</b> <em class="pill now">BOOK BY FRI 16 OCT</em></li><li><b>Icelandic-horse forest ride — Paimentupa</b> — beginners · 1 h 50 € pp, 1.5 h 60 € · rider limit 90 kg <em class="pill ask">ASK</em></li><li><b>E-fatbike rental</b> — 50 € / 3 h <em class="pill road">ON THE ROAD</em></li></ul></div>
+   <div class="kv"><span class="k">OPEN</span><span class="v"><b>Trail of the Tops</b> — Ukko-, Akka- and Paha-Koli, 1.4 km loop from the Nature Centre; wet rock on Akka-Koli is treacherous · <b>Mäkrä</b> 7.5 km, 3.5 h · <b>Relax Spa</b> Mon–Thu 10–22, 36 € for guests (40 € standard), adults only after 18:00, 2-h visits · Nature Centre Ukko — Monday closed in autumn ("generally open" in holiday weeks) · P1–P3 free for guests</span></div>
+   <div class="kv"><span class="k">EVENING</span><span class="v">hotel sauna 17–19 women · 19–21 men · aurora is rarer this far south — the lake shore is dark, still look</span></div>
+   <div class="kv x"><span class="k">NOT RUNNING</span><span class="v">public Tour of the Peaks (Saturdays only) · chairlift · Pielinen cruises</span></div>
+   <div class="kv"><span class="k">CLIMATE</span><span class="v">night −0.5 → day 4.6 °C · frost 54 % of nights · cold night −7.0 — coldest on route · snow 40 % of yrs</span></div>
+  </div>
+  <div class="read">
+   <div class="rc"><b>2</b><div class="lab">free days · mon–tue </div></div>
+   <div class="rc"><b>07:13–18:16</b><div class="lab">usable light</div></div>
+   <div class="rc a"><b>16 OCT</b><div class="lab">first book-by</div></div>
+   <div class="rc c"><b><a href="#w-koli" data-go="w" style="border:0">Full list →</a></b><div class="lab">things to do</div></div></div>
+ </div>
+
  <div class="leg ok"><div class="lhead">
   <div class="ldate">21<small>OCT<span>WED</span></small></div>
   <div class="ltitle"><h3>Koli → Rantasalmi</h3><span class="stay"><u>IN <b>WED 21 OCT</b></u><i>·</i><wbr><u>OUT <b>SAT 24 OCT</b></u><wbr><u><i>·</i>3&nbsp;NIGHTS</u></span><span class="tag c">Booked</span></div></div>
   <div class="lbody">
-   <p class="addr">KURU RESORT · KURUNTIE 22, RANTASALMI · SAUNA, LAKE <a href="https://www.google.com/maps/search/?api=1&amp;query=Kuru%20Resort%2C%20Kuruntie%2022%2C%2058900%20Rantasalmi%2C%20Finland" target="_blank" rel="noopener" title="Open in Google Maps" style="border:0;font-size:11px;letter-spacing:.1em">⌖&nbsp;MAP</a></p>
-   <p>Last base. Road 504 to Polvijärvi, road 23 to Varkaus, Joroinen — 214 km (Google Maps). Linnansaari National Park by boat while the season holds. <b>Check-out is 10:00–11:00 and the ferry day starts at 06:30</b> — settle the bill and arrange the key drop with reception on the 23rd.</p>
+   <div class="kv"><span class="k">SLEEP</span><span class="v"><b>Kuru Resort</b> · Kuruntie 22, Rantasalmi <a href="https://www.google.com/maps/search/?api=1&amp;query=Kuru%20Resort%2C%20Kuruntie%2022%2C%2058900%20Rantasalmi%2C%20Finland" target="_blank" rel="noopener" title="Open in Google Maps" style="border:0;font-size:11px;letter-spacing:.1em">⌖&nbsp;MAP</a> · 2 lake suites, breakfast · adults only · <b>check-in 15:00–22:00</b> · check-out 10:00–11:00 — <b>the ferry day starts 06:30: settle the bill and the key drop on the 23rd</b> · +358 29 0024400</span></div>
+   <div class="kv"><span class="k">ROUTE</span><span class="v"><b>504 to Polvijärvi · 23 to Varkaus · Joroinen</b>, 214 km · leave 12:30, in ~15:50</span></div>
    <div class="load" title="full bar = 400 km, the six-hour ceiling on sealed road at 65 km/h; red = over it — ~3 km of this route is recorded gravel, timed at 35 km/h (registers checked 22 Sep)"><span>DRIVE</span><span class="trk"><i style="width:53.5%"></i></span><span class="cap">400</span><span>214 KM · 3.3 H</span></div>
-   <div class="todo"><div class="tl"><span>While here · 22–23 Oct, Thu–Fri · holiday week</span><a href="#w-saimaa" data-go="w">Full list →</a></div>
-   <ul>
-   <li><b>Linnansaari boat</b> from Järvisydän — €34.90, 10:00 → back ~13:00; <b>book by 16:00 the day before or it won't sail</b>; wind cancels</li>
-   <li><b>Olavinlinna castle</b> 10–16, tour included · <b>Riihisaari</b> Tue–Sun 10–17, combo €19</li>
-   <li><b>Lusto Forest Museum</b>, Punkaharju — Tue–Sun 10–17 + ridge road</li>
-   <li class="y"><b>Järvisydän Sauna World</b> — day access on request</li>
-   <li class="x"><b>Seal safaris · Kerimäki church</b> — over / under renovation</li>
-   <li class="q"><b>Kuru activities</b> — ask reception</li>
-   </ul></div>
-   <div class="clim">
-    <div class="ct"><span class="cl">Climate 21–24 Oct</span>
-     <span class="cbar" title="29 years of record, snow 30 · FMI Rantasalmi Rukkasluoto 101436 (T) · mean night to mean day, scale −8 to +16 °C"><i style="left:42.9%;width:14.2%"></i><u class="l" style="left:42.9%">2.3</u><u class="r" style="left:57.1%">5.7 °C</u></span></div>
-    <div class="ck"><span>frost <b>22 %</b> of nights</span><span>cold night <b>−1.7</b></span><span>snow <b>30 %</b> of yrs</span></div>
-   </div>
   </div>
   <div class="read">
    <div class="rc"><b>12:30 → ~15:50</b><div class="lab">depart · arrive · check-in 15:00–22:00</div></div>
@@ -800,21 +780,30 @@ h2{display:block}h2 small{display:block;text-align:left;margin-top:5px}
    <div class="rc ref"><b>6444.432.072</b><div class="lab">booking ref · pin withheld</div></div></div>
  </div>
 
+ <div class="leg base"><div class="lhead">
+  <div class="ldate">22<small>OCT<span>THU</span></small></div>
+  <div class="ltitle"><h3>Rantasalmi · Kuru Resort</h3><span class="stay"><u>2 FREE DAYS · THU–FRI · HOLIDAY WEEK</u></span><span class="tag a">To book</span></div></div>
+  <div class="lbody">
+   <div class="kv"><span class="k">BOOK</span><ul class="bl"><li><b>Kuru private lakeside sauna</b> — daily 16–22 · 1 h, 49 € · <b>max 2 per slot</b> <em class="pill desk">AT CHECK-IN</em></li><li><b>Järvisydän evening spa</b> — 52 € · Mon–Sat 20:30–22:30 · <b>book by 16:00 the day before</b> · Lake Spa ~12–20, 33.90 € <em class="pill now">BOOK BY 21 OCT</em></li><li><b>Eurydike — immersive theatre at Olavinlinna</b> — 22 or 23 Oct 19:00 · 35 € <em class="pill now">BOOK BEFORE ARRIVAL</em></li><li><b>Oravi boat taxi to Linnansaari</b> — any day to 31 Oct · min 52 € per boat <em class="pill ask">ASK</em></li><li><b>Kuru eFatBikes</b> — from the Safari House · forest routes · ask what the booking includes <em class="pill desk">AT CHECK-IN</em></li></ul></div>
+   <div class="kv"><span class="k">OPEN</span><span class="v"><b>Olavinlinna</b> castle, Savonlinna, 45 km — Tue–Sun 10–16, 15 € · Riihisaari museum next door Tue–Sun 10–17 · <b>Lusto</b> forest museum, Punkaharju, Tue–Sun 10–17 · the Punkaharju ridge road</span></div>
+   <div class="kv"><span class="k">EVENING</span><span class="v"><b>Solitary</b> restaurant Tue–Sat from 17:00 · adults-only resort</span></div>
+   <div class="kv x"><span class="k">NOT RUNNING</span><span class="v">seal trips and M/S Linnansaari (season over) · Kerimäki church</span></div>
+   <div class="kv"><span class="k">CLIMATE</span><span class="v">night 2.3 → day 5.7 °C · frost 22 % of nights · cold night −1.7 · snow 30 % of yrs</span></div>
+  </div>
+  <div class="read">
+   <div class="rc"><b>2</b><div class="lab">free days · thu–fri </div></div>
+   <div class="rc"><b>07:26–18:15</b><div class="lab">usable light</div></div>
+   <div class="rc a"><b>21 OCT</b><div class="lab">first book-by</div></div>
+   <div class="rc c"><b><a href="#w-rantasalmi" data-go="w" style="border:0">Full list →</a></b><div class="lab">things to do</div></div></div>
+ </div>
+
  <div class="leg hot fix"><div class="lhead">
   <div class="ldate">24<small>OCT<span>SAT</span></small></div>
   <div class="ltitle"><h3>Rantasalmi → Turku → ferry</h3><span class="stay"><u>IN <b>SAT 24 OCT</b></u><i>·</i><wbr><u>OUT <b>SUN 25 OCT</b></u><wbr><u><i>·</i>1&nbsp;NIGHT</u></span><span class="tag r">Critical</span></div></div>
   <div class="lbody">
-   <p class="addr">TALLINK SILJA BALTIC PRINCESS · TURKU, KULJETUSKATU 4 · SAILS 19:30 · 2 BALCONY SUITES <a href="https://www.google.com/maps/search/?api=1&amp;query=Tallink%20Silja%20terminal%2C%20Kuljetuskatu%204%2C%20Turku%2C%20Finland" target="_blank" rel="noopener" title="Open in Google Maps" style="border:0;font-size:11px;letter-spacing:.1em">⌖&nbsp;PORT</a></p>
+   <div class="kv"><span class="k">SHIP</span><span class="v"><b>Tallink Silja Baltic Princess</b> · Turku, Kuljetuskatu 4 <a href="https://www.google.com/maps/search/?api=1&amp;query=Tallink%20Silja%20terminal%2C%20Kuljetuskatu%204%2C%20Turku%2C%20Finland" target="_blank" rel="noopener" title="Open in Google Maps" style="border:0;font-size:11px;letter-spacing:.1em">⌖&nbsp;PORT</a> · <b>sails 19:30 Finnish time</b> · once aboard set both watches back 1 h for Sweden and back 1 h again for the end of summer time — docks 06:10 Swedish winter time · 2 balcony suites · vehicles at the port by 18:30, <b>car check-in closes 19:00</b> — it reads the plates, LXP27T and KSU90N, ticketed as vans up to 2.4 m high and 7.0 m long</span></div>
+   <div class="kv"><span class="k">ROUTE</span><span class="v"><b>Depart 06:30 — the first hour is dark</b> (first light 07:28) · road 5 to Turku, 459 km, 7.1 h. At +15% this is 8.1 h · <b>roughly 3.9 h in hand at the port on the planned timing — the margin is for problems, not sightseeing</b></span></div>
    <div class="load hot" title="full bar = 400 km, the six-hour ceiling on sealed road at 65 km/h; red = over it"><span>DRIVE</span><span class="trk"><i style="width:100.0%"></i></span><span class="cap">400</span><span>459 KM · 7.1 H</span></div>
-   <div class="warn r"><b>Tightest day of the trip. Depart 06:30.</b> Vehicles at port by 18:30,
-    car check-in closes 19:00. First light at Rantasalmi is 07:28, sunrise 08:16 — the first hour is fully dark. At +15% this is 8.1 h.
-    Keep stops short — the margin is for problems, not sightseeing; on the planned timing there is
-    roughly 3.9 h in hand at the port. The ticket carries the two vehicles as <b>vans up to 2.4 m high and 7.0 m long</b> — both 4x4s fit — under registrations <b>LXP27T and KSU90N</b> — confirmed as the two rental cars (Adam, 10 Sep); car check-in reads the plates.</div>
-   <div class="clim">
-    <div class="ct"><span class="cl">Climate 24 Oct</span>
-     <span class="cbar" title="29 years of record, snow 30 · mean night to mean day, scale −8 to +16 °C"><i style="left:41.7%;width:22.1%"></i><u class="l" style="left:41.7%">2.0</u><u class="r" style="left:63.8%">7.3 °C</u></span></div>
-    <div class="ck"><span>frost <b>36 %</b> of nights</span><span>cold night <b>−4.8</b></span><span>snow <b>20 %</b> of yrs</span></div>
-   </div>
   </div>
   <div class="read">
    <div class="rc" title="first light at Rantasalmi 07:28, last light at Turku 18:40 on 24 Oct"><b>07:28–18:40</b><div class="lab">usable light · 11.2&nbsp;h</div></div>
@@ -828,17 +817,8 @@ h2{display:block}h2 small{display:block;text-align:left;margin-top:5px}
   <div class="ldate">25<small>OCT<span>SUN</span></small></div>
   <div class="ltitle"><h3>Värtahamnen → Arlanda · vehicles back to Ronny</h3><span class="tag a">Handover</span></div></div>
   <div class="lbody">
-   <p class="addr">VÄRTAHAMNEN · HAMNPIRSVÄGEN 10 <a href="https://www.google.com/maps/search/?api=1&amp;query=V%C3%A4rtahamnen%2C%20Hamnpirsv%C3%A4gen%2010%2C%20Stockholm%2C%20Sweden" target="_blank" rel="noopener" title="Open in Google Maps" style="border:0;font-size:11px;letter-spacing:.1em">⌖&nbsp;PORT</a> → ARLANDA · 43 KM · RETURN POINT TO CONFIRM</p>
-   <p><b>Two clock changes overnight.</b> Finland → Sweden is −1 h, and summer time ends (03:00 → 02:00).
-    Sail 19:30 Finnish summer time, dock 06:10 Swedish winter time. Set both watches when the ship leaves Turku.</p>
-   <div class="warn"><b>The return point and time are still not agreed</b> — and it is a Sunday. Ask Ronny when he makes
-    contact, about a week out. Empty the vehicles on the ship rather than in the car park; the <b>€3,000 deposit</b> comes
-    back after they are returned. Nothing is booked in Sweden tonight — the party flies out at 16:55 (next card).</div>
-   <div class="clim">
-    <div class="ct"><span class="cl">Climate 25–26 Oct · Stockholm</span>
-     <span class="cbar" title="30 years of record · mean night to mean day, scale −8 to +16 °C"><i style="left:46.2%;width:22.5%"></i><u class="l" style="left:46.2%">3.1</u><u class="r" style="left:68.8%">8.5 °C</u></span></div>
-    <div class="ck"><span>frost <b>24 %</b> of nights</span><span>cold night <b>−3.4</b></span><span>rain <b>35 %</b> of days</span></div>
-   </div>
+   <div class="kv"><span class="k">DOCK</span><span class="v"><b>Dock 06:10 Swedish winter time</b> at Värtahamnen, Hamnpirsvägen 10 <a href="https://www.google.com/maps/search/?api=1&amp;query=V%C3%A4rtahamnen%2C%20Hamnpirsv%C3%A4gen%2010%2C%20Stockholm%2C%20Sweden" target="_blank" rel="noopener" title="Open in Google Maps" style="border:0;font-size:11px;letter-spacing:.1em">⌖&nbsp;PORT</a> → Arlanda, 43 km · return point and time to confirm</span></div>
+   <div class="kv"><span class="k">NOTE</span><span class="v"><b>You docked on Swedish winter time</b> — two hours behind the clock you sailed on; the flight is 16:55 winter time · <b>empty the vehicles on the ship</b>, not in the car park · the return point and time are still to agree with Ronny — a Sunday; ask when he makes contact, about a week out · the €3,000 deposit comes back after the return · nothing is booked in Sweden tonight — the party flies at 16:55</span></div>
   </div>
   <div class="read">
    <div class="rc c"><b>06:10</b><div class="lab">dock · Värtahamnen</div></div>
@@ -851,9 +831,9 @@ h2{display:block}h2 small{display:block;text-align:left;margin-top:5px}
   <div class="ldate">25<small>OCT<span>SUN</span></small></div>
   <div class="ltitle"><h3>Stockholm Arlanda → Frankfurt</h3><span class="tag a">To book</span></div></div>
   <div class="lbody">
-   <p class="addr">LH 805 · ARN 16:55 → FRA 19:10 · 2 H 15 · AIRBUS A321 · LUFTHANSA BUSINESS · ALL FOUR · NOT YET BOOKED · ALTERNATIVE 12:40 → 14:55</p>
-   <p>Chosen 10 Sep, <b>to book soon</b> — one way, business, four passengers, quoted at US$1,673 in total on Google Flights that day (lowest total; the fare at booking will differ). <b>Be at Arlanda by ~15:00</b>; the morning goes on the vehicle handover (previous card). Lands <b>Terminal 1</b> — the hotel is there too, next card. Departure time is winter time, an hour later than the clock you sailed on.</p>
-   <div class="warn"><b>Alternative, same day: Lufthansa ARN 12:40 → FRA 14:55</b>, nonstop, 2 h 15, quoted US$1,810 for four (+US$137 on LH 805; flight number not on the quote). Buys an afternoon in Frankfurt, costs the morning's slack: off the ship, at Arlanda by ~08:00, an hour with Ronny, then at the desk by ~10:40 — about 1.7 h in hand against ~5.9 h on the 16:55. <b>Only if the handover is agreed for early morning.</b></div></div>
+   <div class="kv"><span class="k">FLIGHT</span><span class="v">LH 805 · ARN 16:55 → FRA 19:10 · 2 h 15 · Airbus A321 · Lufthansa Business · all four · <b>not yet booked</b></span></div>
+   <div class="kv"><span class="k">NOTE</span><span class="v">One way, business, four passengers — to book · be at Arlanda by ~15:00; the morning goes on the handover · lands Terminal 1, where the hotel is · <b>departure is winter time — an hour later than the clock you sailed on</b> · alternative the same day: 12:40 → 14:55, only if the handover is agreed for early morning</span></div>
+  </div>
   <div class="read">
    <div class="rc"><b>16:55</b><div class="lab">depart ARN · terminal to confirm</div></div>
    <div class="rc"><b>19:10</b><div class="lab">arrive FRA · T1</div></div>
@@ -865,9 +845,8 @@ h2{display:block}h2 small{display:block;text-align:left;margin-top:5px}
   <div class="ldate">25<small>OCT<span>SUN</span></small></div>
   <div class="ltitle"><h3>Frankfurt Airport Marriott Hotel</h3><span class="stay"><u>IN <b>SUN 25 OCT</b></u><i>·</i><wbr><u>OUT <b>MON 26 OCT</b></u><wbr><u><i>·</i>1&nbsp;NIGHT</u></span><span class="tag c">Booked</span></div></div>
   <div class="lbody">
-   <p class="addr">FRANKFURT AIRPORT MARRIOTT · HUGO-ECKENER-RING 15 · AT TERMINAL 1 · 2 PREMIER SUITES, M CLUB LOUNGE <a href="https://www.google.com/maps/search/?api=1&amp;query=Frankfurt%20Airport%20Marriott%20Hotel%2C%20Hugo-Eckener-Ring%2015%2C%2060549%20Frankfurt%20am%20Main%2C%20Germany" target="_blank" rel="noopener" title="Open in Google Maps" style="border:0;font-size:11px;letter-spacing:.1em">⌖&nbsp;MAP</a></p>
-   <p>At Terminal 1: LH 805 lands there, SQ329 leaves from there at 13:35 the next day — <b>no transfer either way</b>, and
-    the last morning is a walk from the lobby to the gate. Two Premier Suites with M Club lounge access, two adults each, <b>€958 for the night</b> (€475 + €4 fee per suite; a €2-per-person tourist contribution is added at check-out) — re-issued 10 Sep without the extra-person charge. Check-in 15:00, check-out 12:00. Free cancellation until <b>24 Oct 23:59</b> local time; after that one night, €475 per suite. Parking is irrelevant — the vehicles went back at Arlanda that morning.</p></div>
+   <div class="kv"><span class="k">SLEEP</span><span class="v"><b>Frankfurt Airport Marriott</b> · Hugo-Eckener-Ring 15, at Terminal 1 <a href="https://www.google.com/maps/search/?api=1&amp;query=Frankfurt%20Airport%20Marriott%20Hotel%2C%20Hugo-Eckener-Ring%2015%2C%2060549%20Frankfurt%20am%20Main%2C%20Germany" target="_blank" rel="noopener" title="Open in Google Maps" style="border:0;font-size:11px;letter-spacing:.1em">⌖&nbsp;MAP</a> · 2 Premier Suites, M Club lounge · <b>check-in 15:00, check-out 12:00</b> · LH 805 lands at T1 and SQ329 leaves from T1 — no transfer either way; the last morning is a walk from the lobby to the gate · a €2 pp tourist contribution is added at check-out</span></div>
+  </div>
   <div class="read">
    <div class="rc ref"><b>Terminal 1</b><div class="lab">hotel · in the terminal</div></div>
    <div class="rc"><b>15:00 → 12:00</b><div class="lab">check-in · check-out</div></div>
@@ -879,9 +858,9 @@ h2{display:block}h2 small{display:block;text-align:left;margin-top:5px}
   <div class="ldate">26<small>OCT<span>MON</span></small></div>
   <div class="ltitle"><h3>Frankfurt → Singapore</h3><span class="tag c">Booked</span></div></div>
   <div class="lbody">
-   <p class="addr">SQ329 · FRA 13:35 → SIN 08:55 (27 OCT) · BUSINESS · TERMINAL 1</p>
-   <div class="warn">The party is in Frankfurt from the evening of the 25th (LH 805, lands T1 at 19:10), so this is no
-    longer a same-day connection. The Marriott at T1 is booked (check-out 12:00); still to book: LH 805.</div></div>
+   <div class="kv"><span class="k">FLIGHT</span><span class="v">SQ329 · FRA 13:35 → SIN 08:55 (27 Oct) · Business · Terminal 1</span></div>
+   <div class="kv"><span class="k">NOTE</span><span class="v">Check-out 12:00 at the Marriott; the gate is a walk from the lobby · still to book: LH 805 the day before</span></div>
+  </div>
   <div class="read">
    <div class="rc"><b>13:35</b><div class="lab">depart FRA</div></div>
    <div class="rc"><b>08:55</b><div class="lab">arrive SIN +1</div></div>
@@ -955,14 +934,14 @@ h2{display:block}h2 small{display:block;text-align:left;margin-top:5px}
 
 <!-- LODGING -->
 <section id="s" role="tabpanel" hidden>
- <h2>Lodging manifest<small>30 NIGHTS · ALL BOOKED · 1 OCT: TREEHOTEL'S UPDATED CONFIRMATION TO FILE</small></h2>
+ <h2>Lodging manifest<small>30 NIGHTS · ALL BOOKED</small></h2>
  <div class="tw"><table><thead><tr><th>Nights</th><th>Property</th><th>Reference</th><th>Tel</th></tr></thead><tbody>
   <tr><td>26 SEP</td><td><b>Ett Hem</b> <a href="https://www.google.com/maps/search/?api=1&amp;query=Ett%20Hem%2C%20Sk%C3%B6ldungagatan%202%2C%20114%2027%20Stockholm%2C%20Sweden" target="_blank" rel="noopener" title="Open in Google Maps" style="border:0;font-size:11px;letter-spacing:.1em">⌖&nbsp;MAP</a><br>Sköldungagatan 2, Östermalm · two suites, 2 + 2 adults · check-in after 15:00 · prepaid · <b>free cancellation ends 24 Sep 14:00</b></td><td class="mono">78802SH070437<br>78802SH070436</td><td>0046-468200590<br><small>as printed on the voucher</small></td></tr>
   <tr><td>27 SEP</td><td><b>Home Hotel Grand Sundsvall</b> <a href="https://www.google.com/maps/search/?api=1&amp;query=Home%20Hotel%20Grand%20Sundsvall%2C%20Nybrogatan%2013%2C%20852%2031%20Sundsvall%2C%20Sweden" target="_blank" rel="noopener" title="Open in Google Maps" style="border:0;font-size:11px;letter-spacing:.1em">⌖&nbsp;MAP</a><br>Nybrogatan 13</td><td class="mono">5920.259.830</td><td><a href="tel:+4660646560">+46 60 64 65 60</a></td></tr>
   <tr><td>28 SEP</td><td><b>Docksta Hotell</b> <a href="https://www.google.com/maps/search/?api=1&amp;query=Docksta%20Hotell%2C%20%C3%96rnv%C3%A4gen%202%2C%20870%2033%20Docksta%2C%20Sweden" target="_blank" rel="noopener" title="Open in Google Maps" style="border:0;font-size:11px;letter-spacing:.1em">⌖&nbsp;MAP</a><br>Örnvägen 2, Docksta · 2 Double or Twin · check-in 15–24, tell them the arrival time · free cancel to 27 Sep</td><td class="mono">6608.164.817</td><td><a href="tel:+4661340010">+46 613 400 10</a></td></tr>
   <tr><td>29 SEP</td><td><b>Granö Beckasin</b> <a href="https://www.google.com/maps/search/?api=1&amp;query=Gran%C3%B6%20Beckasin%2C%20V%C3%A4stan%C3%A5%2015%2C%20922%2095%20Gran%C3%B6%2C%20Sweden" target="_blank" rel="noopener" title="Open in Google Maps" style="border:0;font-size:11px;letter-spacing:.1em">⌖&nbsp;MAP</a><br>Västanå 15, Granö · 2 Bird's Nest Studios · check-in 15–21, <b>desk closes 17:30</b> · dinner on request · free cancel to 26 Sep</td><td class="mono">6796.848.975</td><td><a href="tel:+4693341000">+46 933 410 00</a></td></tr>
-  <tr><td>30 SEP–01 OCT</td><td><b>Treehotel</b> <a href="https://www.google.com/maps/search/?api=1&amp;query=Treehotel%2C%20Edeforsv%C3%A4gen%202A%2C%20960%2024%20Harads%2C%20Sweden" target="_blank" rel="noopener" title="Open in Google Maps" style="border:0;font-size:11px;letter-spacing:.1em">⌖&nbsp;MAP</a><br>Edeforsvägen 2A, Harads · 7th Room, 4 adults · check-in 16–22 at the Guesthouse · <b>non-refundable</b> · <b>two nights, 30 Sep → 2 Oct</b> — updated confirmation 22 Sep, SEK 33,200</td><td class="mono">5739.577.553</td><td><a href="tel:+4692810300">+46 928 103 00</a></td></tr>
-  <tr><td>02–03 OCT</td><td><b>ICEHOTEL</b> <a href="https://www.google.com/maps/search/?api=1&amp;query=ICEHOTEL%2C%20Marknadsv%C3%A4gen%2063%2C%20981%2091%20Jukkasj%C3%A4rvi%2C%20Sweden" target="_blank" rel="noopener" title="Open in Google Maps" style="border:0;font-size:11px;letter-spacing:.1em">⌖&nbsp;MAP</a><br>Marknadsvägen 63, Jukkasjärvi · 2 nights, shortened 21 Sep (was 1–3 Oct) · insured, free to cancel until 12:00 on 2 Oct</td><td class="mono">BJFQ71</td><td><a href="tel:+4698066800">+46 980 668 00</a></td></tr>
+  <tr><td>30 SEP–01 OCT</td><td><b>Treehotel</b> <a href="https://www.google.com/maps/search/?api=1&amp;query=Treehotel%2C%20Edeforsv%C3%A4gen%202A%2C%20960%2024%20Harads%2C%20Sweden" target="_blank" rel="noopener" title="Open in Google Maps" style="border:0;font-size:11px;letter-spacing:.1em">⌖&nbsp;MAP</a><br>Edeforsvägen 2A, Harads · 7th Room, 4 adults · check-in 16–22 at the Guesthouse · two nights, 30 Sep → 2 Oct · <b>non-refundable</b></td><td class="mono">5739.577.553</td><td><a href="tel:+4692810300">+46 928 103 00</a></td></tr>
+  <tr><td>02–03 OCT</td><td><b>ICEHOTEL</b> <a href="https://www.google.com/maps/search/?api=1&amp;query=ICEHOTEL%2C%20Marknadsv%C3%A4gen%2063%2C%20981%2091%20Jukkasj%C3%A4rvi%2C%20Sweden" target="_blank" rel="noopener" title="Open in Google Maps" style="border:0;font-size:11px;letter-spacing:.1em">⌖&nbsp;MAP</a><br>Marknadsvägen 63, Jukkasjärvi · 2 nights, 2 → 4 Oct · insured, free to cancel until 12:00 on 2 Oct</td><td class="mono">BJFQ71</td><td><a href="tel:+4698066800">+46 980 668 00</a></td></tr>
   <tr><td>04–06 OCT</td><td><b>Northern Lights Ranch</b> <a href="https://www.google.com/maps/search/?api=1&amp;query=Northern%20Lights%20Ranch%2C%20Ounasjoentie%201619%2C%2099140%20Levi%2C%20Finland" target="_blank" rel="noopener" title="Open in Google Maps" style="border:0;font-size:11px;letter-spacing:.1em">⌖&nbsp;MAP</a><br>1619 Ounasjoentie, Levi</td><td class="mono">6636.503.648</td><td><a href="tel:+358447700540">+358 44 7700540</a></td></tr>
   <tr><td>07–09 OCT</td><td><b>Aurora Village Ivalo</b> <a href="https://www.google.com/maps/search/?api=1&amp;query=Aurora%20Village%20Ivalo%2C%20Aurorakuja%2038%2C%2099800%20Ivalo%2C%20Finland" target="_blank" rel="noopener" title="Open in Google Maps" style="border:0;font-size:11px;letter-spacing:.1em">⌖&nbsp;MAP</a><br>Aurorakuja 38</td><td class="mono">5831.655.575</td><td><a href="tel:+358104197821">+358 10 419 7821</a></td></tr>
   <tr><td>10–12 OCT</td><td><b>Glass Resort</b> <a href="https://www.google.com/maps/search/?api=1&amp;query=Glass%20Resort%2C%20T%C3%A4htikuja%2016%2C%2096930%20Rovaniemi%2C%20Finland" target="_blank" rel="noopener" title="Open in Google Maps" style="border:0;font-size:11px;letter-spacing:.1em">⌖&nbsp;MAP</a><br>Tähtikuja 16, Rovaniemi</td><td class="mono">6276.007.714</td><td><a href="tel:+358405194444">+358 40 5194444</a></td></tr>
@@ -998,27 +977,37 @@ h2{display:block}h2 small{display:block;text-align:left;margin-top:5px}
 
 <!-- THINGS TO DO -->
 <section id="w" role="tabpanel" hidden>
- <h2>Things to do<small>CHECKED 7 SEP 2026 · NOTHING BOOKED YET</small></h2>
+ <h2>Things to do<small>CHECKED 23 SEP 2026 · OPERATORS' OWN PAGES AND BOOKING CALENDARS · NOTHING BOOKED YET</small></h2>
  <ul class="sl legend">
-  <li class="ok"><b>2026 information from the operator's own page or booking system</b> — seen by us on 7 Sep, or quoted
-   with a 2026 date by the research run. Still re-check the week before: seasons slip.</li>
-  <li class="y"><b>Exists, but only last season's or third-party information</b> — confirm before counting on it.</li>
-  <li class="q"><b>No usable source found</b> — the research was cut short; this may well exist. Ask locally.</li>
-  <li class="x"><b>Closed or out of season</b> on our dates, stated by the operator or authority.</li>
+  <li class="ok"><b>Seen on the operator's own page or booking calendar on 23 Sep</b> — price, hours or an open date for our day. Still re-check the week before: seasons slip.</li>
+  <li class="y"><b>Operator page, but not confirmed for our date</b> — the season or the day was not checked, or the information is from the 7 Sep run. Confirm before counting on it.</li>
+  <li class="q"><b>No reachable source</b> — the site was down or unreadable; the thing may well exist. Ask locally.</li>
+  <li class="x"><b>Closed or not running</b> on our dates, stated by the operator.</li>
  </ul>
- <p class="intro" style="max-width:none">Lines without a mark (aurora, driving, reindeer) are general guidance, not verified items.
-  Finnish times are <b>EET, one hour ahead of Sweden</b> — the clocks go forward at the border on 4 Oct.
+ <p class="intro" style="max-width:none">Finnish times are <b>EET, one hour ahead of Sweden</b> — your watch goes forward one hour at the border on 4 Oct.
   Last light for each day is on its card under Legs; <b>be off any trail an hour before it, headlamp per person.</b>
   Both vehicles are on winter tyres; expect ice on the gravel approaches to trailheads (Kiilopää, Patoniementie, Juuma).
   Finnish autumn school holidays fall between <b>9 and 25 October</b> (the week varies by region) — Ruka, Koli and
-  Saimaa will be busy; book gondola passes, the boat and any guided activity ahead. The strips on the Legs cards carry
-  the top six items per base; this tab is the full list. Distances are approximate, from our own route planning.</p>
+  Saimaa will be busy. The base cards under Legs carry the shortlist for each free day; this tab is the full list, with
+  prices as the pages showed them on 23 Sep. Distances are approximate, from our own route planning.</p>
 
- <div class="warn"><b>Before departure:</b> email <a href="mailto:info@kirunalapland.se">info@kirunalapland.se</a> about
-  October mine-tour dates (none in the booking system yet) · book Aurora Village husky programmes online · ring Lapland
-  Safaris Levi for an ATV (phone only, Mon–Fri 10–15 EET) · ask ICEHOTEL about the Northern Lights dinner and the
-  sculpting class · ask Northern Lights Ranch, Glass Resort, Elisabeth and Kuru what they run in October.<br>
-  <b>On the trip:</b> Ruka online lift passes before 14 Oct · <b>Linnansaari boat by 16:00 on 20 Oct</b> — it does not sail unbooked.</div>
+ <h2 id="w-bookby">Book-by dates<small>THE SHORTLIST · CUT-OFFS AS THE OPERATORS STATE THEM</small></h2>
+ <div class="tw"><table><thead><tr><th>What</th><th>Rule</th><th>Book by</th></tr></thead><tbody>
+  <tr><td><b>Treehotel forest hike</b> or any Treehotel activity, 1 Oct</td><td>at least 7 days ahead · booking@treehotel.se</td><td class="mono"><b>THU 24 SEP</b></td></tr>
+  <tr><td>Treehotel dinner, 30 Sep / 1 Oct</td><td>meals pre-booked 14 days before arrival</td><td class="mono">16 SEP — passed; ask</td></tr>
+  <tr><td><b>ICEHOTEL Northern Lights Dinner</b>, 3 Oct</td><td>online · 2 Oct already sold out</td><td class="mono"><b>NOW</b></td></tr>
+  <tr><td>ICEHOTEL Abisko hike</td><td>no departure 1–5 Oct · private only</td><td class="mono">ASK, OR DROP</td></tr>
+  <tr><td><b>Soma Kätkätunturi hike</b>, 5 Oct</td><td>2-day cut-off · open</td><td class="mono">SAT 3 OCT</td></tr>
+  <tr><td><b>Soma reindeer farm</b>, 6 Oct</td><td>1-day cut-off · open</td><td class="mono">MON 5 OCT</td></tr>
+  <tr><td>Aurora Village Otsamo hike · Aurora Camp</td><td>season ends 15 Oct · no cut-off stated</td><td class="mono">BEFORE ARRIVAL</td></tr>
+  <tr><td>Pure Lapland ATV</td><td>weekdays only in October → Mon 12</td><td class="mono">BEFORE ARRIVAL</td></tr>
+  <tr><td><b>Oulanka golden-eagle hides</b>, 14–16 Oct</td><td>online calendar · autumn season to 31 Oct</td><td class="mono">BEFORE ARRIVAL</td></tr>
+  <tr><td>Ruka gondola pass</td><td>−20 % online · holiday week</td><td class="mono">TUE 13 OCT</td></tr>
+  <tr><td>Ruka HoNS sauna</td><td>3-day cut-off</td><td class="mono">SUN 11 OCT</td></tr>
+  <tr><td>Koli Safaris tours, 19–20 Oct</td><td>weekday sales desk only</td><td class="mono">FRI 16 OCT</td></tr>
+  <tr><td>Järvisydän evening spa, 22 Oct</td><td>by 16:00 the day before</td><td class="mono">WED 21 OCT</td></tr>
+  <tr><td>Eurydike theatre, Olavinlinna, 22 or 23 Oct 19:00</td><td>ticketed</td><td class="mono">BEFORE ARRIVAL</td></tr>
+ </tbody></table></div>
 
  <h2 id="w-aurora">Aurora — conditions permitting<small>BEST CHANCES JUKKASJÄRVI TO RUKA · GENERAL GUIDANCE</small></h2>
  <ul>
@@ -1029,162 +1018,162 @@ h2{display:block}h2 small{display:block;text-align:left;margin-top:5px}
   <li>Camera: tripod, manual focus ∞, 5–15 s, f/2.8 or wider, ISO 1600–3200.</li>
  </ul>
 
- <h2 id="w-kiruna">Jukkasjärvi &amp; Kiruna<small>2–3 OCT · FRIDAY AND SATURDAY</small></h2>
+ <h2 id="w-harads">Harads<small>1 OCT · THURSDAY · TREEHOTEL</small></h2>
  <ul class="sl">
-  <li class="ok"><b>ICEHOTEL 365</b> — open 13 Apr–30 Nov, daily 11:00–18:00. Ice bar, art suites, ice-sculpting
-   class (runs on two or more bookings; price at reception). All four.
+  <li class="ok"><b>Forest hike</b> — 3 h SEK 2 350 pp or 5 h SEK 3 700 pp, 2–10 people, May–October. <b>Book at least one week ahead</b>; 50 % charge inside 14 days, 100 % inside 7. booking@treehotel.se
+   <a href="https://www.treehotel.se/en/activities/forest-hike" target="_blank" rel="noopener">treehotel.se</a></li>
+  <li class="ok"><b>Aurora dinner at the Husky Farm</b> — 17:00–21:00, SEK 3 450 pp; the season opens 1 Oct. <b>Northern Lights hunt</b> — 20:00–23:00, private, SEK 12 000 + 4 000 per extra person (16 000 for four), 25 % non-refundable deposit. <b>Jokkmokk Journey</b> — 10:00–16:00, SEK 5 500 pp, max 4. <b>Tallberg Dinner</b> SEK 4 200 pp · <b>foraging tour</b> SEK 2 900 pp · <b>Forest SPA</b> SEK 650 pp for 2 h.</li>
+  <li class="ok"><b>Restaurant</b> — meals are pre-booked at least 14 days before arrival (a date already passed: ask when giving the arrival time). Tasting menu 18:30, 3 h, SEK 3 450; 3-course SEK 1 250.</li>
+  <li class="y"><b>The Stately Storforsen</b> — Treehotel's private guided outing, 5 h with a one-hour transfer each way, lunch and guide, year-round, 2–8 people, SEK 4 400 pp; or drive there yourselves — the reserve has footpaths and parking (GPT run, 23 Sep). <b>Arctic herbs workshop</b> with Eva Gunnare — 2 h, year-round, 2–6, SEK 2 990 pp; instead of the foraging tour, the theme overlaps.
+   <a href="https://treehotel.se/activities/the-stately-storforsen/" target="_blank" rel="noopener">treehotel.se</a></li>
+  <li class="x"><b>Reindeer herder · forest Sámi · kayaking · moose VIP · wildlife safari</b> — not offered on our dates.</li>
+  <li class="y"><b>Storforsen</b> rapids — 5 km off S-06 at km 260, passed on the 30 Sep trail alternative only; open ground, year-round (August research).</li>
+ </ul>
+
+ <h2 id="w-kiruna">Jukkasjärvi &amp; Kiruna<small>2–3 OCT · FRIDAY AND SATURDAY · ICEHOTEL</small></h2>
+ <ul class="sl">
+  <li class="ok"><b>Northern Lights Dinner</b> — 4 h, SEK 1 995 pp, minimum two; minivan to a wilderness camp free of artificial light, warm aperitif, three courses in a cottage. Gather at Meeting Point 15 minutes before the start (the start time is shown at booking); overalls, boots and gloves lent from the Riverside lobby; age 13+; dietary needs in the booking. <b>Calendar on 23 Sep: 3 Oct available, 2 Oct sold out.</b>
+   <a href="https://www.icehotel.com/northern-lights-dinner" target="_blank" rel="noopener">icehotel.com</a></li>
+  <li class="x"><b>Mountain hike in Abisko</b> — 7 h, SEK 2 190 pp, minimum two — <b>no departure between 1 and 5 Oct</b> (next 6 Oct). Only as a private booking: reservations@icehotel.com.
+   <a href="https://www.icehotel.com/mountain-hike-abisko" target="_blank" rel="noopener">icehotel.com</a></li>
+  <li class="y"><b>Other autumn activities on the ICEHOTEL list</b> — ice sculpting SEK 795 · forest walk, behind the scenes, wilderness skills SEK 495 each · wilderness dinner and wildlife &amp; nature photo SEK 1 995 · private sauna ritual SEK 4 775 · private fishing SEK 3 950. Dates for 3 Oct not checked — ask at the activity desk.</li>
+  <li class="y"><b>ICEHOTEL 365</b> — open 13 Apr–30 Nov, daily 11:00–18:00; ice bar, art suites (7 Sep).
    <a href="https://www.icehotel.com/tickets-opening-hours" target="_blank" rel="noopener">icehotel.com</a></li>
-  <li class="y"><b>LKAB mine tour</b> — 3 h by bus to the show mine at the 540 m level, SEK 590, from Kiruna Tourist Center,
-   Malmvägen 9B. The booking calendar on 7 Sep had dates through 30 Sep and <b>none in October or November 2026</b>.
-   Email info@kirunalapland.se or ring +46 980 188 80 and ask whether October will open.
+  <li class="y"><b>LKAB mine tour</b> — 3 h by bus to the show mine at the 540 m level, SEK 590 pp with bus, guide and coffee; meet at the Tourist Centre, Malmvägen 9B, 15 minutes early; a working mine can cancel at short notice. The calendar on 7 Sep had <b>no October dates</b>; a 3 Oct English departure is unconfirmed — the alternative to the Abisko hike (GPT run, 23 Sep). info@kirunalapland.se · +46 980 188 80.
    <a href="https://kirunalapland.se/en/mine-tour/" target="_blank" rel="noopener">kirunalapland.se</a></li>
   <li class="y"><b>Esrange Space Center</b> visitor centre at the gate — daily 08:00–18:00, free, unmanned. Single source.</li>
-  <li class="y"><b>ICEHOTEL Northern Lights dinner</b> — minivan to a wilderness camp, three courses, aurora watch.
-   October departures not listed; ask the activity desk.</li>
-  <li class="y"><b>Hjalmar Lundbohmsgården</b> — the first mine manager's house, museum and bakery café; hours unverified.</li>
   <li class="x"><b>Kiruna church</b> — moved in 2025, closed to visitors until the end of 2026. Exterior only.</li>
-  <li class="q"><b>Abisko</b>, 100 km west — park trails open; Aurora Sky Station and chairlift autumn dates not found.
-   <b>Camp Ripan spa</b> and <b>Nutti Sámi Siida</b> — not found either.</li>
+  <li class="y"><b>Hjalmar Lundbohmsgården</b> — the first mine manager's house, museum and bakery café; hours unverified (7 Sep).</li>
+  <li class="q"><b>Abisko</b>, 100 km west — park trails open; Aurora Sky Station and chairlift autumn dates not found.</li>
  </ul>
 
- <h2 id="w-levi">Levi<small>5–6 OCT · MONDAY AND TUESDAY</small></h2>
+ <h2 id="w-levi">Levi<small>5–6 OCT · MONDAY AND TUESDAY · NORTHERN LIGHTS RANCH</small></h2>
  <ul class="sl">
-  <li class="ok"><b>Ski on stored snow</b> — season scheduled to open Friday 2 Oct (announced by Levi; snow farming
-   depends on temperatures, re-check levi.fi the week before). Slopes 09:30–19:00, rental and tickets at Zero Point
-   09:00–19:00. All four.
+  <li class="ok"><b>Soma Adventures — Kätkätunturi fell hike</b> — 4 h, 199 € pp, departures 10:00 and 21:00, <b>pick-up at the Northern Lights Ranch</b>; cut-off 2 days, full refund up to the day before. <b>5 and 6 Oct open</b> on the calendar.
+   <a href="https://somaadventures.fi" target="_blank" rel="noopener">somaadventures.fi (Bokun)</a></li>
+  <li class="ok"><b>Soma Adventures — reindeer farm &amp; Puljutunturi</b> — 5.5 h, 259 € pp, 12:00, cut-off 1 day. Open.</li>
+  <li class="y"><b>Soma's other tours</b> — aurora tour 149 € · HideOut 229 € · sauna + dinner 259 € (min 4) · forest cooking 209 € · Levi local life 219 €. Dates not checked.</li>
+  <li class="y"><b>Ski season</b> — opened Fri 2 Oct on stored snow: Glacier, 09:30–19:00; the gondola-for-walkers status is not published — ask at Zero Point. Rental and tickets at Zero Point 09:00–19:00.
    <a href="https://www.levi.fi/en/events/winter-season-opening-2026-2027/" target="_blank" rel="noopener">levi.fi</a></li>
-  <li class="y">Which lifts open first — Glacier Express, North and the Front Slope conveyor — is last year's programme.</li>
-  <li class="ok"><b>Guided e-fatbike tour</b> on the fell trails — runs to 30 Oct; bikes from Zero Point Rental. All four.
-   <a href="https://www.levi.fi/en/mountain-biking/" target="_blank" rel="noopener">levi.fi</a></li>
-  <li class="y"><b>Husky cart ride</b>, ~2 h — several operators; dogs run only at 14 °C or below. No 2026 price seen.</li>
-  <li class="y"><b>Gondola for walkers</b> — the summer scenic lifts closed 20 Sep. Whether the Express carries
-   non-skiers from ski opening is contested between two Levi sources. Ask at Zero Point.</li>
-  <li class="y"><b>ATV safari</b> — advertised without dates. Lapland Safaris' Levi office is shut 1 Oct–22 Nov;
-   <b>phone bookings only, Mon–Fri 10:00–15:00 EET</b> — ring before departure, or on Mon 5 / Tue 6 Oct from the ranch.</li>
-  <li class="q"><b>Levi Spa · Samiland · reindeer farm · Pallas-Yllästunturi hikes · Northern Lights Ranch's own programme</b>
-   — nothing found for October 2026. Ask the ranch.</li>
+  <li class="y"><b>Husky cart ride</b> — Scandinavian Travel Group: 2.5 km by wheeled "troll cart" plus kennel time, hot drink, 2 h, 125 € pp, transport from Levi; <b>15 Sep – 31 Oct in snowless conditions</b>; strict cancellation — 100 % inside 7 days, 50 % inside 21. Ask about a Ranch pick-up (GPT run, 23 Sep).
+   <a href="https://www.scandinavian-travel-group.com/husky-safari-kennel-visits/" target="_blank" rel="noopener">scandinavian-travel-group.com</a></li>
+  <li class="ok"><b>Levi Water World</b> — daily 12:00–20:00, 25 € (Monday morning swim 11 €). <b>Samiland</b> — daily 10:00–20:00, 14 €; a booked one-hour guide 170 € or 1.5 h with a joik performance 240 € on top of entry; reindeer feeding is winter only (GPT run).</li>
+  <li class="y"><b>Guided e-fatbike tour</b> on the fell trails — runs to 30 Oct; bikes from Zero Point Rental (7 Sep).</li>
+  <li class="q"><b>Lapland Safaris ATV</b> — the Levi office is shut from 1 Oct; phone only, Mon–Fri 10:00–15:00 EET; October tours unconfirmed. <b>Northern Lights Ranch's own programme</b> — its website was unreachable on 23 Sep (nlranch.fi, northernlightsranch.fi); ask by email or at check-in.</li>
+  <li class="y"><b>Gravel loop L3</b> — FIN-01 west from Köngäs: Pallastunturi, Raattama, Hetta (117 km), FIN-03 Hetta → Muonio (75 km), road 79 back — 192 km of trail — mixed surface: roughly two-thirds of it reads paved in Digiroad (road 957 and the Hetta road; Codex review 22 Sep, not re-checked here), so ~7.8 h from 08:00 at the all-gravel figure is the ceiling, nearer 6 h on the register (78 km of road 79 back); the short version turns at the FIN-01 km 2290 point on road 957 — 44 km of trail, ~3.1 h; the Pallastunturi car park is 14 km further by roads 957 and 9571</li>
+  <li class="x"><b>Summer scenic lifts</b> closed 20 Sep · husky carts run only under 14 °C.</li>
  </ul>
 
- <h2 id="w-ivalo">Ivalo · Saariselkä · Inari<small>8–9 OCT · THURSDAY AND FRIDAY</small></h2>
+ <h2 id="w-ivalo">Ivalo · Saariselkä · Inari<small>8–9 OCT · THURSDAY AND FRIDAY · AURORA VILLAGE</small></h2>
  <ul class="sl">
-  <li class="ok"><b>Aurora Village's own husky programme</b>, page updated 11 Aug 2026, groups of 2–6 — <b>husky hike</b> €127
-   (2.5 h, moderate, to end Oct) · <b>husky farm visit</b> €69 (1.5 h, easy, to end Oct) · <b>husky wagon ride</b> €94
-   (1 h, to end Nov, only under 15 °C). Book online.
-   <a href="https://www.auroravillage.fi/huskies-summer-autumn/" target="_blank" rel="noopener">auroravillage.fi</a></li>
-  <li class="y">Also on their autumn list, <b>no season end dates published</b> — aurora tour by car or night hike, horse
-   rides, Lake Inari boat trip, packraft and fatbike, Nellim wilderness day, floating sauna. Ask them to confirm for 8–9 Oct.</li>
-  <li class="ok"><b>Siida Sámi Museum</b>, Inari, ~40 km — winter hours from 5 Oct: Mon–Sat 10:00–17:00,
-   <b>Sunday closed</b>. <a href="https://siida.fi/en/visitors/" target="_blank" rel="noopener">siida.fi</a></li>
-  <li class="ok"><b>Urho Kekkonen National Park</b> from Saariselkä / Kiilopää, ~30–40 km south. Trails usable until first
-   snow, usually mid-October; day huts open; <b>Kiilopää car park charges from 1 Sep 2026</b>.
-   <b>Kaunispää</b> 2.1 km, ~1 h, +35 m — all four · <b>Luulampi</b> 11 km, 4–5 h, +140 m, day hut — all four if the
-   moderate pair is happy with a half day · <b>Rumakuru</b> 14 km (summer route), 3–6 h, +110 m, two day huts — strong
-   pair, or all four with an early start · <b>Kiirunapolku</b> 6 km from Kiilopää — one source grades it moderate,
-   another hard, 4–6 h — strong pair only. A natural split: strong pair on Rumakuru, moderate pair on Kaunispää, second car.
-   <a href="https://www.luontoon.fi/en/destinations/urho-kekkonen-national-park" target="_blank" rel="noopener">luontoon.fi</a></li>
-  <li class="y">Trail cafés (Luulampi) — open "in season" only; assume closed, carry food. Kaunispää summit restaurant lists
-   daily 10:00–19:00 on its own site (Aug 2026) but shoulder-season hours are unconfirmed.</li>
-  <li class="ok"><b>Gold Museum, Tankavaara</b>, on Highway 4 (E75) south — Mon–Fri 11:00–16:00. Panning finished 25 Sep.
-   <a href="https://www.kultamuseo.fi/en/etusivu-english/" target="_blank" rel="noopener">kultamuseo.fi</a></li>
-  <li class="x"><b>Lake Inari public cruises</b> — season over by 30 Sep. <b>Saariselkä bike rental</b> — hours
-   listed to 20 Sep only. <b>Reindeer</b> at Aurora Village starts 1 Nov.</li>
-  <li class="q"><b>ATV safaris</b> — no October listing found by this run. <b>Kiilopää Fell Centre</b> services — not found.</li>
+  <li class="ok"><b>Aurora Village's own programme</b> ("active outdoors", 23 Sep) — <b>Otsamo fell hike</b> 174 € (to 15 Oct) · <b>UKK national park hike</b> 143 € · fatbike 127 € guided, 65 € rental · <b>Aurora Camp</b> ~21:00, 158 € (to 15 Oct) · northern lights by car 143 € · panorama sauna 50 € · husky hike 127 € and husky farm visit 69 € (to end Oct) · Nellim wilderness trip 153 € · Siida visit tour 153 € · crafting 135 € (min 4). Book online; <b>no cut-off or cancellation terms stated</b>.
+   <a href="https://www.auroravillage.fi/active-outdoors/" target="_blank" rel="noopener">auroravillage.fi</a></li>
+  <li class="y"><b>Jäniskoski hike</b> — 69 € on one page, 143 € on another; ask which.</li>
+  <li class="ok"><b>Dinner</b> is included in the northern-lights season rate — <b>the table must be reserved</b>.</li>
+  <li class="ok"><b>Siida Sámi Museum</b>, Inari, ~40 km — <b>closed 28 Sep – 4 Oct</b>, then Mon–Sat 10:00–17:00, 18 €, Sunday closed.
+   <a href="https://siida.fi/en/" target="_blank" rel="noopener">siida.fi</a></li>
+  <li class="y"><b>Urho Kekkonen National Park</b> from Saariselkä / Kiilopää, ~30–40 km south — trails usable until first snow, usually mid-October; day huts open. Kaunispää 2.1 km, ~1 h · Luulampi 11 km, 4–5 h, day hut · Rumakuru 14 km (summer route), 3–6 h · Kiirunapolku 6 km from Kiilopää, graded moderate to hard. Trail cafés closed — carry food (7 Sep).
+   <a href="https://www.luontoon.fi/en/urhokekkonennp" target="_blank" rel="noopener">luontoon.fi</a></li>
+  <li class="y"><b>Gravel loop I1</b> — road 4 south to where FIN-01 crosses it (km 2064, about 20 km <i>south</i> of Vuotso — you pass the village first; <a href="https://www.google.com/maps/dir/?api=1&amp;destination=67.93022,26.92458&amp;travelmode=driving" target="_blank" rel="noopener" title="Google Maps directions to 67.93022, 26.92458 — the GPX point">⌖ ON</a>), FIN-01 east towards Lokka and back — 88 km of trail, ~6.7 h from 08:00. The border stretch beyond (Tulppio, Tuntsa) is a 12-h day from Ivalo — not a day trip</li>
+  <li class="y"><b>Aurora Village husky wagon ride</b> — 1 h, 94 €, to end Nov, only under 15 °C (7 Sep). <b>Kaunispää summit restaurant</b> — daily 10:00–19:00 on its own site in August; shoulder-season hours unconfirmed.</li>
+  <li class="y"><b>Sámi home visit and handicraft workshop</b>, Inari — Reindeer farm Renniina: reindeer leather, antler, bone and wool; 2 h with the home visit 90 € pp, workshop alone 50 € pp; year-round, advance booking; transport by enquiry from Inari village, not from the Village; the reindeer-feeding versions are winter only (GPT run, 23 Sep).
+   <a href="https://www.reindeerinari.fi/en/handicraft-workshop/" target="_blank" rel="noopener">reindeerinari.fi</a></li>
+  <li class="y"><b>Gold Museum, Tankavaara</b>, on the E75 south, ~60 km from Ivalo — Mon–Fri 11:00–16:00; <b>indoor gold panning Mon–Fri at 13:00 until 16 Oct</b>, 1 h, museum entry included, private timing +60 € (GPT run, 23 Sep); outdoor panning at the Gold Village ended 25 Sep. Weekdays only — not on Saturday the 10th.
+   <a href="https://www.kultamuseo.fi/en/programs/" target="_blank" rel="noopener">kultamuseo.fi</a></li>
+  <li class="x"><b>Lake Inari public cruises</b> — season over by 30 Sep. <b>Reindeer at Aurora Village</b> — from 1 Nov.</li>
  </ul>
 
- <h2 id="w-rovaniemi">Rovaniemi<small>11–12 OCT · SUNDAY AND MONDAY</small></h2>
+ <h2 id="w-rovaniemi">Rovaniemi<small>11–12 OCT · SUNDAY AND MONDAY · GLASS RESORT</small></h2>
  <ul class="sl">
-  <li class="ok"><b>Sunday 11 Oct is the museum day.</b> <b>Arktikum</b> — Tue–Sun 10:00–18:00, <b>Monday closed</b>; allow 2–3 h.
-   <a href="https://arktikum.fi/en/visit/opening-hours/" target="_blank" rel="noopener">arktikum.fi</a></li>
-  <li class="y"><b>Pilke science centre</b> — Monday closed, Sunday hours unverified, and <b>closing permanently by the end of
-   October 2026</b>; may already be shut. Call first.</li>
-  <li class="ok"><b>Monday 12 Oct:</b> every museum is shut. <b>Santa Claus Office</b> and <b>Santa's Main Post Office</b>, both
-   in the Village — daily 10:00–17:00.
-   <a href="https://www.santaclausoffice.com/opening-hours/" target="_blank" rel="noopener">santaclausoffice.com</a></li>
-  <li class="y"><b>Husky on wheels</b> — Apukka "Autumn Husky Ride on Wheels", 3 km, from €159, pickup from the
-   Village · Arctic Circle Husky Park inside the Village, 1 Oct–30 Nov, 11:00–15:00, short rides · Bearhill's cart
-   season started 14 Oct last year — probably not running yet on 11–12 Oct; treat Apukka and the Husky Park as the
-   realistic options.</li>
-  <li class="y"><b>Arctic Circle Hiking Area</b>, ~20 min north on Highway 4 (E75) — flat duckboard loops of 2–10 km,
-   all four. The Monday option; not re-verified this run.</li>
-  <li class="q"><b>Ounasvaara trails · Ranua wildlife park · reindeer farms · Glass Resort's own activities</b> —
-   no source returned. Ask at check-in.</li>
+  <li class="ok"><b>Pure Lapland — ATV safari</b> — 149 € pp, +50 € for a solo driver, transfer 70 €; <b>weekdays only in October</b>, so Monday 12. <b>Ranua wildlife photo tour</b> — 09:00, 155 €, daily, cut-off 1 h. <b>Evening ATV aurora</b> 199 €, Mon/Wed/Fri/Sun 20:00 with Glass Resort pick-up · <b>husky on wheels</b> 168 €, Mon–Sat 09:00 · huskies + ATV 328 €.
+   <a href="https://purelapland.fi" target="_blank" rel="noopener">purelapland.fi (Bokun)</a></li>
+  <li class="ok"><b>Arktikum</b> — Tue–Sun 10:00–18:00, <b>Monday closed</b>, 22 €; allow 2–3 h. Sunday 11 Oct is the museum day.
+   <a href="https://www.arktikum.fi/en/" target="_blank" rel="noopener">arktikum.fi</a></li>
+  <li class="ok"><b>Ranua wildlife park</b> — daily 10:00–16:00, 24.50 € online (~80 km south, our estimate).</li>
+  <li class="ok"><b>Glass Resort</b> — Gallis restaurant 17:00–23:00; dinner is not included in October unless the rate says (the booking's inclusions say breakfast + dinner — confirm at check-in); aurora alarm not stated — ask.</li>
+  <li class="y"><b>Floating under the Northern Sky</b> — Lapland Safaris: 3 h evening programme, drysuit floating on a lake, transfers, guide, fireside snack; October listed; from 212 € pp; the pick-up list has a meeting point beside Piparina for Glass Resort guests; over 15 and 140 cm (GPT run, 23 Sep). <b>Antler workshop</b> — Hornwork, Kangasniemi, ~12 km from the centre, all year; duration, price and transfer by quote.
+   <a href="https://www.visitrovaniemi.fi/activity-product/floating-under-the-northern-sky-rovaniemi/" target="_blank" rel="noopener">visitrovaniemi.fi</a></li>
+  <li class="y"><b>Santa Claus Office</b> and <b>Santa's Main Post Office</b>, in the Village — daily 10:00–17:00 (7 Sep). <b>Arctic Circle Hiking Area</b>, ~20 min north on the E75 — flat duckboard loops of 2–10 km; the Monday option (7 Sep).</li>
+  <li class="y"><b>Gravel loop R1 / R2</b> — FIN-07 from 2.7 km behind the resort: north to Kierinki and road 79 back (133 km of trail, 117 km of road, ~6.7 h) or south to Ranua and back (141 km, ~6.5 h); R1 covers what C2 leaves out if the transfer went on the road</li>
+  <li class="x"><b>Pilke science centre</b> — closed. All museums shut on Monday 12 Oct.</li>
  </ul>
 
- <h2 id="w-ruka">Ruka &amp; Kuusamo<small>14–16 OCT · WEDNESDAY TO FRIDAY · HOLIDAY WEEK</small></h2>
+ <h2 id="w-ruka">Ruka &amp; Kuusamo<small>14–16 OCT · WEDNESDAY TO FRIDAY · HOLIDAY WEEK · AURORA B. LODGE · HIKING, WILDLIFE AND THE BORDER GRAVEL</small></h2>
  <ul class="sl">
-  <li class="ok"><b>Ski and gondola</b> — season scheduled to open 2 Oct on stored snow (announced by Ruka; re-check ruka.fi
-   before arrival). Village-2-Valley gondola, SaaruaExpress and Saarua III; slopes 09:30–19:00, <b>gondola 09:30–23:00</b>.
-   Pedestrian tickets cover the gondola and Village Express, ~9 min ride; <b>closes in strong wind</b>. All four.
-   <a href="https://www.ruka.fi/en/skiresort/slopes" target="_blank" rel="noopener">ruka.fi</a></li>
-  <li class="y">Online passes are reported at −20 % until 30 Nov — buy online before 14 Oct; holiday week.</li>
-  <li class="ok"><b>Pieni Karhunkierros</b> — ~12 km from Juuma (~10 km from Basecamp Oulanka), 4–6 h, suspension
-   bridges and the long Kallioportti stairs, commonly walked clockwise. Strong pair; the moderate pair only with a full
-   day and dry rock. <b>Kiutaköngäs</b> — ~7 km from the visitor centre car park, rapids, shelter and fire site — all four,
-   the shorter day. A natural split: one car to Juuma, one to Kiutaköngäs, meet back at the lodge.
-   <a href="https://www.karhunkierros.fi/en/karhunkierros/" target="_blank" rel="noopener">karhunkierros.fi</a></li>
-  <li class="x"><b>Oulanka Visitor Centre</b> and its restaurant — open 3 Jun–26 Sep 2026 only. The trails remain open.
-   <a href="https://www.luontoon.fi/en/services/oulanka-visitor-centre-visitor-center-7002-en" target="_blank" rel="noopener">luontoon.fi</a></li>
-  <li class="ok"><b>Hossa National Park</b>, ~100 km from Ruka (Google Maps) — Nature Centre and café Lounaja open <b>1–25 Oct,
-   10:00–15:00</b>. Julma-Ölkky canyon lake and the Värikallio rock paintings on foot. A full day; all four.
-   <a href="https://hossa-kylmaluoma.fi/en/hossa-nationalpark-nature-centre/" target="_blank" rel="noopener">hossa-kylmaluoma.fi</a></li>
-  <li class="y"><b>Riisitunturi</b> — ~40 min via Patoniementie, last 3 km gravel; hanging bogs, boardwalks slick in
-   autumn. Blog source only.</li>
-  <li class="x"><b>Husky sledding, Bike Park, scheduled rafting</b> — out of season.</li>
-  <li class="q"><b>Kuusamo predator centre · Ruka restaurants</b> — no source; ask Elisabeth.</li>
+  <li class="ok"><b>Oulanka golden-eagle hides</b> — Kuusamo Nature Photography: "Photography season: 15 September to 30 April", an autumn season 15 Sep – 31 Oct; <b>220 € per photographer per day</b> with the mandatory briefing; 4–10 h in the hide, no leaving mid-session, gas heater, dry toilet, bring food; capacity 14 in four linked hides, other photographers possible; ~75 km from Kuusamo and a 1.5 km walk — "if you're driving a four-wheel vehicle, you can get as close as 400 metres". Online availability calendar; info@kuusamonaturephotography.fi, +358 40 708 9722. Page last edited June 2025 — confirm the 2026 price. Eagles are not guaranteed.
+   <a href="https://kuusamonaturephotography.fi/en/portfolio/oulanka-eagle-hides/" target="_blank" rel="noopener">kuusamonaturephotography.fi</a></li>
+  <li class="x"><b>Bear hides, Kuusamo</b> — Taiga Bear Kuusamo: "The season starts in May and lasts until the end of September"; the Ruka-Kuusamo page: "Bear watching is available from May to September" (Bear Kuusamo, Kainuun Luontoretket, Ruka Safaris listed, not checked). Finnature will book partner hides on request, "the season usually ends in October" — ask if bears matter more than eagles.
+   <a href="https://taigabearkuusamo.fi/en/" target="_blank" rel="noopener">taigabearkuusamo.fi</a></li>
+  <li class="y"><b>Large Carnivore Centre</b> (Kuusamon Suurpetokeskus) — bears, lynx, reindeer, wolfdogs, visits guided; opened for 2026 on 7 Jul, adults 25 €, one listed tour start 10:15; café and shop closed this summer; <b>no October hours published</b> — ring before driving out.
+   <a href="https://kuusamon-suurpetokeskus.fi/" target="_blank" rel="noopener">kuusamon-suurpetokeskus.fi</a></li>
+  <li class="ok"><b>Hannu Hautala Nature Photography Centre</b>, in Karhuntassu (the tourist information), Torangintaival 2, Kuusamo — Tue–Fri 9–17, Sat 10–15, no closures 13–17 Oct; adults 15 €.
+   <a href="https://www.karhuntassu.fi/en/front-page/visiting-hours-and-tickets/" target="_blank" rel="noopener">karhuntassu.fi</a></li>
+  <li class="y"><b>Kuusamon Tropiikki</b> water park (Holiday Club) — day visitors welcome; "Weeks 41–42 Mon–Sun 12 pm – 8 pm" (week 42 = 12–18 Oct; the year of the schedule is not stated); adults 25 €.
+   <a href="https://www.holidayclubresorts.com/en/hotels-resorts/kuusamon-tropiikki/spa-and-treatments/" target="_blank" rel="noopener">holidayclubresorts.com</a></li>
+  <li class="y"><b>Border gravel from the lodge</b> — our own figures from the road registers (23 Sep), not an operator's: <b>north</b>, 18.5 km to FIN-01 km 1633, the line up the east side of Oulanka past Käylä and Hautajärvi to km 1735 — 102 km, ~26 km recorded tarmac, ~76 km gravel or unrecorded — and 113 km of road back by Salla: ~234 km, ~5.6 h with an hour of stops, from 08:00 back about 13:30 (last light 18:27); <b>south</b>, the 17 Oct alternative's 197 km down the border to Hossa and ~115 km of road back — a full ~8.3 h day, the same line the transfer may use. The tap points are on the 13 Oct and 17 Oct trail boxes.</li>
+  <li class="y"><b>Hikes on the Kuusamo list</b> (Ruka-Kuusamo's Outdooractive collection, Jan 2026): Valtavaaran huiputus 5.7 km · Konttaisen kuhaus 2 km · Pyhän jyssäys 6 km (Valtavaara–Pyhävaara reserve) · Ölökyn ähkäsy round Julma-Ölkky 10 km and Värikallion kaarros 8 km (Hossa) · Könkään keino 8 km, Kanjonin kurkkaus 6 km (Oulanka) · Riisin rietas 10.7 km. The Karhunkierros from Hautajärvi (border side; on-demand bus, parking 10 €/day) — "still good for hiking in early October", steep sections and stairs slippery as autumn goes on. Iivaara and Näränkä were not on the list and their park pages did not load.
+   <a href="https://www.outdooractive.com/en/list/hiking-trails-in-kuusamo/232282703/" target="_blank" rel="noopener">outdooractive.com</a></li>
+  <li class="y"><b>Gondola</b> — Village-2-Valley 09:30–23:00 from 2 Oct, Saarua slopes; the site carried a "temporarily closed" banner on 23 Sep — re-check before buying. Online passes −20 %; holiday week, buy by 13 Oct.
+   <a href="https://www.ruka.fi/en" target="_blank" rel="noopener">ruka.fi</a></li>
+  <li class="ok"><b>River floating</b> — Rukapalvelu 138 €, 2.5 h in a floating suit in flowing water; its dated programme (1 Jun 2026 – 30 Apr 2027) runs Wednesday 14:00 and Thursday 10:00 — <b>14 or 15 Oct</b>; confirm the transfer from the lodge and suit sizing (GPT run, 23 Sep) · Ruka Adventures 105 €, "snow conditions permitting". <b>Friday rafting + sauna</b> 118 €. One floating on the trip — here or Rovaniemi.
+   <a href="https://www.ruka.fi/en/events/rukapalvelu-relaxing-river-floating" target="_blank" rel="noopener">ruka.fi</a></li>
+  <li class="y"><b>Quad safari</b> — listed, dates not checked.</li>
+  <li class="ok"><b>Saunas</b> — HoNS 40 € (3-day cut-off — by 11 Oct for the 14th) · Pyhäpiilo smoke sauna Tue/Thu 45 € · BASE summit sauna 25 €.</li>
+  <li class="y"><b>Pieni Karhunkierros</b> — ~12 km from Juuma, 4–6 h, suspension bridges and the Kallioportti stairs; rock slippery in October. <b>Kiutaköngäs</b> — ~7 km from the visitor-centre car park, rapids and a fire site; the shorter day. One car to Juuma, one to Kiutaköngäs (7 Sep).
+   <a href="https://www.karhunkierros.fi" target="_blank" rel="noopener">karhunkierros.fi</a></li>
+  <li class="x"><b>Oulanka Visitor Centre</b> and its restaurant — closed after 26 Sep; the trails stay open.</li>
+  <li class="y"><b>Hossa National Park</b>, ~100 km — Nature Centre and café 1–25 Oct, 10:00–15:00; Julma-Ölkky canyon lake, Värikallio rock paintings; a full day (7 Sep). <b>Riisitunturi</b> — ~40 min via Patoniementie, last 3 km gravel; boardwalks slick in autumn.</li>
+  <li class="x"><b>Husky sledding · Bike Park · scheduled rafting</b> — out of season.</li>
+  <li class="q"><b>Aurora B. Luxury Lodge</b> — no reachable website; Booking.com listing only. <b>Kuusamo predator centre · Ruka restaurants</b> — no source. Ask Elisabeth what runs in October.</li>
  </ul>
 
- <h2 id="w-koli">Koli<small>19–20 OCT · MONDAY AND TUESDAY · HOLIDAY WEEK</small></h2>
+ <h2 id="w-koli">Koli<small>19–20 OCT · MONDAY AND TUESDAY · HOLIDAY WEEK · BREAK SOKOS</small></h2>
  <ul class="sl">
-  <li class="ok"><b>Koli Nature Centre Ukko</b> — from 1 Sep: Tue–Sat 9:00–16:00, <b>Sun 9:00–15:00, Monday closed</b>
-   ("generally open every day" in holiday weeks — check). Exhibition, maps. <b>Car parks P1–P3 are in a paid-parking
-   pilot from 1 Sep — free for Break Sokos Koli guests.</b>
-   <a href="https://www.luontoon.fi/en/services/koli-nature-centre-ukko-visitor-center-63847-en" target="_blank" rel="noopener">luontoon.fi</a></li>
-  <li class="ok"><b>Trail of the Tops</b> — Ukko-Koli, Akka-Koli, Paha-Koli, ~1.4 km loop from the Nature Centre yard;
-   a 400 m accessible spur reaches Ukko-Koli. Steep, rocky, unlit; <b>wet rock on Akka-Koli is treacherous</b>. All four in the dry.</li>
-  <li class="y"><b>Mäkrä trail</b> — ~7.5 km, ~3.5 h, moderate to demanding, from the Nature Centre. Single source. Strong pair.</li>
-  <li class="ok"><b>Herajärvi circuit</b> — ~30 km south loop, ~35–38 km north loop, ~61 km in all. Day sections only.</li>
+  <li class="ok"><b>Koli Safaris</b>, on request through the <b>weekday sales desk, +358 20 1234 660</b> — e-fatbike tour 49 / 69 € · Tour of the Peaks 29 € · Stories 39 € · Walk in the Darkness 69 € (Oct–Dec) · mushroom picking 59 €. E-fatbike rental 50 € / 3 h. The public Tour of the Peaks runs Saturdays only.
+   <a href="https://www.sokoshotels.fi/en/hotels/lieksa/break-sokos-hotel-koli" target="_blank" rel="noopener">sokoshotels.fi</a></li>
+  <li class="y"><b>Icelandic-horse forest ride</b> — Paimentupa: beginner routes on paths and forest roads, groups usually 2–6, all year; 1 h 50 € pp or 1.5 h 60 € (rider limit 90 kg), 2 h 75 € (85 kg); declare experience, take the one-hour version first (GPT run, 23 Sep).
+   <a href="https://paimentupa.fi/en/riding/" target="_blank" rel="noopener">paimentupa.fi</a></li>
+  <li class="ok"><b>Relax Spa</b> — Mon–Thu 10:00–22:00, 36 € for hotel guests (40 € standard), adults only after 18:00, two-hour visits; maintenance closure 2–6 Nov, after our stay. <b>Hotel sauna</b> 17–19 women, 19–21 men.</li>
+  <li class="y"><b>Koli Nature Centre Ukko</b> — Monday closed in autumn ("generally open every day" in holiday weeks — check). Car parks P1–P3 are paid from 1 Sep, free for Break Sokos guests (7 Sep).
+   <a href="https://www.luontoon.fi/en/koli" target="_blank" rel="noopener">luontoon.fi</a></li>
+  <li class="y"><b>Trail of the Tops</b> — Ukko-Koli, Akka-Koli, Paha-Koli, ~1.4 km loop from the Nature Centre; a 400 m accessible spur reaches Ukko-Koli. Steep, rocky, unlit; <b>wet rock on Akka-Koli is treacherous</b>. <b>Mäkrä trail</b> — ~7.5 km, ~3.5 h, moderate to demanding (7 Sep).</li>
+  <li class="y"><b>Herajärvi circuit</b> — ~30 km south loop, ~35–38 km north loop; day sections only (7 Sep).</li>
+  <li class="y"><b>Erä-Eero wildlife hides</b>, Kontiovaara, Lieksa (~95 km) — open March to November; wolverines "during all four seasons", eagles best from September, bears April–September; from the turn of September/October "daytime visits" rather than nights; 190 € (viewing cabin) to 235–250 € (photo hides) pp; contact form or +358 400 432218; the business is for sale (Jan 2026 notice).
+   <a href="https://www.eraeero.com/" target="_blank" rel="noopener">eraeero.com</a></li>
   <li class="x"><b>Scenic chairlift</b> — summer only. <b>Pielinen cruises</b> — ended 30 Aug.</li>
-  <li class="q"><b>Monday</b> — Nature Centre likely shut, no lift, no boat. Paateri (Eva Ryynänen's studio), the Pielinen
-   Museum in Lieksa and Joensuu (~75 km) are the indoor candidates — none verified.</li>
+  <li class="q"><b>Monday indoors</b> — Joensuu 63 km, Lieksa 95 km (Google Maps): Paateri (Eva Ryynänen's studio), the Pielinen Museum in Lieksa — none verified.</li>
  </ul>
 
- <h2 id="w-saimaa">Rantasalmi &amp; Savonlinna<small>22–23 OCT · THURSDAY AND FRIDAY · HOLIDAY WEEK</small></h2>
+ <h2 id="w-rantasalmi">Rantasalmi &amp; Savonlinna<small>22–23 OCT · THURSDAY AND FRIDAY · HOLIDAY WEEK · KURU RESORT</small></h2>
  <ul class="sl">
-  <li class="ok"><b>Linnansaari National Park by boat</b> from Järvisydän, ~10 min from Kuru — €34.90, departs 10:00,
-   the boat leaves the island 12:00, back around 13:00 (operator says about 3 h). Linnavuori lookout and 2.8 / 5.5 / 7.5 km
-   island trails; all four. <b>Book online by 16:00 the day before — an unbooked departure is cancelled</b>, and so is
-   any in strong wind.
-   <a href="https://www.jarvisydan.com/en/trips-to-the-national-park/" target="_blank" rel="noopener">jarvisydan.com</a></li>
-  <li class="y">Season end — advertised to 31 Oct by Visit Savonlinna, not stated on the operator page. Check open departures.</li>
-  <li class="ok"><b>Olavinlinna castle</b>, Savonlinna, ~45 km — October: weekdays 10:00–16:00 (one source says Tue–Fri,
-   another Mon–Fri; we are there Wed–Fri), Sat–Sun 11:00–16:00; guided tour included, last tour 15:15.
-   <b>Riihisaari museum</b> next door — Tue–Sun 10:00–17:00, €11; combined ticket €19.
-   <a href="https://www.savonlinna.fi/riihisaari/en/visit-us/opening-hours-and-tickets/" target="_blank" rel="noopener">savonlinna.fi</a></li>
-  <li class="ok"><b>Lusto Finnish Forest Museum</b>, Punkaharju — Tue–Sun 10:00–17:00, Monday closed.</li>
-  <li class="y"><b>Punkaharju ridge road</b> and Harju Trail — year-round; trail information last updated 2024.</li>
-  <li class="y"><b>Järvisydän Sauna World and Lake Spa</b> — year-round; day access for non-residents through the
-   resort. Rates not published.</li>
-  <li class="x"><b>Seal safaris</b> — ended 30 Aug; watch from the Linnansaari boat instead. <b>Kerimäki wooden
-   church</b> — under renovation, visitors June–August only.</li>
-  <li class="q"><b>Kolovesi canoe rental</b> (Oravi) — sources disagree on October. <b>Kuru's own activities</b> — no October
-   source; ask reception.</li>
+  <li class="ok"><b>Kuru Resort</b> — adults only · <b>Solitary</b> restaurant Tue–Sat from 17:00 · <b>private lakeside saunas</b> daily 16:00–22:00, 1 h 49 €, max 2 per slot.
+   <a href="https://kururesort.com" target="_blank" rel="noopener">kururesort.com</a></li>
+  <li class="ok"><b>Järvisydän Lake Spa</b>, ~10 min — ~12:00–20:00, 33.90 €; <b>evening spa</b> 52 €, Mon–Sat 20:30–22:30, book by 16:00 the day before. <b>Kuru eFatBikes</b> — year-round from the Safari House, forest routes to the Forest Café; yoga and the lakeside hot tub are on Kuru's programme — ask what the booking already includes (GPT run, 23 Sep).
+   <a href="https://www.jarvisydan.com/en/" target="_blank" rel="noopener">jarvisydan.com</a></li>
+  <li class="ok"><b>Olavinlinna castle</b>, Savonlinna, ~45 km — Tue–Sun 10:00–16:00, 15 €. <b>Eurydike</b>, immersive theatre in the castle, 22 and 23 Oct 19:00, 35 €.</li>
+  <li class="ok"><b>Linnansaari</b> — the seal trips and M/S Linnansaari do not run in October; the <b>Oravi boat taxi</b> goes any day to 31 Oct, minimum 52 € per boat. The 10:00 boat from Järvisydän (34.90 €, book by 16:00 the day before) was advertised to 31 Oct by Visit Savonlinna on 7 Sep but is not offered for October on the operator's page — <b>ask Järvisydän</b>.</li>
+  <li class="y"><b>Riihisaari museum</b>, by the castle — Tue–Sun 10:00–17:00, 11 €; combined ticket 19 €. <b>Lusto Finnish Forest Museum</b>, Punkaharju — Tue–Sun 10:00–17:00. <b>Punkaharju ridge road</b> — year-round (7 Sep).</li>
+  <li class="x"><b>Seal safaris</b> — ended 30 Aug. <b>Kerimäki wooden church</b> — visitors June–August only.</li>
  </ul>
 
  <h2 id="w-trail">On the trail days<small>28–30 SEP · WHAT YOU PASS, NOT WHAT YOU STOP FOR</small></h2>
  <ul class="sl">
   <li class="q"><b>Höga Kusten</b>, 28 Sep evening — Skuleberget is at the hotel's door in Docksta and the Skuleskogen national park 10 km further; the cable car and Naturum hours for late September were not checked.</li>
-  <li class="y"><b>Granö Beckasin</b>, 29 Sep — Bird's Nest treehouses, sauna, river; autumn packages listed on their site, dinner from 17:00. Reception closes 17:30.</li>
-  <li class="y"><b>Storforsen</b> rapids — on the way now, 5 km off S-06 at km 260 on 30 Sep; open ground, year-round (August research). A twenty-minute stop, not an hour.</li>
-  <li class="y"><b>Treehotel</b>, Harads — one night, 30 Sep. Guided forest walks and moose safaris were listed through October in August; ask when booking.</li>
+  <li class="y"><b>Sundsvall</b>, 27 Sep evening / 28 Sep morning — the Stenstan stone-city walk (Stora torget, Storgatan), 60–90 min; Norra Berget open-air museum grounds open daily (GPT run, 23 Sep). <b>Skuleberget</b>, 28 Sep afternoon — the southern trail from FriluftsByn, 2.5 km to the summit, 5 km return, ~3 h, a sustained climb; chargeable parking; the chairlift and summit café are not to be counted on.</li>
+  <li class="y"><b>Granö Beckasin</b>, 29 Sep — Bird's Nest treehouses, sauna, river; dinner on request, order when you give the arrival time. Reception closes 17:30. <b>Dusk moose safari</b> — minibus with a nature guide, 3–4 h, 2–8 people, SEK 1 200 pp, from reception; runs at dusk in parts of the year — 29 Sep is an enquiry (GPT run, 23 Sep); the private wood-fired sauna or hot tub is the fallback.</li>
+  <li class="y"><b>Storforsen</b> rapids — 5 km off S-06 at km 260 on 30 Sep, trail alternative only; a twenty-minute stop, not an hour.</li>
+  <li class="y"><b>Lentiira</b>, 17 Oct — the lakeside smoke sauna, 45–50 € an hour for two plus 15 € per extra person (~75–80 € for four); arrange the heating time when booking dinner (GPT run, 23 Sep). <b>Wild Brown Bear</b>, Kostamustie 5644, Vartius — the hides next door: "Open daily 1st April – 30th October", bears "until the last bear leaves for winter hibernation", 1–4 wolverines, foxes and the local wolf pack 1–2 times a week; 140 € pp a night in a hide, lodge with dinner and breakfast 60 €; 29 hides; +358 40 5469008 — the page carries no 2026 date (© 2018), ring. <b>Boreal Wildlife Centre</b>, Viiksimo, 60 km from Kuhmo — "September and October offer great opportunities" for wolf, bear and wolverine; one night 220 € pp; request form.
+   <a href="https://www.wildbrownbear.fi/" target="_blank" rel="noopener">wildbrownbear.fi</a></li>
   <li><b>Reindeer on the roads</b> are a year-round hazard on every unfenced road, worst at dusk — slow right down, they
    move in groups, and a collision must be reported. Seeing them <em>on the trail</em> is a separate matter: unlikely in
    September, the herds are still high.</li>
  </ul>
 
- <p class="intro" style="margin-top:28px">Sources and the full verification table:
-  <code>analysis/Base_Activities_Verified_v1.1.md</code>. Only two of four research providers returned anything,
-  and each answer was cut at 8,000 characters — "no source" often means the source was discarded, not that nothing
-  exists. Transfer and travel days (26–27 Sep, 1 Oct, 24–26 Oct) carry no list; their cards under Legs say what happens.</p>
+ <p class="intro" style="margin-top:28px">Sources, labels and the book-by arithmetic: <code>analysis/Things_To_Do_Research_v1.2.md</code>
+  (23 Sep); the 7 Sep run remains in <code>analysis/Base_Activities_Verified_v1.1.md</code>; items marked "GPT run" come from
+  <code>analysis/Activities_Per_Base_Recommendations_v1.0.md</code> (operator pages read by that run on 23 Sep, not re-checked here). Not reached on 23 Sep: the
+  Northern Lights Ranch and Aurora B. websites, luontoon.fi listings, the ICEHOTEL dinner's start time — marked above.
+  Transfer and travel days (26–27 Sep, 24–26 Oct) carry no list; their cards under Legs say what happens.</p>
 </section>
 
 <!-- WEATHER -->
@@ -1316,7 +1305,7 @@ h2{display:block}h2 small{display:block;text-align:left;margin-top:5px}
   </div>
  </div>
 
- <h2>Trail alternatives · the rules<small>28 SEP – 18 OCT · IF A TRAIL DAY IS TAKEN</small></h2>
+ <h2 id="e-rules">Trail alternatives · the rules<small>28 SEP – 18 OCT · IF A TRAIL DAY IS TAKEN</small></h2>
  <ul>
   <li><b>Sweden, 28 Sep – 1 Oct: paved is the plan, gravel is the option</b> (Adam, 17 Sep). The four cards carry the E4 · E12 · 97 · E10 plans — 116 · 191 · 340 · 279 km, 1.8 · 2.9 · 5.2 · 4.3 h, leaving 12:00 · 10:00 · 10:00 · 10:00 — and the S-07, S-07 + S-06, S-06 and S-16 lines as alternatives with their own bars, timelines and cut rules (882 km of gravel in all). The choice is made at breakfast; the beds are booked either way.</li>
   <li><b>A Swedish trail alternative departs at first light — 06:30; the Finnish ones at 07:00–07:15, as on their cards.</b> At 35 km/h on gravel the long third day needs every minute of it: a desk that closes at 17:30 on the 29th and 22:00 on the 30th, no mobile coverage for most of the way, and a surface nobody has confirmed — <b>the early start is the whole margin</b> for a puncture, a washout, or driving on when a bed falls through. Tell the hotel which plan you are on when you give the arrival time.</li>
