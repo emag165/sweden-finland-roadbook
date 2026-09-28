@@ -2,6 +2,10 @@
 
 **Live:** https://emag165.github.io/sweden-finland-roadbook/
 
+**Current version:** v2.13, published 28 Sep 2026: the page (`index.html`) plus its offline copy, `Traveller_Roadbook_v2.13.pdf`, linked from the button under the header boxes. Older PDFs are kept. The notes further down date from v1.22 and are kept as history.
+
+**Working files:** this repository only serves the page. The trip's working files are in a separate **private** repository for the owner and his AI assistants. Nothing from it is published here except the reviewed public roadbook. This repository must stay **public**: on GitHub's free plan, making it private takes the site offline.
+
 29-day self-driven 4x4 trip, 26 Sep – 26 Oct 2026. Four travellers, two vehicles.
 Vehicles collected at the Stockholm hotel on 27 Sep (moved from Arlanda on 21 Sep);
 the 25 Oct return point is to confirm with the operator.
